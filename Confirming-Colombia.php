@@ -1,6 +1,6 @@
 <?php
 
-$title          = "CesionBNK - Factoring y Confirming";
+$title          = "Factoring, confirming en Colombia. C-FINANCIA by cesionbnk";
 
 $templateFinal  = implode("", file("./media/Confirming-Colombia.html"));
 $templateFinal  = str_replace("[TITULO]"           , $title          , $templateFinal);

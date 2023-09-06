@@ -1,6 +1,8 @@
 <?php
 
-$title          = "CesionBNK - Factoring y Confirming";
+$title          = "Factoring, confirming en Colombia. C-FINANCIA by cesionbnk";
+
+$meta = "Ofrecemos servicios de factoring para PYMEs, brindando adelanto de facturas y financiamiento de cuentas por cobrar. Obtén financiamiento rápido y flexible para tu pequeña empresa.";
 
 $templateFinal  = implode("", file("./media/tarjeta.html"));
 $templateFinal  = str_replace("[TITULO]"           , $title          , $templateFinal);
