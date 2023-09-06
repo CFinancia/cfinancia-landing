@@ -1,0 +1,224 @@
+ <!-- Signup Modal Window -->
+  <div id="signupModal" class="js-signup-modal u-modal-window" style="width: 500px;">
+    <!-- Modal Close Button -->
+    <button class="btn btn-sm btn-icon btn-text-secondary u-modal-window__close" type="button" onclick="Custombox.modal.close();">
+      <span class="fas fa-times"></span>
+    </button>
+    <!-- End Modal Close Button -->
+
+    <!-- Content -->
+    <div class="p-5">
+      <form class="js-validate">
+        <!-- Signin -->
+        <div id="signin" data-target-group="idForm">
+          <!-- Title -->
+          <header class="text-center mb-5">
+            <h2 class="h4 mb-0">Por favor, registrese</h2>
+            <p>Inicie sesión para administrar su cuenta.</p>
+          </header>
+          <!-- End Title -->
+
+          <!-- Input -->
+          <div class="js-form-message mb-3">
+            <div class="js-focus-state input-group form">
+              <div class="input-group-prepend form__prepend">
+                <span class="input-group-text form__text">
+                  <span class="fa fa-user form__text-inner"></span>
+                </span>
+              </div>
+              <input type="email" class="form-control form__input" name="email" required
+                     placeholder="Email"
+                     aria-label="Email"
+                     data-msg="Please enter a valid email address."
+                     data-error-class="u-has-error"
+                     data-success-class="u-has-success">
+            </div>
+          </div>
+          <!-- End Input -->
+
+          <!-- Input -->
+          <div class="js-form-message mb-3">
+            <div class="js-focus-state input-group form">
+              <div class="input-group-prepend form__prepend">
+                <span class="input-group-text form__text">
+                  <span class="fa fa-lock form__text-inner"></span>
+                </span>
+              </div>
+              <input type="password" class="form-control form__input" name="password" required
+                     placeholder="Password"
+                     aria-label="Password"
+                     data-msg="Your password is invalid. Please try again."
+                     data-error-class="u-has-error"
+                     data-success-class="u-has-dark">
+            </div>
+          </div>
+          <!-- End Input -->
+
+          <div class="row mb-3">
+            <div class="col-6">
+              <!-- Checkbox -->
+              <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
+                <input type="checkbox" class="custom-control-input" id="rememberMeCheckbox">
+                <label class="custom-control-label" for="rememberMeCheckbox">
+                  Recuérdame
+                </label>
+              </div>
+              <!-- End Checkbox -->
+            </div>
+
+            <div class="col-6 text-right">
+              <a class="js-animation-link float-right" href="javascript:;"
+                 data-target="#forgotPassword"
+                 data-link-group="idForm"
+                 data-animation-in="fadeIn">¿Se te olvidó tu contraseña?</a>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <button type="submit" class="btn btn-block btn-dark">Iniciar</button>
+          </div>
+
+          <div class="text-center mb-3">
+            <p class="text-muted">
+              ¿No tiene una cuenta?
+              <a class="js-animation-link" href="javascript:;"
+                 data-target="#signup"
+                 data-link-group="idForm"
+                 data-animation-in="fadeIn">Regístrate
+              </a>
+            </p>
+          </div>
+
+                  </div>
+        <!-- End Signin -->
+
+        <!-- Signup -->
+        <div id="signup" style="display: none; opacity: 0;" data-target-group="idForm">
+          <!-- Title -->
+          <header class="text-center mb-5">
+            <h2 class="h4 mb-0">Por favor regístrese</h2>
+            <p>Complete el formulario para comenzar.</p>
+          </header>
+          <!-- End Title -->
+
+          <!-- Input -->
+          <div class="js-form-message mb-3">
+            <div class="js-focus-state input-group form">
+              <div class="input-group-prepend form__prepend">
+                <span class="input-group-text form__text">
+                  <span class="fa fa-user form__text-inner"></span>
+                </span>
+              </div>
+              <input type="email" class="form-control form__input" name="email" required
+                     placeholder="Email"
+                     aria-label="Email"
+                     data-msg="Please enter a valid email address."
+                     data-error-class="u-has-error"
+                     data-success-class="u-has-success">
+            </div>
+          </div>
+          <!-- End Input -->
+
+          <!-- Input -->
+          <div class="js-form-message mb-3">
+            <div class="js-focus-state input-group form">
+              <div class="input-group-prepend form__prepend">
+                <span class="input-group-text form__text">
+                  <span class="fa fa-lock form__text-inner"></span>
+                </span>
+              </div>
+              <input type="password" class="form-control form__input" name="password" id="password" required
+                     placeholder="Password"
+                     aria-label="Password"
+                     data-msg="Your password is invalid. Please try again."
+                     data-error-class="u-has-error"
+                     data-success-class="u-has-success">
+            </div>
+          </div>
+          <!-- End Input -->
+
+          <!-- Input -->
+          <div class="js-form-message mb-3">
+            <div class="js-focus-state input-group form">
+              <div class="input-group-prepend form__prepend">
+                <span class="input-group-text form__text">
+                  <span class="fa fa-key form__text-inner"></span>
+                </span>
+              </div>
+              <input type="password" class="form-control form__input" name="confirmPassword" required
+                     placeholder="Confirm Password"
+                     aria-label="Confirm Password"
+                     data-msg="Password does not match the confirm password."
+                     data-error-class="u-has-error"
+                     data-success-class="u-has-success">
+            </div>
+          </div>
+          <!-- End Input -->
+
+          <div class="mb-3">
+            <button type="submit" class="btn btn-block btn-dark">Signup</button>
+          </div>
+
+          <div class="text-center mb-3">
+            <p class="text-muted">
+              Have an account?
+              <a class="js-animation-link" href="javascript:;"
+                 data-target="#signin"
+                 data-link-group="idForm"
+                 data-animation-in="fadeIn">Signin
+              </a>
+            </p>
+          </div>
+
+         
+          
+        </div>
+        <!-- End Signup -->
+
+        <!-- Forgot Password -->
+        <div id="forgotPassword" style="display: none; opacity: 0;" data-target-group="idForm">
+          <!-- Title -->
+          <header class="text-center mb-5">
+            <h2 class="h4 mb-0">Recuperar cuenta</h2>
+            <p>Ingrese su dirección de correo electrónico y se le enviará un correo electrónico con instrucciones.</p>
+          </header>
+          <!-- End Title -->
+
+          <!-- Input -->
+          <div class="js-form-message mb-3">
+            <div class="js-focus-state input-group form">
+              <div class="input-group-prepend form__prepend">
+                <span class="input-group-text form__text">
+                  <span class="fa fa-user form__text-inner"></span>
+                </span>
+              </div>
+              <input type="email" class="form-control form__input" name="email" required
+                     placeholder="Email"
+                     aria-label="Email"
+                     data-msg="Please enter a valid email address."
+                     data-error-class="u-has-error"
+                     data-success-class="u-has-success">
+            </div>
+          </div>
+          <!-- End Input -->
+
+          <div class="mb-3">
+            <button type="submit" class="btn btn-block btn-dark">Recover Account</button>
+          </div>
+
+          <div class="text-center mb-3">
+            <p class="text-muted">
+              ¿Tener una cuenta? 
+              <a class="js-animation-link" href="javascript:;"
+                 data-target="#signin"
+                 data-link-group="idForm"
+                 data-animation-in="fadeIn">Registrarse
+              </a>
+            </p>
+          </div>
+        </div>
+        <!-- End Forgot Password -->
+      </form>
+    </div>
+    <!-- End Content -->
+  </div>
