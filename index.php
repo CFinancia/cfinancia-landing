@@ -1,4 +1,7 @@
 <?php
+include("./globales/redes.php");
+
+$redes  		= redes(); 
 
 $title          = "Factoring, confirming en Colombia. C-FINANCIA by cesionbnk";
 
@@ -13,6 +16,7 @@ $templateFinal  = str_replace("[MENU]"            	, $menu_menu      , $template
 
 $menu_menu    = implode("", file("./media/footer.html"));
 $templateFinal  = str_replace("[FOOTER]"            , $menu_menu      , $templateFinal);
+$templateFinal  = str_replace("[REDES]"             , $redes      	  , $templateFinal);
 
 echo $templateFinal;
 
