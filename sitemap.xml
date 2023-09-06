@@ -12,4 +12,34 @@
         <changefreq>weekly</changefreq>
         <lastmod>2023-09-05T00:00:00+00:00</lastmod>
     </url>
+    <url>
+        <loc>https://www.c-financia.com/factoring.php</loc>
+        <priority>0.1</priority>
+        <changefreq>weekly</changefreq>
+        <lastmod>2023-09-05T00:00:00+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://www.c-financia.com/Confirming-Colombia.php</loc>
+        <priority>0.1</priority>
+        <changefreq>weekly</changefreq>
+        <lastmod>2023-09-05T00:00:00+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://www.c-financia.com/factura-electronica.php</loc>
+        <priority>0.1</priority>
+        <changefreq>weekly</changefreq>
+        <lastmod>2023-09-05T00:00:00+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://www.c-financia.com/portal-proveedores.php</loc>
+        <priority>0.1</priority>
+        <changefreq>weekly</changefreq>
+        <lastmod>2023-09-05T00:00:00+00:00</lastmod>
+    </url>
+      <url>
+        <loc>https://www.c-financia.com/blog.php</loc>
+        <priority>0.1</priority>
+        <changefreq>weekly</changefreq>
+        <lastmod>2023-09-05T00:00:00+00:00</lastmod>
+    </url>
 </urlset>
