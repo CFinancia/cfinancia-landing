@@ -1,0 +1,634 @@
+	<!-- begin::Head -->
+
+	<head>
+
+		<!--begin::Base Path (base relative path for assets of this page) -->
+
+		<!--end::Base Path -->
+		<meta charset="utf-8" />
+		<title>Metronic | Login Page v3</title>
+		<meta name="description" content="Login page example">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" integrity="sha512-nNlU0WK2QfKsuEmdcTwkeh+lhGs6uyOxuUs+n+0oXSYDok5qy0EI0lt01ZynHq6+p/tbgpZ7P+yUb+r71wqdXg==" crossorigin="anonymous" />
+		<!-- reCaptcha -->
+		<script src="https://www.google.com/recaptcha/api.js"></script>
+		<script>
+			function correctCaptcha() {
+				$("#submit-form-proveedor").prop( "disabled", false );
+			}
+		</script>
+		<!--begin::Fonts -->
+		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+		<script>
+			WebFont.load({
+				google: {
+					"families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"]
+				},
+				active: function () {
+					sessionStorage.fonts = true;
+				}
+			});
+		</script>
+
+		<!--end::Fonts -->
+		<style>
+			.hide-password {
+				-webkit-text-security: disc !important
+			}
+
+			.error-password {
+				font-weight: 500;
+				font-size: 0.9rem;
+				padding-left: 1.6rem;
+				color: #fd397a;
+				width: 100%;
+				margin-top: 0.25rem;
+			}
+		</style>
+		<!--begin::Page Custom Styles(used by this page) -->
+		<link href="./assets/css/demo1/pages/login/login-3.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/demo1/pages/wizard/wizard-4.css" rel="stylesheet" type="text/css" />
+
+		<!--end::Page Custom Styles -->
+
+		<!--begin:: Global Mandatory Vendors -->
+		<link href="./assets/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet"
+			type="text/css" />
+
+		<!--end:: Global Mandatory Vendors -->
+
+		<!--begin:: Global Optional Vendors -->
+		<!-- <link href="./assets/vendors/general/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" -->
+			<!-- type="text/css" /> -->
+		<!-- <link href="./assets/vendors/general/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet" -->
+			<!-- type="text/css" /> -->
+		<!-- <link href="./assets/vendors/general/select2/dist/css/select2.css" rel="stylesheet" type="text/css" /> -->
+		<!-- <link href="./assets/vendors/general/ion-rangeslider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css" /> -->
+		<!-- <link href="./assets/vendors/general/nouislider/distribute/nouislider.css" rel="stylesheet" type="text/css" /> -->
+		<!-- <link href="./assets/vendors/general/owl.carousel/dist/assets/owl.carousel.css" rel="stylesheet" type="text/css" /> -->
+		<link href="./assets/vendors/general/owl.carousel/dist/assets/owl.theme.default.css" rel="stylesheet"
+			type="text/css" />
+		<link href="./assets/vendors/general/animate.css/animate.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/vendors/general/sweetalert2/dist/sweetalert2.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/vendors/general/socicon/css/socicon.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/vendors/custom/vendors/line-awesome/css/line-awesome.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/vendors/custom/vendors/flaticon/flaticon.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/vendors/general/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet"
+			type="text/css" />
+
+		<!--end:: Global Optional Vendors -->
+
+		<!--begin::Global Theme Styles(used by all pages) -->
+		<!-- <link href="./assets/css/demo1/style.bundle.css" rel="stylesheet" type="text/css" /> -->
+
+		<!--end::Global Theme Styles -->
+
+		<!--begin::Layout Skins(used by all pages) -->
+		<link href="./assets/css/demo1/skins/header/base/light.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/demo1/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/demo1/skins/brand/dark.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/demo1/skins/aside/dark.css" rel="stylesheet" type="text/css" />
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+		<!--end::Layout Skins -->
+		<link rel="shortcut icon" href="./assets/media/logos/favicon.ico" />
+	</head>
+
+	<!-- end::Head -->
+
+	<!-- begin::Body -->
+
+	<body
+		class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
+		<!-- begin:: Page -->
+		<div class="kt-grid kt-grid--ver kt-grid--root">
+			<div class="kt-grid kt-grid--hor kt-grid--root  kt-login kt-login--v3 kt-login--signin" id="kt_login">
+				<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor"
+					style="background-image: url(./assets/media//bg/bg-11.png); background-repeat: no-repeat; background-position: center center;">
+					<div class="kt-grid__item kt-grid__item--fluid kt-login__wrapper">
+						<div class="kt-login__container">
+							<div class="kt-login__signin">
+								<div class="kt-login__head">
+									<!-- <h1 class="kt-login__title"><img style="width: 30%;" src="./assets/media/logos/logo-cesion.png"></h1> -->
+									<h1 class="kt-login__title" style="font-size: 37px;">
+										<div style="font-family: 'Raleway', sans-serif;">CESION<strong>BNK</strong></div>
+									</h1>
+								</div>
+								<div id="progressbar"></div>
+								<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+									<div class="kt-wizard-v4" id="kt_wizard_v4" data-ktwizard-state="step-first">
+
+										<!--begin: Form Wizard Nav -->
+										<div class="kt-wizard-v4__nav">
+											<div class="kt-wizard-v4__nav-items">
+												<a class="kt-wizard-v4__nav-item" href="#" data-ktwizard-type="step"
+													data-ktwizard-state="current">
+													<div class="kt-wizard-v4__nav-body">
+														<div class="kt-wizard-v4__nav-label">
+															<!-- <div class="kt-wizard-v4__nav-number">
+																1
+															</div> -->
+															<div class="kt-wizard-v4__nav-label-title">
+																Datos Generales
+															</div>
+															<div class="kt-wizard-v4__nav-label-desc">
+																Datos del solicitante
+															</div>
+														</div>
+													</div>
+												</a>
+												<a class="kt-wizard-v4__nav-item" href="#" data-ktwizard-type="step">
+													<div class="kt-wizard-v4__nav-body">
+														<!-- <div class="kt-wizard-v4__nav-number">
+	                                                        2
+	                                                    </div> -->
+														<div class="kt-wizard-v4__nav-label">
+															<div class="kt-wizard-v4__nav-label-title">
+																Datos Empresa
+															</div>
+															<div class="kt-wizard-v4__nav-label-desc">
+																Datos principales
+															</div>
+														</div>
+													</div>
+												</a>
+												<a class="kt-wizard-v4__nav-item" href="#" data-ktwizard-type="step">
+													<div class="kt-wizard-v4__nav-body">
+														<!-- <div class="kt-wizard-v4__nav-number">
+	                                                        3
+	                                                    </div> -->
+														<div class="kt-wizard-v4__nav-label">
+															<div class="kt-wizard-v4__nav-label-title">
+																Datos Usuario
+															</div>
+															<div class="kt-wizard-v4__nav-label-desc">
+																Datos de acceso
+															</div>
+														</div>
+													</div>
+												</a>
+												<a class="kt-wizard-v4__nav-item" href="#" data-ktwizard-type="step">
+													<div class="kt-wizard-v4__nav-body">
+														<!-- <div class="kt-wizard-v4__nav-number">
+	                                                        4
+	                                                    </div> -->
+														<div class="kt-wizard-v4__nav-label">
+															<div class="kt-wizard-v4__nav-label-title">
+																Completo!
+															</div>
+															<div class="kt-wizard-v4__nav-label-desc">
+																Revisión y envío
+															</div>
+														</div>
+													</div>
+												</a>
+											</div>
+										</div>
+
+										<!--end: Form Wizard Nav -->
+										<div class="kt-portlet">
+											<div class="kt-portlet__body kt-portlet__body--fit">
+												<div class="kt-grid">
+													<div class="kt-grid__item kt-grid__item--fluid kt-wizard-v4__wrapper">
+
+														<!--begin: Form Wizard Form-->
+														<form class="kt-form" id="kt_form">
+
+															<!--begin: Form Wizard Step 1-->
+															<div class="kt-wizard-v4__content"
+																data-ktwizard-type="step-content"
+																data-ktwizard-state="current">
+																<div class="kt-heading kt-heading--md">Ingrese los datos
+																	del solicitante
+																</div>
+																<div class="kt-form__section kt-form__section--first">
+																	<div class="kt-wizard-v4__form">
+																		<div class="form-group">
+																			<label>Nombres</label>
+																			<input type="text" class="form-control"
+																				name="solicitante_nombre"
+																				id="solicitante_nombre"
+																				placeholder="Nombres" required>
+																		</div>
+																		<div class="form-group">
+																			<label>Apellidos</label>
+																			<input type="text" class="form-control"
+																				name="solicitante_apellidos"
+																				id="solicitante_apellidos"
+																				placeholder="Apellidos" required>
+																		</div>
+																		<div class="row">
+																			<div class="col-xl-6">
+																				<div class="form-group">
+																					<label>Telefono</label>
+																					<input type="number" class="form-control"
+																						name="telefono_solicitante"
+																						id="telefono_solicitante"
+																						placeholder="Telefono" required>
+																				</div>
+																			</div>
+																			<div class="col-xl-6">
+																				<div class="form-group">
+																					<label>Email</label>
+																					<input type="email"
+																						class="form-control"
+																						name="email_solicitante"
+																						id="email_solicitante"
+																						placeholder="Email">
+																				</div>
+																			</div>
+																		</div>
+																		<!-- <div class="row">
+																			<div class="col-xl-6">
+																				<label class="">Tipo de documento:</label>
+																				<div class="form-group">
+																					<select class="form-control"
+																						name="tipo_id" id="tipo_id">
+																						<option value=4>Cédula de
+																							ciudadanía</option>
+																						<option value=1>Tarjeta de
+																							extranjería</option>
+																						<option value=2>Tarjeta de
+																							identidad</option>
+																						<option value=3>Registro civil
+																						</option>
+																						<option value=7>Documento de
+																							identificación extranjero
+																						</option>
+																						<option value=5>Cédula de
+																							extranjería</option>
+																						<option value=6>NIT</option>
+																						<option value=8>NIT de otro país
+																						</option>
+																						<option value=9>NUIP</option>
+																						<option value=10>Pasaporte</option>
+																					</select>
+																					<span
+																						class="form-text text-muted">Seleccione
+																						el tipo de documento de
+																						identificación del
+																						solicitante</span>
+																				</div>
+																			</div>
+																			<div class="col-xl-6">
+																				<label class="">Identificación:</label>
+																				<div class="form-group">
+																					<input type="text" class="form-control"
+																						id="solicitante_identificacion"
+																						name="solicitante_identificacion"
+																						placeholder="Identificación"
+																						required>
+																					<span
+																						class="form-text text-muted">Ingrese
+																						el núnero de identificación del
+																						solicitante</span>
+																				</div>
+																			</div>
+																		</div> -->
+																	</div>
+																</div>
+															</div>
+
+															<!--end: Form Wizard Step 1-->
+
+															<!--begin: Form Wizard Step 2-->
+															<div class="kt-wizard-v4__content"
+																data-ktwizard-type="step-content">
+																<div class="kt-heading kt-heading--md">Ingrese datos
+																	principales de la empresa
+																</div>
+																<div class="kt-form__section kt-form__section--first">
+																	<div class="kt-wizard-v4__form">
+																		<div class="form-group">
+																			<label>Razón Social de la empresa
+																				solicitante:</label>
+																			<input type="text" class="form-control"
+																				name="rzn_social" id="rzn_social"
+																				placeholder="Razón Social" value="[RAZONSOCIAL]" required [DISABLED]>
+																			<span class="form-text text-muted">Ingrese la
+																				razón social de la empresa</span>
+																		</div>
+																		<div class="form-group">
+																			<label>Nombre Comercial:</label>
+																			<input type="text" class="form-control"
+																				name="nombre_comercial"
+																				id="nombre_comercial"
+																				placeholder="Nombre Comercial" value="[RAZONSOCIAL]" required>
+																			<span class="form-text text-muted">Ingrese el
+																				nombre comercial del
+																				solicitante</span>
+																		</div>
+																		<div class="row">
+																			<div class="col-xl-6">
+																				<div class="form-group">
+																					<label>NIT:</label>
+																					<input type="text" class="form-control"
+																						name="nit" id="nit"
+																						placeholder="NIT" value="[NIT]" required [DISABLED]>
+																					<span
+																						class="form-text text-muted">Ingrese
+																						el nit identificador del
+																						solicitante</span>
+																				</div>
+																			</div>
+																			<div class="col-xl-6">
+																				<div class="form-group">
+																					<label>Ciudad:</label>
+																					<input type="text" class="form-control"
+																						name="ciudad" id="ciudad"
+																						placeholder="Ciudad" required>
+																					<span
+																						class="form-text text-muted">Ingrese
+																						la ciudad de la empresa
+																						solicitante</span>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="row">
+																			<div class="col-xl-6">
+																				<div class="form-group">
+																					<label>Teléfono:</label>
+																					<input type="number" class="form-control"
+																						name="empresa_telefono"
+																						id="empresa_telefono"
+																						placeholder="Teléfono" required>
+																					<span
+																						class="form-text text-muted">Ingrese
+																						un teléfono de contacto de la
+																						empresa solicitante</span>
+																				</div>
+																			</div>
+																			<div class="col-xl-6">
+																				<div class="form-group">
+																					<label>Dirección:</label>
+																					<input type="text" class="form-control"
+																						name="direccion" id="direccion"
+																						placeholder="Dirección" required>
+																					<span
+																						class="form-text text-muted">Ingrese
+																						la dirección del domicilio
+																						principal de la empresa
+																						solicitante</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+
+															<!--end: Form Wizard Step 2-->
+
+															<!--begin: Form Wizard Step 3-->
+															<div class="kt-wizard-v4__content"
+																data-ktwizard-type="step-content">
+																<div class="kt-heading kt-heading--md">Ingrese datos para
+																	acceso a la plataforma</div>
+																<div class="kt-form__section kt-form__section--first">
+																	<div class="kt-wizard-v4__form">
+																		<div class="form-group">
+																			<label>Correo Electrónico</label>
+																			<input type="email" class="form-control"
+																				name="user_email" id="user_email"
+																				placeholder="Email" required>
+																		</div>
+																		<div class="form-group">
+																			<label>Contraseña</label>
+																			<input type="password" class="form-control"
+																				name="user_password" id="user_password"
+																				placeholder="Contraseña" required>
+																		</div>
+																		<div class="form-group">
+																			<label>Confirme la contraseña</label>
+																			<input type="password" class="form-control"
+																				name="user_password_c" id="user_password_c"
+																				placeholder="Confirme la Contraseña"
+																				required>
+																			<span id="user_password_c_error"
+																				class="error-password"
+																				style="display: none;">No coinciden las
+																				contraseñas.</span>
+																		</div>
+																	</div>
+																</div>
+															</div>
+
+															<!--end: Form Wizard Step 3-->
+
+															<!--begin: Form Wizard Step 4-->
+															<div class="kt-wizard-v4__content"
+																data-ktwizard-type="step-content">
+																<div class="kt-heading kt-heading--md">Comprueba tus datos
+																	y envía!</div>
+																<div class="kt-form__section kt-form__section--first">
+																	<div class="kt-wizard-v4__review">
+																		<div class="kt-wizard-v4__review-item">
+																			<div class="kt-wizard-v4__review-title">
+																				Datos de solicitante
+																			</div>
+																			<div class="kt-wizard-v4__review-content">
+																				<span name="confirm_nombres"></span><br />
+																				<span
+																					name="confirm_apellidos"></span><br />
+																				<span name="confirm_telefono"></span><br />
+																				<span name="confirm_email"></span><br />
+																				<!-- <span
+																					name="confirm_tipo_id"></span><span>&nbsp;-</span>
+																				<span name="confirm_identificacion"></span> -->
+																			</div>
+																		</div>
+																		<div class="kt-wizard-v4__review-item">
+																			<div class="kt-wizard-v4__review-title">
+																				Datos de la Empresa
+																			</div>
+																			<div class="kt-wizard-v4__review-content">
+																				<span
+																					name="confirm_rznsocial"></span><br />
+																				<span
+																					name="confirm_nombre_comercial"></span><br />
+																				<span>NIT - </span>
+																				<span name="confirm_nit"></span><br />
+																				<span
+																					name="confirm_ciudad_emp"></span><br />
+																				<span
+																					name="confirm_telefono_emp"></span><br />
+																				<span name="confirm_direccion_emp"></span>
+																			</div>
+																		</div>
+																		<div class="kt-wizard-v4__review-item">
+																			<div class="kt-wizard-v4__review-title">
+																				Datos de usuario
+																			</div>
+																			<div class="kt-wizard-v4__review-content">
+																				<span
+																					name="confirm_user_mail"></span><br />
+																				<span type="password"
+																					name="confirm_user_password"
+																					id="confirm_user_password"
+																					class="hide-password"></span>
+																				&nbsp;&nbsp; <a><i id="view_pass"
+																						class="fa fa-eye fa-1"></i></a>
+																			</div>
+																		</div>
+																		<div class="kt-wizard-v4__review-item">
+																			<div class="g-recaptcha"
+																				data-callback="correctCaptcha"
+																				data-sitekey="6Lfxs3waAAAAAJMouXb2pDpBud8cy2K5rIooddl6">
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+
+															<!--end: Form Wizard Step 4-->
+
+															<!--begin: Form Actions -->
+															<div class="kt-form__actions">
+																<div class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+																	data-ktwizard-type="action-prev">
+																	Anterior
+																</div>
+																<div>
+																	<button
+																		class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+																		data-ktwizard-type="action-submit" id="submit-form-proveedor" disabled>
+																		Enviar
+																		<span id="sending-form" style="display:none; margin-bottom: 3%;" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+																	</button>
+																</div>
+																<div>
+																	<button
+																		class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
+																		data-ktwizard-type="action-next" id="next-step">
+																		Siguiente
+																	</button>
+																</div>
+															</div>
+
+															<!--end: Form Actions -->
+														</form>
+
+														<!--end: Form Wizard Form-->
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+							<div class="kt-login__signup">
+								<div class="kt-login__head">
+									<h3 class="kt-login__title">Sign Up</h3>
+									<div class="kt-login__desc">Enter your details to create your account:</div>
+								</div>
+								<form class="kt-form" action="">
+									<div class="input-group">
+										<input class="form-control" type="text" placeholder="Fullname" name="fullname">
+									</div>
+									<div class="input-group">
+										<input class="form-control" type="text" placeholder="Email" name="email"
+											autocomplete="off">
+									</div>
+									<div class="input-group">
+										<input class="form-control" type="password" placeholder="Password" name="password">
+									</div>
+									<div class="input-group">
+										<input class="form-control" type="password" placeholder="Confirm Password"
+											name="rpassword">
+									</div>
+									<div class="row kt-login__extra">
+										<div class="col kt-align-left">
+											<label class="kt-checkbox">
+												<input type="checkbox" name="agree">I Agree the <a href="#"
+													class="kt-link kt-login__link kt-font-bold">terms and conditions</a>.
+												<span></span>
+											</label>
+											<span class="form-text text-muted"></span>
+										</div>
+									</div>
+									<div class="kt-login__actions">
+										<button id="kt_login_signup_submit"
+											class="btn btn-brand btn-elevate kt-login__btn-primary">Sign
+											Up</button>&nbsp;&nbsp;
+										<button id="kt_login_signup_cancel"
+											class="btn btn-light btn-elevate kt-login__btn-secondary">Cancel</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- end:: Page -->
+
+		<!-- begin::Global Config(global config for global JS sciprts) -->
+		<script>
+			var KTAppOptions = {
+				"colors": {
+					"state": {
+						"brand": "#5d78ff",
+						"dark": "#282a3c",
+						"light": "#ffffff",
+						"primary": "#5867dd",
+						"success": "#34bfa3",
+						"info": "#36a3f7",
+						"warning": "#ffb822",
+						"danger": "#fd3995"
+					},
+					"base": {
+						"label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+						"shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+					}
+				}
+			};
+		</script>
+
+		<!-- end::Global Config -->
+
+		<!--begin:: Global Mandatory Vendors -->
+		<script src="./assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
+		<script src="./assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
+		<script src="./assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="./assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
+		<script src="./assets/vendors/general/moment/min/moment.min.js" type="text/javascript"></script>
+		<script src="./assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
+		<script src="./assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
+		<script src="./assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
+		<script src="./assets/vendors/general/wnumb/wNumb.js" type="text/javascript"></script>
+
+		<!--end:: Global Mandatory Vendors -->
+
+		<!--begin:: Global Optional Vendors -->
+		<script src="./assets/vendors/general/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
+		<script src="./assets/vendors/general/block-ui/jquery.blockUI.js" type="text/javascript"></script>
+		<script src="./assets/vendors/general/jquery-validation/dist/jquery.validate.js" type="text/javascript"></script>
+		<script src="./assets/vendors/general/jquery-validation/dist/additional-methods.js" type="text/javascript">
+		</script>
+		<script src="./assets/vendors/custom/js/vendors/jquery-validation.init.js" type="text/javascript"></script>
+		<script src="./assets/vendors/general/waypoints/lib/jquery.waypoints.js" type="text/javascript"></script>
+		<script src="./assets/vendors/general/counterup/jquery.counterup.js" type="text/javascript"></script>
+		<script src="./assets/vendors/general/es6-promise-polyfill/promise.min.js" type="text/javascript"></script>
+		<script src="./assets/vendors/general/sweetalert2/dist/sweetalert2.min.js" type="text/javascript"></script>
+		<script src="./assets/vendors/custom/js/vendors/sweetalert2.init.js" type="text/javascript"></script>
+
+		<!--end:: Global Optional Vendors -->
+
+		<!--begin::Global Theme Bundle(used by all pages) -->
+		<!-- <script src="./assets/js/demo1/scripts.bundle.js" type="text/javascript"></script> -->
+
+		<!--end::Global Theme Bundle -->
+
+		<!--begin::Page Scripts(used by this page) -->
+		<script src="./assets/js/demo1/pages/login/login-general.js" type="text/javascript"></script>
+		<script src="./assets/js/demo1/pages/wizard/wizard-4.js" type="text/javascript"></script>
+		<script src="./js/confirmForm.js" type="text/javascript"></script>
+		<script src="./js/sendForm.js" type="text/javascript"></script>
+		<!--end::Page Scripts -->
+	</body>
+
+	<!-- end::Body -->

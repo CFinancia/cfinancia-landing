@@ -1,0 +1,89 @@
+<link href="./css/style_form.css" rel="stylesheet" type="text/css" />
+<link href="./assets/css/demo1/pages/pricing/pricing-1.css" rel="stylesheet" type="text/css" />
+<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+							<!--begin::Portlet-->
+    <div class="kt-portlet">
+        <div class="kt-portlet__head">
+            <div class="kt-portlet__head-label">
+                <h3 class="kt-portlet__head-title">
+                    Resultado y estado del registro
+                </h3>
+            </div>
+        </div>
+        <div class="kt-portlet__body">
+            <div class="container-fluid px-0">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 col-12">
+                        <div class="card card0">
+                            <div class="d-flex" id="wrapper">
+                                <!-- Sidebar -->
+                                <div class="bg-light border-right" id="sidebar-wrapper">
+                                    <div class="sidebar-heading pt-5 pb-4"><strong>Consultar estado:</strong></div>
+                                    <div class="list-group list-group-flush">
+                                        <a data-toggle="tab" href="#menu1" id="tab1" class="tabs list-group-item">
+                                            <div class="list-div my-2">
+                                                <div class="fa fa-code"></div> &nbsp;&nbsp; Por TrackID
+                                            </div>
+                                        </a>
+                                        <a data-toggle="tab" href="#menu2" id="tab2" class="tabs list-group-item active1">
+                                            <div class="list-div my-2">
+                                                <div class="fa fa-id-card"></div> &nbsp;&nbsp; Por NIT
+                                            </div>
+                                        </a> 
+                                    </div>
+                                </div> <!-- Page Content -->
+                                <div id="page-content-wrapper">
+                                    <div class="tab-content">
+                                        <div id="menu1" class="tab-pane">
+                                            <div class="row justify-content-center">
+                                                <div class="col-11">
+                                                    <div class="form-card">
+                                                        <br>
+                                                        <h3 class="mt-0 mb-4 text-center">Ingrese el TrackID de la solicitud:</h3>
+                                                        <form action="estado_registro.php" method="GET">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="input-group"> <input type="text" id="trackid" name="trackid"> <label>TRACKID</label> </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-12"> <button type="submit" class="btn btn-block btn-primary">Consultar</button> </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="menu2" class="tab-pane in active">
+                                            <div class="row justify-content-center">
+                                                <div class="col-11">
+                                                    <div class="form-card">
+                                                        <br>
+                                                        <h3 class="mt-0 mb-4 text-center">Ingrese el número del NIT del solicitante:</h3>
+                                                        <form action="estado_registro.php" method="POST">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="input-group"> <input type="text" id="nit" name="nit"> <label>NIT</label> </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-12"> <button type="submit" class="btn btn-block btn-primary">Consultar</button> </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+							<!--end::Portlet-->
+
+</div>
