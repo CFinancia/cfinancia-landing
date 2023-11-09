@@ -12,8 +12,15 @@ $menu_css 			= "-type-5";
 
 
 $header 			= implode("", file("./templates/head.html"));
+$preloader          = implode("", file("./templates/preloading.html"));
+$headermenu          = implode("", file("./templates/menu.html"));
+
+
 $footer 			= implode("", file("./templates/footer.html"));
+
 $templateFinal 		= implode("", file("./templates/index-2.html"));
+
+
 
 $templateFinal 		= str_replace("[HEADER]"   				, $header    				, $templateFinal);
 $templateFinal 		= str_replace("[keywords]"   		    , $m_keywords    			, $templateFinal);
