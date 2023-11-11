@@ -6,7 +6,7 @@ $m_description= "C-Financia ofrece soluciones de factoring para empresas. Obtén
 
 $m_canonical   		= '<link rel="canonical" href="https://turismoencasasyfincas.com" />';
 
-$title_seo          = "Factoring para Empresas | Anticipo de Facturas | C-Financia";
+$title_seo          = "Blog de Factoring y Finanzas | C-Financia";
 
 $menu_css 			= "-type-5";
 
