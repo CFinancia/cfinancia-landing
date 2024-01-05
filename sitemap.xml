@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://www.c-financia.com/index.php</loc>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>http://www.c-financia.com/servicios-factoring.php</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>http://www.c-financia.com/contacto.php</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>http://www.c-financia.com/blog-que-es-factoring.php</loc>
+        <priority>0.60</priority>
+    </url>
+    <url>
+        <loc>http://www.c-financia.com/blog-liquidez-financiera.php</loc>
+        <priority>0.60</priority>
+    </url>
+    <url>
+        <loc>http://www.c-financia.com/blog-factoring.php</loc>
+        <priority>0.60</priority>
+    </url>
+</urlset>
