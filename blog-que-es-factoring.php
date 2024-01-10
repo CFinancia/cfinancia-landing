@@ -2,7 +2,8 @@
 
 $m_keywords = "Factoring: qué es - Diccionario de Economía";
 
-$m_description= "C-Financia ofrece soluciones de factoring para empresas. Obtén financiamiento inmediato a través del anticipo de facturas, aumenta tu liquidez y haz crecer tu negocio. ¡Contáctanos para conocer cómo podemos ayudarte!";
+$m_description = "Descubre qué es el factoring y cómo puede beneficiar a tu empresa. C-Financia ofrece soluciones de factoring para empresas, brindándote financiamiento inmediato a través del anticipo de facturas. Aumenta tu liquidez y haz crecer tu negocio. ¡Contáctanos para obtener más información!";
+
 
 $m_canonical   		= '<link rel="canonical" href="https://turismoencasasyfincas.com" />';
 
