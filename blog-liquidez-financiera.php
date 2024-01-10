@@ -1,4 +1,9 @@
 <?php
+if (strpos($_SERVER['HTTP_HOST'], 'www.') === false) {
+    $urlRedireccion = 'https://www.' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    header('Location: ' . $urlRedireccion, true, 301);
+    exit();
+}
 
 $m_keywords = "Factoring Empresarial, Soluciones de Factoring, Financiamiento para Empresas, Liquidez Empresarial, Estrategias de Factoring, Mejora de Flujo de Caja, Factoring en Colombia, Gestión Financiera Empresarial, Anticipo de Facturas, Servicios de Factoring, Finanzas para Emprendedores, Crédito Comercial, Optimización de Recursos Empresariales, Factoring vs Préstamos Bancarios, Análisis Financiero Empresarial.";
 $m_description= "Descubre estrategias de factoring y financiamiento en el blog de C-Financia. Consejos, guías y soluciones para mejorar la liquidez y el crecimiento empresarial.";
