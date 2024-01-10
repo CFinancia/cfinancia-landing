@@ -1,4 +1,9 @@
 <?php
+if (strpos($_SERVER['HTTP_HOST'], 'www.') === false) {
+    $urlRedireccion = 'https://www.' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    header('Location: ' . $urlRedireccion, true, 301);
+    exit();
+}
 
 $m_keywords = "Factoring, Financiamiento empresarial, Liquidez para empresas, Financiamiento,credito para empresas, capital de trabajo, anticipo de facturas,Factoring para empresas,C-Financia";
 
