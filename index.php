@@ -9,7 +9,7 @@ $m_keywords = "Factoring, Financiamiento empresarial, Liquidez para empresas, Fi
 
 $m_description= "C-Financia ofrece soluciones de factoring para empresas. Obtén financiamiento inmediato a través del anticipo de facturas, aumenta tu liquidez y haz crecer tu negocio. ¡Contáctanos para conocer cómo podemos ayudarte!";
 
-$m_canonical   		= '<link rel="canonical" href="https://turismoencasasyfincas.com" />';
+$m_canonical   		= '<link rel="canonical" href="https://c-financia.com" />';
 
 $title_seo          = "Factoring para Empresas | Anticipo de Facturas | C-Financia";
 

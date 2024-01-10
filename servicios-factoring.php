@@ -9,7 +9,7 @@ $m_keywords = "Factoring, Financiamiento empresarial, Liquidez para empresas, Fi
 
 $m_description= "Explora los beneficios del factoring con C-FINANCIA. Soluciona tus necesidades de capital de trabajo, anticipa el pago de tus facturas y encuentra respuestas en nuestra sección FAQ.";
 
-$m_canonical   		= '<link rel="canonical" href="https://turismoencasasyfincas.com" />';
+$m_canonical   		= '<link rel="canonical" href="https://c-financia.com" />';
 
 $title_seo          = "Factoring: qué es - Diccionario de Economía";
 
