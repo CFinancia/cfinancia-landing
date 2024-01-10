@@ -7,7 +7,7 @@ if (strpos($_SERVER['HTTP_HOST'], 'www.') === false) {
 
 $m_keywords = "Factoring, Financiamiento empresarial, Liquidez para empresas, Financiamiento,credito para empresas, capital de trabajo, anticipo de facturas,Factoring para empresas,C-Financia";
 
-$m_description= "C-Financia ofrece soluciones de factoring para empresas. Obtén financiamiento inmediato a través del anticipo de facturas, aumenta tu liquidez y haz crecer tu negocio. ¡Contáctanos para conocer cómo podemos ayudarte!";
+$m_description= "Explora los beneficios del factoring con C-FINANCIA. Soluciona tus necesidades de capital de trabajo, anticipa el pago de tus facturas y encuentra respuestas en nuestra sección FAQ.";
 
 $m_canonical   		= '<link rel="canonical" href="https://turismoencasasyfincas.com" />';
 
