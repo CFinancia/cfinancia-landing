@@ -1,13 +1,10 @@
 <?php
 
-$m_keywords = "Factoring: qué es - Diccionario de Economía";
-
-$m_description= "C-Financia ofrece soluciones de factoring para empresas. Obtén financiamiento inmediato a través del anticipo de facturas, aumenta tu liquidez y haz crecer tu negocio. ¡Contáctanos para conocer cómo podemos ayudarte!";
+$m_keywords = "Factoring Empresarial, Soluciones de Factoring, Financiamiento para Empresas, Liquidez Empresarial, Estrategias de Factoring, Mejora de Flujo de Caja, Factoring en Colombia, Gestión Financiera Empresarial, Anticipo de Facturas, Servicios de Factoring, Finanzas para Emprendedores, Crédito Comercial, Optimización de Recursos Empresariales, Factoring vs Préstamos Bancarios, Análisis Financiero Empresarial.";
+$m_description= "Descubre estrategias de factoring y financiamiento en el blog de C-Financia. Consejos, guías y soluciones para mejorar la liquidez y el crecimiento empresarial.";
 
 $m_canonical   		= '<link rel="canonical" href="https://turismoencasasyfincas.com" />';
-
-$title_seo          = "Cómo Mejorar la Liquidez en las empresas, productos financieros para empresas.";
-
+$title_seo          = "C-Financia Blog - Expertos en Factoring y Finanzas Empresariales";
 $menu_css 			= "-type-5";
 
 
