@@ -11,7 +11,8 @@ $m_description= "Explora los beneficios del factoring con C-FINANCIA. Soluciona 
 
 $m_canonical   		= '<link rel="canonical" href="https://c-financia.com" />';
 
-$title_seo          = "Factoring: qué es - Diccionario de Economía";
+$title_seo = "Factoring Empresarial: Soluciones Financieras para Tu Negocio | C-Financia";
+
 
 $menu_css 			= "-type-5";
 
