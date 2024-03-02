@@ -4,13 +4,13 @@ if (strpos($_SERVER['HTTP_HOST'], 'www.') === false) {
     header('Location: ' . $urlRedireccion, true, 301);
     exit();
 }
-$m_keywords = "Factoring, Financiamiento empresarial, Liquidez para empresas, Financiamiento,credito para empresas, capital de trabajo, anticipo de facturas,Factoring para empresas,C-Financia";
+$m_keywords = "Factoring, Financiamiento para empresas, Liquidez para empresas, Financiamiento,credito para empresas, capital de trabajo, anticipo de facturas,Factoring para empresas,C-Financia";
 
-$m_description= "C-Financia ofrece soluciones de Factoring para empresas. Obtén financiamiento inmediato a través del anticipo de facturas, aumenta tu liquidez y haz crecer tu negocio. ¡Contáctanos para conocer cómo podemos ayudarte!";
+$m_description= "C-Financia ofrece soluciones de Factoring para empresas. Obtén Financiamiento para empresas inmediato a través del anticipo de facturas, aumenta tu liquidez y haz crecer tu negocio. ¡Contáctanos para conocer cómo podemos ayudarte!";
 
 $m_canonical   		= '<link rel="canonical" href="https://c-financia.com" />';
 
-$title_seo          = "Factoring para Empresas | Anticipo de Facturas | C-Financia";
+$title_seo          = "Factoring y Financiamiento para empresas | C-Financia";
 
 $menu_css 			= "-type-5";
 
