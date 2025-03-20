@@ -50,4 +50,20 @@
 <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/43715999.js"></script>
 <!-- End of HubSpot Embed Code -->
+
+<script>
+ document.addEventListener("DOMContentLoaded", function() {
+    (function() {
+        var script = document.createElement('script');
+        script.src = 'https://www.sync-manager.com/IA_Expertos/proyecto-chat/api/chat-widget.js';
+        script.async = true;
+        document.body.appendChild(script);
+        script.onload = function() {
+            window.initChatBot({
+                token: 'U2qdAMJrcT'  // Aquí el token específico del cliente
+            });
+        };
+    })();
+ });
+</script>
 </head>
