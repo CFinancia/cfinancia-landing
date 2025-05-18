@@ -9,8 +9,6 @@ const HeroBannerTwo = () => {
   const scrollToCalculator = () => {
     if (calculatorRef.current) {
       calculatorRef.current.scrollIntoView({ behavior: "smooth" })
-
-      // Add highlight effect
       calculatorRef.current.classList.add("highlight-calculator")
       setTimeout(() => {
         calculatorRef.current?.classList.remove("highlight-calculator")
@@ -19,11 +17,11 @@ const HeroBannerTwo = () => {
   }
 
   return (
-    <section className="pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+    <section className="pt-5 pb-5 overflow-hidden">
+      <div className="container">
+        <div className="row align-items-center gy-5">
           <motion.div
-            className="lg:w-5/12 z-10"
+            className="col-lg-5 z-1"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7 }}
@@ -33,75 +31,103 @@ const HeroBannerTwo = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.7 }}
             >
-              <div className="inline-block px-4 py-1 bg-lime-100 text-lime-700 rounded-full text-sm font-medium mb-6">
+              <div className="badge text-bg-success bg-opacity-10 text-success fw-medium mb-3">
                 Financiamiento empresarial
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                <span className="block">Convierte tus</span>
-                <span className="block">
-                  facturas en <span className="text-lime-500">liquidez</span>
-                </span>
-                <span className="block">inmediata</span>
+              <h1 className="display-5 fw-bold mb-3">
+                <div>Convierte tus</div>
+                <div>
+                  facturas en <span className="text-success">liquidez</span>
+                </div>
+                <div>inmediata</div>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 max-w-lg">
-                Adelantamos hasta el <span className="font-semibold text-lime-600">90%</span> del valor de tu factura en
-                24h. Sin deuda, sin garantías y con tasas competitivas.
+              <p className="fs-5 text-muted mb-4">
+                Adelantamos hasta el{" "}
+                <span className="fw-semibold text-success">90%</span> del valor de tu factura en 24h. Sin deuda, sin
+                garantías y con tasas competitivas.
               </p>
             </motion.div>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 mb-12"
+              className="d-flex flex-column flex-sm-row gap-3 mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >
               <button
-                className="group bg-lime-500 hover:bg-lime-600 text-white font-medium py-3 px-6 rounded-full transition-colors shadow-lg shadow-lime-200/50 flex items-center gap-2 animate-pulse-subtle"
+                className="btn btn-success d-flex align-items-center gap-2 px-4 py-2 animate__animated animate__pulse animate__infinite"
                 onClick={scrollToCalculator}
                 aria-label="Solicita tu anticipo y comienza a calcular tu financiamiento"
               >
                 Solicita tu anticipo
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight size={16} />
               </button>
             </motion.div>
 
             <motion.div
-              className="flex items-center gap-6"
+              className="d-flex align-items-center gap-3"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7, duration: 0.6 }}
             >
-              <div className="flex -space-x-3">
+              <div className="d-flex">
                 {[1, 2, 3, 4].map((i) => (
                   <div
                     key={i}
-                    className="w-10 h-10 rounded-full bg-white border-2 border-lime-100 flex items-center justify-center text-xs font-medium text-lime-600 shadow-sm"
+                    className="rounded-circle bg-white border border-success-subtle text-success d-flex align-items-center justify-content-center me-n2"
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      fontSize: "12px",
+                      boxShadow: "0 0.125rem 0.25rem rgba(0,0,0,0.075)",
+                    }}
                   >
                     {i}
                   </div>
                 ))}
               </div>
-              <p className="text-gray-600 text-sm">
-                <span className="text-lime-600 font-semibold">+1,500</span> empresas confían en nosotros
+              <p className="text-muted small mb-0">
+                <span className="text-success fw-semibold">+1,500</span> empresas confían en nosotros
               </p>
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="lg:w-7/12 relative"
+            className="col-lg-7 position-relative"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
             ref={calculatorRef}
             id="calculator-section"
           >
-            <div className="relative">
-              <div className="absolute -top-10 -left-10 w-40 h-40 bg-lime-400/10 rounded-full blur-3xl"></div>
-              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-emerald-400/10 rounded-full blur-3xl"></div>
+            <div className="position-relative">
+              <div
+                className="position-absolute rounded-circle bg-success bg-opacity-25"
+                style={{
+                  width: "10rem",
+                  height: "10rem",
+                  top: "-2.5rem",
+                  left: "-2.5rem",
+                  filter: "blur(60px)",
+                }}
+              ></div>
+              <div
+                className="position-absolute rounded-circle bg-info bg-opacity-25"
+                style={{
+                  width: "10rem",
+                  height: "10rem",
+                  bottom: "-2.5rem",
+                  right: "-2.5rem",
+                  filter: "blur(60px)",
+                }}
+              ></div>
 
-              <div className="relative bg-white rounded-3xl shadow-2xl shadow-lime-100/50 overflow-hidden border border-gray-100">
-                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-lime-400 to-emerald-500"></div>
-                <div className="p-8">
+              <div className="position-relative bg-white rounded-4 shadow p-4 border border-light">
+                <div
+                  className="position-absolute top-0 start-0 w-100"
+                  style={{ height: "0.5rem", background: "linear-gradient(to right, #a3e635, #10b981)" }}
+                ></div>
+                <div className="pt-4">
                   <Calculator />
                 </div>
               </div>
@@ -113,5 +139,4 @@ const HeroBannerTwo = () => {
   )
 }
 
-export default HeroBannerTwo;
-
+export default HeroBannerTwo
