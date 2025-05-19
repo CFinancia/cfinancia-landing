@@ -40,7 +40,7 @@ export default function AppNavigation() {
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomePageTwo />} />
         <Route path="/home-2" element={<HomePageTwo />} />
         <Route path="/home-3" element={<HomePageThree />} />
         <Route path="/home-4" element={<HomePageFour />} />
