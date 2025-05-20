@@ -471,7 +471,7 @@ export function Calculator() {
               <button
                 className="btn btn-success bg-lime-500 w-100 shadow"
                 style={{ height: "48px" }}
-                onClick={handleSubmitFinanciamiento}
+                onClick={ () => {window.location.href = 'https://cfinancia-prod-clientes.cesionbnk.com'; }}
                 aria-label="Solicitar financiamiento"
               >
                 Solicitar financiamiento

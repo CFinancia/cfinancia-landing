@@ -32,7 +32,7 @@ const HeroBannerTwo = () => {
   };
 
   return (
-    <div className="hero-banner-one pt-225 xl-pt-200 lg-pt-150 pb-150 lg-pb-100 position-relative">
+    <div className="hero-banner-one pt-160 xl-pt-200 lg-pt-150 pb-150 lg-pb-100 position-relative">
       <Slider {...slider_setting} className="hero-slider-one m0">
         {slider_bg.map((bg, i) => (
           <div className="item m0" key={i}>

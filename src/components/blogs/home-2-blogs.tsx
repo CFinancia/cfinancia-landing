@@ -24,7 +24,7 @@ const HomeTwoBlogs = () => {
           </div>
 
           <div className="section-btn sm-mt-40">
-            <NavLink to="/blog-grid" className="btn-five icon-link">
+            <NavLink to="/" className="btn-five icon-link">
               <span className="text">Descubrir más</span>
               <div className="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
                 <i className="bi bi-arrow-up-right"></i>

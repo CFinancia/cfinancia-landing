@@ -44,7 +44,7 @@ const BlockFeatureThree = () => {
                   <div className="d-flex align-items-center justify-content-between">
                     <div className="tag text-uppercase fw-500">Contáctanos</div>
                     <NavLink
-                      to="/project-details-v1"
+                      to="/"
                       className="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"
                     >
                       <i className="bi bi-arrow-up-right"></i>
@@ -70,7 +70,7 @@ const BlockFeatureThree = () => {
                 <div className="d-flex align-items-center justify-content-between">
                   <div className="tag text-uppercase fw-500">CHATBOT</div>
                   <NavLink
-                    to="/project-details-v1"
+                    to="/"
                     className="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"
                   >
                     <i className="bi bi-arrow-up-right"></i>
@@ -82,7 +82,7 @@ const BlockFeatureThree = () => {
                 data-wow-delay="0.2s"
               >
                 <h3 className="block-title d-inline-block position-relative mt-20 mb-250 lg-mb-150 sm-mb-100">
-                  <NavLink to="/project-details-v1">
+                  <NavLink to="/">
                     Contacta a través de WhatsApp.
                   </NavLink>
                 </h3>
@@ -100,7 +100,7 @@ const BlockFeatureThree = () => {
           </div>
 
           <div className="section-btn sm-mt-40">
-            <NavLink to="/project-v1" className="btn-five icon-link">
+            <NavLink to="/" className="btn-five icon-link">
               <span className="text">Contáctanos</span>
               <div className="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
                 <i className="bi bi-arrow-up-right"></i>

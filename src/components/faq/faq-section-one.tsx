@@ -17,7 +17,7 @@ const FaqSectionOne = ({ cls }: { cls?: string }) => {
             <p className="text-lg mb-40 lg-mb-20">
               ¿No encuentras la respuesta? Podemos ayudarte
             </p>
-            <NavLink to="/contact" className="btn-four">
+            <NavLink to="/" className="btn-four">
               Contáctanos
             </NavLink>
           </div>

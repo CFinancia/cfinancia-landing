@@ -66,10 +66,10 @@ const TextFeatureOne = ({ style_2 = false }: { style_2?: boolean }) => {
                   proceso de financiamiento empresarial.
                 </p>
                 <div className="d-inline-flex flex-wrap align-items-center">
-                  <NavLink to="/about-us" className="btn-four mt-15 me-4">
+                  <NavLink to="/" className="btn-four mt-15 me-4">
                     Más sobre nosotros
                   </NavLink>
-                  <NavLink to="/contact" className="btn-three icon-link mt-15">
+                  <NavLink to="/" className="btn-three icon-link mt-15">
                     <span>Regístrate</span>
                     <img
                       src="/assets/images/icon/icon_09.svg"

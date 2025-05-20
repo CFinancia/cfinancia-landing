@@ -53,7 +53,7 @@ const BlockFeatureOne = ({ style_2 = false }: { style_2?: boolean }) => {
 									<img src={item.icon} alt="icon" className="lazy-img icon me-auto" />
 									<h4 className="fw-bold mt-30 mb-25">{item.title}</h4>
 									<p className="mb-20">{item.desc}</p>
-									<NavLink to="/service-details" className="arrow-btn tran3s mt-auto stretched-link">
+									<NavLink to="/" className="arrow-btn tran3s mt-auto stretched-link">
 										<img src="/assets/images/icon/icon_09.svg" alt="arrow" className="lazy-img" />
 									</NavLink>
 								</div>
