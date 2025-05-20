@@ -23,7 +23,7 @@ const HeaderTwo = () => {
                 <ul className="d-flex align-items-center style-none">
                   <li className="d-none d-md-block">
                     <NavLink to="/contact" className="btn-one tran3s">
-                      Get in Touch
+                      Regístrate
                     </NavLink>
                   </li>
                 </ul>

@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-
+import PartnersSliderOne from "../partners/partners-slider-one";
 
 const FancyBannerTwo = () => {
   return (
@@ -9,19 +9,34 @@ const FancyBannerTwo = () => {
           <div className="row">
             <div className="col-lg-8 m-auto">
               <div className="title-one">
-                <h2>Want to chat? Feel free to contact our team.</h2>
+                <h2>
+                  Verifica si tu cliente cuenta con cupo aprobado en nuestro
+                  Programa de Financiamiento con aliados.
+                </h2>
               </div>
               <p className="text-lg mt-40 lg-mt-30 mb-30">
-                Contact our friendly team for quick and helpful answers.
+                En caso afirmativo, aprovecha las ventajas del factoring online
+                de manera sencilla.
               </p>
               <div className="d-inline-flex flex-wrap justify-content-center">
                 <NavLink to="/contact" className="btn-four mt-10 me-2">
-                  Get a Quote
+                  Regístrate
                 </NavLink>
                 <NavLink to="/contact" className="btn-six mt-10 ms-2">
-                  Contact
+                  Contáctanos
                 </NavLink>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-12">
+            <div className="partner-logo-one pt-60 md-pt-50">
+              <p className="fw-500 text-dark mb-40">
+                <span className="text-decoration-underline">Nuestros aliados</span>{" "}
+                estratégicos{" "}
+              </p>
+              <PartnersSliderOne />
             </div>
           </div>
         </div>

@@ -4,9 +4,9 @@ const blog_data:IBlog[] = [
   {
     id:1,
     img:'/assets/images/blog/blog_img_03.jpg',
-    date:'09 FEB 2023',
-    title:'Wise Spending Habits, 13 Tips for Maximizing Your Money.',
-    author:'Mark doe',
+    date:'09 de octubre 2023',
+    title:'Descifrando el Factoring: una guía completa para entender este servicio de financiamiento empresarial.',
+    author:'Felipe Castro',
     post_info:'Mark doe . 6 min . Finance',
     category:'design',
     page:'home'
@@ -14,9 +14,9 @@ const blog_data:IBlog[] = [
   {
     id:2,
     img:'/assets/images/blog/blog_img_04.jpg',
-    date:'12 aug 2023',
-    title:'Business Success: Lessons from Visionary Leaders',
-    author:'John Smith',
+    date:'08 de octubre 2023',
+    title:'Cómo mejorar la liquidez empresarial: estrategias prácticas para empresas colombianas.',
+    author:'Andres Guavita',
     post_info:'John Smith . 7 min read . Travelling',
     category:'ui',
     page:'home'

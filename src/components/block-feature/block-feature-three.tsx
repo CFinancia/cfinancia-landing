@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 
-
 const BlockFeatureThree = () => {
   return (
     <div className="block-feature-three position-relative mt-150 lg-mt-80 pb-150 lg-pb-80 sm-pb-60">
@@ -9,7 +8,7 @@ const BlockFeatureThree = () => {
           <div className="row">
             <div className="col-md-6 wow fadeInLeft">
               <div className="title-one mb-90 lg-mb-50">
-                <h2>Our client Success Stories.</h2>
+                <h2>Atención y asesoramiento personalizado</h2>
               </div>
             </div>
           </div>
@@ -20,16 +19,13 @@ const BlockFeatureThree = () => {
                 <div className="row">
                   <div className="col-lg-5">
                     <div className="tag d-inline-block border-30 fw-500 text-uppercase mb-15">
-                      Consulting
-                    </div>
-                    <div className="date text-dark">
-                      <span className="fw-500">Featured -</span> 18 Jul 2023
+                      Agende su cita
                     </div>
                   </div>
                   <div className="col-lg-7">
                     <h3 className="block-title d-inline-block position-relative">
                       <NavLink to="/project-details-v1">
-                        Manage your online banking and get rewarded
+                        Agende cita con nuestros asesores.
                       </NavLink>
                     </h3>
                   </div>
@@ -39,16 +35,16 @@ const BlockFeatureThree = () => {
               <div className="block-two border-30 d-flex mt-45 lg-mt-30 wow fadeInUp">
                 <div className="img-wrapper"></div>
                 <div className="text-wrapper bg-white">
-                  <div className="date">18 Jul 2023</div>
                   <h3 className="block-title d-inline-block position-relative mt-5 mb-40 lg-mb-30">
                     <NavLink to="/project-details-v1">
-                      Gold card user will get priority pass for
-                      <br className="d-none d-lg-block" /> Airport.
+                      Completa nuestro formulario de contacto y permítenos
+                      ayudarte en tus necesidades financieras.
                     </NavLink>
                   </h3>
                   <div className="d-flex align-items-center justify-content-between">
-                    <div className="tag text-uppercase fw-500">Payments</div>
-                    <NavLink to="/project-details-v1"
+                    <div className="tag text-uppercase fw-500">Contáctanos</div>
+                    <NavLink
+                      to="/project-details-v1"
                       className="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"
                     >
                       <i className="bi bi-arrow-up-right"></i>
@@ -63,15 +59,18 @@ const BlockFeatureThree = () => {
                 className="block-three border-30 ps-lg-4 ps-3 pe-lg-4 pe-3 pt-40 lg-pt-30 pb-30 md-mt-30 wow fadeInUp"
                 data-wow-delay="0.2s"
               >
-                <div className="date">3 Aug 2023</div>
+                <div className="date">Autoatención Comercial</div>
                 <h3 className="block-title d-inline-block position-relative mt-20 mb-80 lg-mb-50">
                   <NavLink to="/project-details-v1">
-                    Gold card user will get priority pass for Airport.
+                    Optimiza tu experiencia con nuestro chatbot personalizado.
+                    Respuestas rápidas y asesoramiento sobre factoring en tiempo
+                    real.
                   </NavLink>
                 </h3>
                 <div className="d-flex align-items-center justify-content-between">
-                  <div className="tag text-uppercase fw-500">DESIGN</div>
-                  <NavLink to="/project-details-v1"
+                  <div className="tag text-uppercase fw-500">CHATBOT</div>
+                  <NavLink
+                    to="/project-details-v1"
                     className="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"
                   >
                     <i className="bi bi-arrow-up-right"></i>
@@ -84,14 +83,13 @@ const BlockFeatureThree = () => {
               >
                 <h3 className="block-title d-inline-block position-relative mt-20 mb-250 lg-mb-150 sm-mb-100">
                   <NavLink to="/project-details-v1">
-                    Our Travel Card Makes
-                    <br className="d-none d-xl-block" />
-                    you Happy.
+                    Contacta a través de WhatsApp.
                   </NavLink>
                 </h3>
                 <div className="d-flex align-items-center justify-content-between">
-                  <div className="tag text-uppercase fw-500">DESIGN</div>
-                  <NavLink to="/project-details-v1"
+                  <div className="tag text-uppercase fw-500">WHATSAPP</div>
+                  <NavLink
+                    to="/project-details-v1"
                     className="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"
                   >
                     <i className="bi bi-arrow-up-right"></i>
@@ -103,7 +101,7 @@ const BlockFeatureThree = () => {
 
           <div className="section-btn sm-mt-40">
             <NavLink to="/project-v1" className="btn-five icon-link">
-              <span className="text">See all stories</span>
+              <span className="text">Contáctanos</span>
               <div className="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
                 <i className="bi bi-arrow-up-right"></i>
               </div>

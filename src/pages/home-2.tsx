@@ -13,6 +13,18 @@ import TeamSectionOne from "../components/team/team-section-one";
 import TextFeatureOne from "../components/text-feature/text-feature-one";
 import FooterOne from "../layout/footer/footer-one";
 import HeaderTwo from "../layout/header/header-two";
+import TextFeatureNine from "@/components/text-feature/text-feature-nine";
+import FeedbackFive from "@/components/feedback/feedback-five";
+import Feedback from "react-bootstrap/esm/Feedback";
+import FeedbackFour from "@/components/feedback/feedback-four";
+import FeedbackSeven from "@/components/feedback/feedback-seven";
+import FeedbackSix from "@/components/feedback/feedback-six";
+import FeedbackThree from "@/components/feedback/feedback-three";
+import FeedbackTwo from "@/components/feedback/feedback-two";
+import FancyBannerNine from "@/components/fancy-banner/fancy-banner-nine";
+import HeaderFour from "@/layout/header/header-four";
+import HeaderFive from "@/layout/header/header-five";
+import HeaderSix from "@/layout/header/header-six";
 
 
 
@@ -53,13 +65,13 @@ export default function HomePageTwo() {
           <BlockFeatureThree />
           {/* block feature three end */}
 
-          {/* feedback one start */}
-          <FeedbackOne />
-          {/* feedback one end */}
+          {/* fancy banner two start */}
+          <FancyBannerNine />
+          {/* fancy banner two end */}
 
-          {/* team section one start */}
-          <TeamSectionOne />
-          {/* team section one end */}
+          {/* text feature nine start */}
+          <TextFeatureNine/>
+          {/* text feature nine end */}
 
           {/* faq section start */}
           <FaqSectionOne />

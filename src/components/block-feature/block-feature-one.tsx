@@ -25,13 +25,13 @@ const BlockFeatureOne = ({ style_2 = false }: { style_2?: boolean }) => {
 				<div className="container">
 					<div className="row">
 						<div className="col-lg-4 wow fadeInUp">
-							<UpperCardItem icon="/assets/images/icon/icon_03.svg" title='Fees' subtitle='cupidatat non proident, sunt in culpa qui officia deserunt' />
+							<UpperCardItem icon="/assets/images/icon/icon_03.svg" title='Servicio 100% digital' subtitle='Registra tu empresa, vincúlala y realiza operaciones, todo de manera fácil y sin necesidad de trámites presenciales' />
 						</div>
 						<div className="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-							<UpperCardItem icon="/assets/images/icon/icon_04.svg" title='Expert Advisor' subtitle='Elit esse cillum dolore eu fugiat nulla pariatur' />
+							<UpperCardItem icon="/assets/images/icon/icon_04.svg" title='Aprobación inmediata' subtitle='Tecnología basada en información de facturas electrónicas, evalúa tu solicitud en minutos, agilizando el proceso de manera eficiente' />
 						</div>
 						<div className="col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-							<UpperCardItem icon="/assets/images/icon/icon_05.svg" title='Effective Support' subtitle='quis nostrud exerct ullamo ea nisi ut aliqui com dolor' />
+							<UpperCardItem icon="/assets/images/icon/icon_05.svg" title='Financiamiento en 24 hrs' subtitle='Su financiamiento en tan solo 24 horas, proporcionándote la rapidez, confianza que tu empresa necesita para crecer' />
 						</div>
 					</div>
 				</div>
@@ -42,7 +42,7 @@ const BlockFeatureOne = ({ style_2 = false }: { style_2?: boolean }) => {
 					<div className="row">
 						<div className="col-md-6">
 							<div className="title-one text-center text-md-start mb-30 sm-mb-10">
-								<h2>Provide quality Services.</h2>
+								<h2>Liquidez inmediata, sin complicaciones.</h2>
 							</div>
 						</div>
 					</div>
@@ -62,9 +62,9 @@ const BlockFeatureOne = ({ style_2 = false }: { style_2?: boolean }) => {
 					</div>
 
 					<div className="section-subheading sm-mt-40">
-						<p className="text-lg">Inciddnt ut labore et dolor magna aliu. enim ad mim venam, quis nostru </p>
+						<p className="text-lg">Facilitamos el acceso a capital de trabajo, para que toda tu cadena de valor fluya sin contratiempos </p>
 						<NavLink to="/service-v1" className="btn-three icon-link">
-							<span>See All Services</span>
+							<span>Financiación para empresas</span>
 							<img src="/assets/images/icon/icon_09.svg" alt="arrow" className="lazy-img icon ms-1" />
 						</NavLink>
 					</div>

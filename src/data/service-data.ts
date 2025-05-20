@@ -44,22 +44,22 @@ const service_data:IService[] = [
   {
     id:5,
     icon:'/assets/images/icon/icon_06.svg',
-    title:'Expense Report',
-    desc:'Maximize convenience by paying for ads, subscriptions, and inventory with Mastercard®.',
+    title:'Accede a financiamiento',
+    desc:'El eje central de nuestro factoring electrónico: acceso rápido y fácil a diversas opciones de financiamiento, todo en un solo lugar.',
     page:'home-2'
   },
   {
     id:6,
     icon:'/assets/images/icon/icon_07.svg',
-    title:'Book keeping',
-    desc:'Use receiving accounts in a growing number of currencies and get paid like a local.',
+    title:'Tecnología de factoring',
+    desc:'Con nuestra tecnología, sincroniza tus facturas emitidas y recibidas para centralizar la información de clientes y proveedores.',
     page:'home-2'
   },
   {
     id:7,
     icon:'/assets/images/icon/icon_08.svg',
-    title:'Tax Preparation',
-    desc:'Use receiving accounts in a growing number of currencies and get paid like a local.',
+    title:'Control de flujo',
+    desc:'Introducimos una herramienta de flujo de caja que permite organizar de manera eficiente sus cuentas por cobrar y pagar. Simplifica la gestión financiera.',
     page:'home-2'
   },
   // home 3

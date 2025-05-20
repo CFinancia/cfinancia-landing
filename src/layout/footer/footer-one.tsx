@@ -14,7 +14,7 @@ const FooterOne = () => {
                 <img src="/assets/images/logo/logo_01.svg" alt="logo"/>
               </NavLink>
             </div> 
-            <p className="text-white lh-sm mb-35">Top-rated <span className="opacity-50">business <br/> consultancy for your success</span></p>
+            <p className="text-white lh-sm mb-35">C-financia <span className="opacity-50">obtén <br/> liquidez con tus facturas</span></p>
             {/* social link */}
             <ul className="style-none d-flex align-items-center social-icon">
              <FooterSocial/>
@@ -25,27 +25,20 @@ const FooterOne = () => {
             <h5 className="footer-title">Links</h5>
             <ul className="footer-nav-link style-none">
               <li><NavLink to="/">Home</NavLink></li>
-              <li><NavLink to="/pricing">Pricing Plan</NavLink></li>
-              <li><NavLink to="/about-us">About us</NavLink></li>
-              <li><NavLink to="/service-v1">Our services</NavLink></li>
+              <li><NavLink to="/pricing">Factoring</NavLink></li>
             </ul>
           </div>
           <div className="col-xl-2 col-md-3 col-sm-4 mb-20">
-            <h5 className="footer-title">Company</h5>
+            <h5 className="footer-title">Nuestra Empresa</h5>
             <ul className="footer-nav-link style-none">
-              <li><NavLink to="/about-us-2">About us</NavLink></li>
-              <li><NavLink to="/blog">Blogs</NavLink></li>
-              <li><NavLink to="/faq">FAQ’s</NavLink></li>
-              <li><NavLink to="/contact">Contact</NavLink></li>
+              <li><NavLink to="/blog">Blog</NavLink></li>
+              <li><NavLink to="/contact">Contáctanos</NavLink></li>
             </ul>
           </div>
           <div className="col-xl-2 col-md-3 col-sm-4 mb-20">
-            <h5 className="footer-title">Support</h5>
+            <h5 className="footer-title">Servicio al Cliente</h5>
             <ul className="footer-nav-link style-none">
-              <li><NavLink to="/contact">Terms of use</NavLink></li>
-              <li><NavLink to="/contact">Terms & conditions</NavLink></li>
-              <li><NavLink to="/contact">Privacy</NavLink></li>
-              <li><NavLink to="/contact">Cookie policy</NavLink></li>
+              <li><NavLink to="/contact">Contáctanos</NavLink></li>
             </ul>
           </div>
         </div>
@@ -68,13 +61,8 @@ const FooterOne = () => {
               <img src="/assets/images/logo/logo_01.svg" alt="logo"/>
             </NavLink>
             <div className="d-xl-flex align-items-center">
-              <ul className="style-none bottom-nav d-flex flex-wrap justify-content-center justify-content-lg-start order-lg-last">
-                <li><NavLink to="#">Privacy & Terms</NavLink></li>
-                <li><NavLink to="#">Cookies</NavLink></li>
-                <li><NavLink to="#">Contact Us</NavLink></li>
-              </ul>
               <div className="copyright me-xl-4 lg-mt-10 order-lg-first">
-                Copyright @{new Date().getFullYear()} babun inc.
+                Financiamiento para todos - C-Financia by Cesionbnk.
               </div>
             </div>
           </div>
