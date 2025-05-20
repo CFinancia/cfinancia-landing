@@ -7,7 +7,7 @@ const slider_setting = {
   centerPadding: "0px",
   slidesToShow: 5,
   slidesToScroll: 1,
-  // autoplay: true,
+  autoplay: true,
   autoplaySpeed: 3500,
   responsive: [
     {
@@ -33,13 +33,13 @@ const slider_setting = {
 
 // slider logos
 const slider_logos: string[] = [
-  '/assets/images/logo/media_01.png',
-  '/assets/images/logo/media_02.png',
-  '/assets/images/logo/media_03.png',
-  '/assets/images/logo/media_04.png',
-  '/assets/images/logo/media_05.png',
-  '/assets/images/logo/media_03.png',
-  '/assets/images/logo/media_01.png',
+  '/assets/images/logo/munichre.png',
+  '/assets/images/logo/apex.jpg',
+  '/assets/images/logo/cavca.png',
+  '/assets/images/logo/fineco.jpg',
+  '/assets/images/logo/iris.jpg',
+  '/assets/images/logo/kandeo.png',
+  '/assets/images/logo/liquitech.jpg',
 ];
 
 const PartnersSliderOne = () => {

@@ -6,25 +6,41 @@ import useSticky from "../../hooks/use-sticky";
 import LoginModal from "../../components/common/login-modal";
 
 const HeaderTwo = () => {
-  const {sticky} = useSticky();
+  const { sticky } = useSticky();
   return (
     <>
-      <header className={`theme-main-menu menu-overlay menu-style-one white-vr sticky-menu ${sticky?'fixed':''}`}>
+      <header
+        className={`theme-main-menu menu-overlay menu-style-one white-vr sticky-menu ${
+          sticky ? "fixed" : ""
+        }`}
+      >
         <div className="inner-content position-relative">
           <div className="top-header">
             <div className="d-flex align-items-center justify-content-between">
               <div className="logo order-lg-0">
                 <NavLink to="/" className="d-flex align-items-center">
-                  <img src="/assets/images/logo/logo_01.svg" alt="logo" />
+                  <img src="/assets/images/logo/c-financia.svg" alt="logo" />
                 </NavLink>
               </div>
 
               <div className="right-widget ms-auto ms-lg-0 me-3 me-lg-0 order-lg-3">
                 <ul className="d-flex align-items-center style-none">
-                  <li className="d-none d-md-block">
-                    <NavLink to="/contact" className="btn-one tran3s">
+                  <li className="d-flex align-items-center login-btn-one">
+                    <span className="bi bi-lock text-white me-2"></span>
+                    <a
+                      href="https://cfinancia.cesionbnk.com/"
+                      className="text-light fw-500"
+                    >
+                      Mi Cuenta
+                    </a>
+                  </li>
+                  <li className="d-none d-md-inline-block ms-3 ms-xl-5">
+                    <a
+                      href="https://cfinancia-prod-clientes.cesionbnk.com/"
+                      className="btn-one tran3s"
+                    >
                       Regístrate
-                    </NavLink>
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -52,7 +68,7 @@ const HeaderTwo = () => {
       </header>
 
       {/* login modal start */}
-      <LoginModal/>
+      <LoginModal />
       {/* login modal end */}
     </>
   );

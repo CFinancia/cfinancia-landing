@@ -11,7 +11,7 @@ const FooterOne = () => {
           <div className="col-xl-4 col-md-3 footer-intro mb-30">
             <div className="logo mb-15">
               <NavLink to="/" className="d-inline-block d-lg-none">
-                <img src="/assets/images/logo/logo_01.svg" alt="logo"/>
+                <img src="/assets/images/logo/c-financia.svg" alt="logo"/>
               </NavLink>
             </div> 
             <p className="text-white lh-sm mb-35">C-financia <span className="opacity-50">obtén <br/> liquidez con tus facturas</span></p>
