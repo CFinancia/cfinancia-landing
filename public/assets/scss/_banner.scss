@@ -92,6 +92,14 @@
     border-color: #f6f6f6 !important;
   }
 }
+.border-lime-100 {
+    --tw-border-opacity: 1;
+    border-color: rgb(236 252 203 / var(--tw-border-opacity, 1));
+}
+.bg-lime-50 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(247 254 231 / var(--tw-bg-opacity, 1));
+}
 
 
 // Hero Banner Two

@@ -390,9 +390,9 @@ export function Calculator() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
           >
-            <div className="bg-success px-4 py-3 text-white rounded-top">
+            <div className="bg-lime-500 px-4 py-3 text-white rounded-top">
               <div className="d-flex justify-content-between align-items-center">
-                <h3 className="h6 fw-bold mb-0">Resultados</h3>
+                <h3 className="h6 fw-bold mb-0 text-white">Resultados</h3>
                 <button
                   type="button"
                   className="btn btn-sm btn-link text-white text-decoration-none"
@@ -405,18 +405,18 @@ export function Calculator() {
             </div>
 
             <div className="p-4 border border-light border-top-0 rounded-bottom">
-              <div className="bg-success bg-opacity-10 rounded p-4 border border-success border-opacity-25 mb-3">
-                <div className="text-success fw-medium small mb-1">
+              <div className="bg-lime-50 rounded-xl p-5 border border-lime-1003">
+                <div className="text-lime-500 fw-medium small mb-1">
                   Te anticipamos el 90% del valor de tu factura
                 </div>
-                <div className="h2 fw-bold text-success mb-0">
+                <div className="h2 fw-bold text-lime-500 mb-0">
                   {formatCurrency(valorAnticipo)}
                 </div>
               </div>
 
               <div className="bg-light rounded p-3 border border-light d-flex align-items-center gap-3 mb-3">
                 <div
-                  className="d-flex align-items-center justify-content-center bg-success text-white rounded shadow-sm"
+                  className="d-flex align-items-center justify-content-center bg-lime-500 text-white rounded shadow-sm"
                   style={{ width: "40px", height: "40px" }}
                 >
                   <Percent className="w-5 h-5" />
@@ -433,7 +433,7 @@ export function Calculator() {
 
               <div className="bg-light rounded p-3 border border-light d-flex align-items-center gap-3 mb-3">
                 <div
-                  className="d-flex align-items-center justify-content-center bg-teal text-white rounded shadow-sm"
+                  className="d-flex align-items-center justify-content-center bg-success text-white rounded shadow-sm"
                   style={{ width: "40px", height: "40px" }}
                 >
                   <Percent className="w-5 h-5" />
@@ -450,7 +450,7 @@ export function Calculator() {
 
               <div className="bg-light rounded p-3 border border-light d-flex align-items-center gap-3 mb-3">
                 <div
-                  className="d-flex align-items-center justify-content-center bg-success text-white rounded shadow-sm"
+                  className="d-flex align-items-center justify-content-center bg-lime-500 text-white rounded shadow-sm"
                   style={{ width: "40px", height: "40px" }}
                 >
                   <Clock className="w-5 h-5" />
@@ -469,7 +469,7 @@ export function Calculator() {
               </div>
 
               <button
-                className="btn btn-success w-100 shadow"
+                className="btn btn-success bg-lime-500 w-100 shadow"
                 style={{ height: "48px" }}
                 onClick={handleSubmitFinanciamiento}
                 aria-label="Solicitar financiamiento"
@@ -492,11 +492,11 @@ export function Calculator() {
         <Modal.Body>
           <div className="d-flex flex-column align-items-center py-4">
             <div
-              className="d-flex align-items-center justify-content-center bg-success bg-opacity-25 rounded-circle mb-3"
+              className="d-flex align-items-center justify-content-center bg-lime-50 bg-opacity-25 rounded-circle mb-3"
               style={{ width: "64px", height: "64px" }}
             >
               <CheckCircle
-                className="text-success"
+                className="text-lime-500"
                 style={{ width: "32px", height: "32px" }}
               />
             </div>
@@ -509,7 +509,7 @@ export function Calculator() {
 
         <Modal.Footer className="justify-content-center">
           <button
-            className="btn btn-success w-100 shadow"
+            className="btn bg-lime-500 w-100 text-white shadow"
             style={{ height: "48px" }}
             onClick={handleContinueOnboarding}
           >
