@@ -5,11 +5,7 @@ import { Calculator } from "../calculator";
 import Slider from "react-slick";
 
 // slider bg
-const slider_bg = [
-  '/assets/images/media/img_01.jpg',
-  '/assets/images/media/img_02.jpg',
-  '/assets/images/media/img_03.jpg'
-];
+const slider_bg = ["/assets/images/media/background.png"];
 // slider setting
 const slider_setting = {
   dots: false,
@@ -21,7 +17,6 @@ const slider_setting = {
   fade: true,
   autoplaySpeed: 7000,
 };
-
 
 const HeroBannerTwo = () => {
   const calculatorRef = useRef<HTMLDivElement>(null);
@@ -62,19 +57,19 @@ const HeroBannerTwo = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.7 }}
               >
-                <div className="badge text-bg-success bg-opacity-10 text-success fw-medium mb-3">
+                <div className="badge bg-lime-500 bg-opacity-10 fw-medium mb-3">
                   Financiamiento empresarial
                 </div>
                 <h1 className="display-5 fw-bold mb-3">
                   <div>Convierte tus</div>
                   <div>
-                    facturas en <span className="text-success">liquidez</span>
+                    facturas en <span className="text-lime-500">liquidez</span>
                   </div>
                   <div>inmediata</div>
                 </h1>
                 <p className="fs-5 text-muted mb-4">
                   Adelantamos hasta el{" "}
-                  <span className="fw-semibold text-success">90%</span> del
+                  <span className="fw-semibold text-lime-500">90%</span> del
                   valor de tu factura en 24h. Sin deuda, sin garantías y con
                   tasas competitivas.
                 </p>
@@ -87,7 +82,7 @@ const HeroBannerTwo = () => {
                 transition={{ delay: 0.5, duration: 0.6 }}
               >
                 <button
-                  className="btn btn-success d-flex align-items-center gap-2 px-4 py-2 animate__animated animate__pulse animate__infinite"
+                  className="btn btn-success bg-lime-500 d-flex align-items-center gap-2 px-4 py-2 animate__animated animate__pulse animate__infinite"
                   onClick={scrollToCalculator}
                   aria-label="Solicita tu anticipo y comienza a calcular tu financiamiento"
                 >
@@ -103,7 +98,7 @@ const HeroBannerTwo = () => {
                 transition={{ delay: 0.7, duration: 0.6 }}
               >
                 <p className="text-muted small mb-0">
-                  <span className="text-success fw-semibold">+100</span>{" "}
+                  <span className="text-lime-500 fw-semibold">+100</span>{" "}
                   empresas confían en nosotros
                 </p>
               </motion.div>
@@ -117,39 +112,17 @@ const HeroBannerTwo = () => {
               ref={calculatorRef}
               id="calculator-section"
             >
-              <div className="position-relative">
+              <div className="position-relative bg-white rounded-4 shadow p-4">
                 <div
-                  className="position-absolute rounded-circle bg-success bg-opacity-25"
+                  className="position-absolute top-0 start-0 w-100"
                   style={{
-                    width: "10rem",
-                    height: "10rem",
-                    top: "-2.5rem",
-                    left: "-2.5rem",
-                    filter: "blur(60px)",
+                    height: "0.8rem",
+                    background: "linear-gradient(to right, #a3e635, #10b981)",
+                    borderRadius: "0px 0px 15px 15px",
                   }}
                 ></div>
-                <div
-                  className="position-absolute rounded-circle bg-info bg-opacity-25"
-                  style={{
-                    width: "10rem",
-                    height: "10rem",
-                    bottom: "-2.5rem",
-                    right: "-2.5rem",
-                    filter: "blur(60px)",
-                  }}
-                ></div>
-
-                <div className="position-relative bg-white rounded-4 shadow p-4 border border-light">
-                  <div
-                    className="position-absolute top-0 start-0 w-100"
-                    style={{
-                      height: "0.5rem",
-                      background: "linear-gradient(to right, #a3e635, #10b981)",
-                    }}
-                  ></div>
-                  <div className="pt-4">
-                    <Calculator />
-                  </div>
+                <div className="pt-4">
+                  <Calculator />
                 </div>
               </div>
             </motion.div>

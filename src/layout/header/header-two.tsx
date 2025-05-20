@@ -2,17 +2,14 @@ import { NavLink } from "react-router-dom";
 
 // internal
 import Navbar from "./navbar";
-import useSticky from "../../hooks/use-sticky";
 import LoginModal from "../../components/common/login-modal";
 
 const HeaderTwo = () => {
-  const { sticky } = useSticky();
+
   return (
     <>
       <header
-        className={`theme-main-menu menu-overlay menu-style-one white-vr sticky-menu ${
-          sticky ? "fixed" : ""
-        }`}
+        className="theme-main-menu menu-overlay menu-style-one white-vr sticky-menu fixed"
       >
         <div className="inner-content position-relative">
           <div className="top-header">

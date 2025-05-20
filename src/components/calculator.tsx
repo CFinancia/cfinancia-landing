@@ -11,16 +11,9 @@ import {
   Percent,
   ArrowLeft,
   ArrowRight,
-  Mail,
   CheckCircle,
 } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogFooter,
-} from "../ui/dialog";
+
 import { Modal } from "react-bootstrap";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
@@ -131,9 +124,9 @@ export function Calculator() {
             <div
               className={`rounded-circle d-flex align-items-center justify-content-center fw-medium text-white ${
                 activeStep === step
-                  ? "bg-success"
+                  ? "bg-lime-500"
                   : activeStep > step
-                  ? "bg-light text-success"
+                  ? "bg-light text-lime-500"
                   : "bg-secondary text-light"
               }`}
               style={{ width: "2rem", height: "2rem", fontSize: "0.875rem" }}
@@ -143,7 +136,7 @@ export function Calculator() {
             <div
               className={`mt-1 small ${
                 activeStep === step
-                  ? "text-success fw-bold"
+                  ? "text-lime-500 fw-bold"
                   : activeStep > step
                   ? "text-secondary"
                   : "text-muted"
@@ -169,7 +162,7 @@ export function Calculator() {
         <div className="d-flex align-items-center justify-content-between mb-4">
           <div className="d-flex align-items-center gap-2">
             <div
-              className="d-flex align-items-center justify-content-center bg-success text-white rounded"
+              className="d-flex align-items-center justify-content-center bg-lime-500 text-white rounded"
               style={{ width: "2.5rem", height: "2.5rem" }}
             >
               <CalculatorIcon size={20} />
@@ -200,7 +193,7 @@ export function Calculator() {
                     </Label>
                     <div className="position-relative mt-2">
                       <DollarSign
-                        className="position-absolute start-0 top-50 translate-middle-y text-success"
+                        className="position-absolute start-0 top-50 translate-middle-y text-lime-500"
                         style={{ left: "1rem" }}
                         size={20}
                       />
@@ -238,7 +231,7 @@ export function Calculator() {
                             type="button"
                             className={`btn w-100 py-4 ${
                               plazoPago === dias
-                                ? "btn-success text-white"
+                                ? "btn-success bg-lime-500 text-white"
                                 : "btn-outline-secondary"
                             }`}
                             onClick={() => setPlazoPago(dias)}
@@ -309,7 +302,7 @@ export function Calculator() {
                             type="button"
                             className={`btn btn-outline-secondary ${
                               pagador === p.id
-                                ? "active bg-light border-success text-success"
+                                ? "active bg-light border-success text-lime-500"
                                 : ""
                             }`}
                             onClick={() => setPagador(p.id)}
@@ -340,7 +333,7 @@ export function Calculator() {
                       ¿A qué correo enviamos tu cotización?
                     </label>
                     <div className="position-relative mt-2">
-                      <i className="bi bi-envelope-fill position-absolute top-50 start-0 translate-middle-y text-success ps-3"></i>
+                      <i className="bi bi-envelope-fill position-absolute top-50 start-0 translate-middle-y text-lime-500 ps-3"></i>
                       <input
                         id="email"
                         type="email"
@@ -370,7 +363,7 @@ export function Calculator() {
                 <Button
                   variant="outline"
                   onClick={prevStep}
-                  className="btn btn-success d-flex align-items-center gap-2"
+                  className="btn btn-success bg-background text-gray-700 d-flex align-items-center gap-2"
                   aria-label="Anterior"
                 >
                   <ArrowLeft className="w-4 h-4" />
@@ -382,7 +375,7 @@ export function Calculator() {
               <Button
                 onClick={nextStep}
                 variant={"outline"}
-                className="btn btn-success d-flex align-items-center gap-2"
+                className="btn btn-success bg-lime-500 d-flex align-items-center "
                 aria-label={activeStep === 4 ? "Calcular" : "Siguiente"}
                 disabled={activeStep === 4 && !validateEmail(email)}
               >
