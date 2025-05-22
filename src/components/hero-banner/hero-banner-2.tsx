@@ -32,7 +32,7 @@ const HeroBannerTwo = () => {
   };
 
   return (
-    <div className="hero-banner-one pt-160 xl-pt-200 lg-pt-150 pb-150 lg-pb-100 position-relative">
+    <div className="hero-banner-one pt-160 xl-pt-200 lg-pt-150 pb-100 lg-pb-100 position-relative">
       <Slider {...slider_setting} className="hero-slider-one m0">
         {slider_bg.map((bg, i) => (
           <div className="item m0" key={i}>
@@ -45,7 +45,7 @@ const HeroBannerTwo = () => {
       </Slider>
       <section className="pt-5 pb-5 overflow-hidden">
         <div className="container">
-          <div className="row align-items-center gy-5">
+          <div className="row gy-5">
             <motion.div
               className="col-lg-5 z-1"
               initial={{ opacity: 0 }}

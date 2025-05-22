@@ -89,7 +89,7 @@ export function Calculator() {
   };
 
   const nextStep = () => {
-    if (activeStep < 4) {
+    if (activeStep < 3) {
       setActiveStep(activeStep + 1);
     } else {
       handleCalculate();
@@ -107,10 +107,6 @@ export function Calculator() {
     return re.test(email);
   };
 
-  const handleSubmitFinanciamiento = () => {
-    setShowModal(true);
-  };
-
   const handleContinueOnboarding = () => {
     setShowModal(false);
     alert("Redirigiendo al proceso de onboarding...");
@@ -119,38 +115,35 @@ export function Calculator() {
   const renderStepper = () => {
     return (
       <div className="d-flex justify-content-between mb-4 px-2">
-        {[1, 2, 3, 4].map((step) => (
-          <div key={step} className="d-flex flex-column align-items-center">
-            <div
-              className={`rounded-circle d-flex align-items-center justify-content-center fw-medium text-white ${
-                activeStep === step
-                  ? "bg-lime-500"
-                  : activeStep > step
-                  ? "bg-light text-lime-500"
-                  : "bg-secondary text-light"
-              }`}
-              style={{ width: "2rem", height: "2rem", fontSize: "0.875rem" }}
-            >
-              {step}
+        {[1, 2, 3].map((step) => (
+          <>
+            <div key={step} className="d-flex flex-column align-items-center">
+              <div
+                className={`rounded-circle d-flex align-items-center justify-content-center fw-medium text-white ${
+                  activeStep === step
+                    ? "bg-lime-500"
+                    : activeStep > step
+                    ? "bg-light text-lime-500"
+                    : "bg-secondary text-light"
+                }`}
+                style={{ width: "2rem", height: "2rem", fontSize: "0.875rem" }}
+              >
+                {step}
+              </div>
+              <div
+                className={`mt-1 small ${
+                  activeStep === step
+                    ? "text-lime-500 fw-bold"
+                    : activeStep > step
+                    ? "text-secondary"
+                    : "text-muted"
+                }`}
+              >
+                {step === 1 ? "Monto" : step === 2 ? "Plazo" : "Pagador"}
+              </div>
             </div>
-            <div
-              className={`mt-1 small ${
-                activeStep === step
-                  ? "text-lime-500 fw-bold"
-                  : activeStep > step
-                  ? "text-secondary"
-                  : "text-muted"
-              }`}
-            >
-              {step === 1
-                ? "Monto"
-                : step === 2
-                ? "Plazo"
-                : step === 3
-                ? "Pagador"
-                : "Contacto"}
-            </div>
-          </div>
+            <div className="bs-stepper-line"></div>
+          </>
         ))}
       </div>
     );
@@ -226,10 +219,10 @@ export function Calculator() {
                     </label>
                     <div className="row g-3">
                       {[30, 60, 90, 120].map((dias) => (
-                        <div className="col-6" key={dias}>
+                        <div className="col-3" key={dias}>
                           <button
                             type="button"
-                            className={`btn w-100 py-4 ${
+                            className={`btn w-100 py-2 ${
                               plazoPago === dias
                                 ? "btn-success bg-lime-500 text-white"
                                 : "btn-outline-secondary"
@@ -317,7 +310,7 @@ export function Calculator() {
                 </motion.div>
               )}
 
-              {activeStep === 4 && (
+              {/* {activeStep === 4 && (
                 <motion.div
                   key="step4"
                   initial={{ opacity: 0, x: -20 }}
@@ -356,8 +349,9 @@ export function Calculator() {
                     </p>
                   </div>
                 </motion.div>
-              )}
+              )} */}
             </AnimatePresence>
+
             <div className="d-flex justify-content-between mt-4">
               {activeStep > 1 ? (
                 <Button
@@ -376,11 +370,11 @@ export function Calculator() {
                 onClick={nextStep}
                 variant={"outline"}
                 className="btn btn-success bg-lime-500 d-flex align-items-center "
-                aria-label={activeStep === 4 ? "Calcular" : "Siguiente"}
-                disabled={activeStep === 4 && !validateEmail(email)}
+                aria-label={activeStep === 3 ? "Calcular" : "Siguiente"}
+                disabled={activeStep === 3 && pagador == ""}
               >
-                {activeStep === 4 ? "Calcular" : "Siguiente"}
-                {activeStep !== 4 && <ArrowRight className="w-4 h-4" />}
+                {activeStep === 3 ? "Ver cotización" : "Siguiente"}
+                {activeStep !== 3 && <ArrowRight className="w-4 h-4" />}
               </Button>
             </div>
           </div>
@@ -392,7 +386,7 @@ export function Calculator() {
           >
             <div className="bg-lime-500 px-4 py-3 text-white rounded-top">
               <div className="d-flex justify-content-between align-items-center">
-                <h3 className="h6 fw-bold mb-0 text-white">Resultados</h3>
+                <h3 className="h6 fw-bold mb-0 text-white">Cotización</h3>
                 <button
                   type="button"
                   className="btn btn-sm btn-link text-white text-decoration-none"
@@ -405,9 +399,10 @@ export function Calculator() {
             </div>
 
             <div className="p-4 border border-light border-top-0 rounded-bottom">
-              <div className="bg-lime-50 rounded-xl p-5 border border-lime-1003">
+              <div className="bg-lime-50 rounded-xl p-3 gap-3 border border-lime-1003 mb-3">
                 <div className="text-lime-500 fw-medium small mb-1">
-                  Te anticipamos el 90% del valor de tu factura
+                  De tu factura de ${valorFacturaFormatted} te anticipamos el
+                  90%:
                 </div>
                 <div className="h2 fw-bold text-lime-500 mb-0">
                   {formatCurrency(valorAnticipo)}
@@ -422,11 +417,11 @@ export function Calculator() {
                   <Percent className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="small text-muted mb-1 fw-medium">
-                    Descuento
+                  <div className="small text-muted fw-medium mb-1">
+                    Tasa de descuento estimada *
                   </div>
-                  <div className="h5 fw-bold text-dark">
-                    {formatCurrency(descuentoEstimado)}
+                  <div className="fw-bold text-dark">
+                    {(tasaMensual * 100).toFixed(1)}% mensual
                   </div>
                 </div>
               </div>
@@ -436,14 +431,14 @@ export function Calculator() {
                   className="d-flex align-items-center justify-content-center bg-success text-white rounded shadow-sm"
                   style={{ width: "40px", height: "40px" }}
                 >
-                  <Percent className="w-5 h-5" />
+                  <DollarSign className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="small text-muted fw-medium mb-1">
-                    Tasa de descuento
+                  <div className="small text-muted mb-1 fw-medium">
+                    Descuento estimado ({plazoPago} días)
                   </div>
-                  <div className="fw-bold text-dark">
-                    {(tasaMensual * 100).toFixed(1)}% mensual
+                  <div className="h5 fw-bold text-dark">
+                    {formatCurrency(descuentoEstimado)}
                   </div>
                 </div>
               </div>
@@ -466,16 +461,40 @@ export function Calculator() {
               <div className="text-muted small bg-success bg-opacity-10 p-3 rounded border border-success border-opacity-25 mb-4">
                 Cuando recibamos el pago de tu factura, descontamos los
                 intereses de los días y te devolvemos el remanente.
+                <p className="pt-2 mb-0">*La tasa puede variar.</p>
               </div>
 
-              <button
-                className="btn btn-success bg-lime-500 w-100 shadow"
-                style={{ height: "48px" }}
-                onClick={ () => {window.location.href = 'https://cfinancia-prod-clientes.cesionbnk.com'; }}
-                aria-label="Solicitar financiamiento"
-              >
-                Solicitar financiamiento
-              </button>
+              <div className="d-flex justify-content-between">
+                <div className="position-relative me-2">
+                  <i className="bi bi-envelope-fill position-absolute top-50 start-0 translate-middle-y text-lime-500 ps-3"></i>
+                  <input
+                    id="email"
+                    type="email"
+                    className="form-control form-control-lg ps-5"
+                    placeholder="Tu correo corporativo"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      setEmailError("");
+                    }}
+                    aria-label="Correo electrónico"
+                  />
+                </div>
+                {emailError && (
+                  <p className="mt-2 text-danger small">{emailError}</p>
+                )}
+
+                <button
+                  className="btn btn-success bg-lime-500 shadow"
+                  onClick={() => {
+                    window.location.href =
+                      "https://cfinancia-prod-clientes.cesionbnk.com";
+                  }}
+                  aria-label="Solicitar financiamiento"
+                >
+                  Solicitar financiamiento
+                </button>
+              </div>
             </div>
           </motion.div>
         )}

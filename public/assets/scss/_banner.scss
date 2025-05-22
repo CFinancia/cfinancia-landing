@@ -60,13 +60,14 @@
 }
 
 .bg-lime-500 {
-  --tw-bg-opacity: 1!important;
+  --tw-bg-opacity: 1 !important;
   background-color: rgb(132 204 22 / var(--tw-bg-opacity, 1)) !important;
   border-color: #84cc16 !important;
   &:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(132 204 22 / var(--tw-bg-opacity, 1));
     border-color: #84cc16 !important;
+    color: #fff !important;
   }
   .btn:disabled {
     opacity: 0.5 !important;
@@ -80,27 +81,58 @@
   color: rgba(132 204 22 / var(--bs-text-opacity)) !important;
 }
 .text-gray-700 {
-    --tw-text-opacity: 1;
-    color: rgb(55 65 81 / var(--tw-text-opacity, 1));
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity, 1));
 }
 .bg-background {
-    background-color: hsl(var(--background));
-    &:hover {
+  background-color: hsl(var(--background));
+  &:hover {
     --tw-bg-opacity: 1;
     background-color: #f6f6f6;
     color: black;
     border-color: #f6f6f6 !important;
   }
+  &:active {
+    background-color: #f6f6f6 !important;
+  }
 }
 .border-lime-100 {
-    --tw-border-opacity: 1;
-    border-color: rgb(236 252 203 / var(--tw-border-opacity, 1));
+  --tw-border-opacity: 1;
+  border-color: rgb(236 252 203 / var(--tw-border-opacity, 1));
 }
 .bg-lime-50 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(247 254 231 / var(--tw-bg-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(247 254 231 / var(--tw-bg-opacity, 1));
+}
+.form-control:focus,
+.form-select:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border-color: #84cc16 !important;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(236 252 203 / var(--tw-border-opacity, 1));
 }
 
+.btn-outline-secondary:hover {
+  background-color: #f6f6f6;
+  color: #6c757d;
+}
+
+.bs-stepper-line {
+  flex: 1 0 32px;
+  min-width: 1px;
+  min-height: 1px;
+  margin: 16px auto 50px auto;
+  background-color: rgba(0, 0, 0, 0.12);
+  &:last-child {
+    display: none;
+  }
+}
+
+.border-success {
+  --bs-border-opacity: 1;
+  border-color: rgba(132 204 22 / var(--bs-text-opacity)) !important;
+}
 
 // Hero Banner Two
 .hero-banner-two {
