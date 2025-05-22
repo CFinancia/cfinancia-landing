@@ -19,9 +19,6 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 
-const TASA_ANUAL = 0.022; // 2.2% efectivo anual
-const PORCENTAJE_FINANCIAMIENTO = 0.9; // 90%
-
 export function Calculator() {
   const [valorFactura, setValorFactura] = useState<number>(0);
   const [valorFacturaFormatted, setValorFacturaFormatted] =
@@ -37,6 +34,16 @@ export function Calculator() {
   const [emailError, setEmailError] = useState<string>("");
   const [showModal, setShowModal] = useState<boolean>(false);
 
+  const PORCENTAJE_FINANCIAMIENTO = plazoPago == 120 ? 85 : 90;
+  const tasasEcopetrol: { [plazo: number]: number } = {
+    30: 0.3402,
+    60: 0.2697,
+    90: 0.249,
+    120: 0.2387,
+  };
+
+  const TASA_ANUAL = pagador === "ecopetrol" ? tasasEcopetrol[plazoPago] ?? 0.2387 : 0.2387;
+
   const calculatorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -46,12 +53,12 @@ export function Calculator() {
   }, [valorFactura, plazoPago, pagador]);
 
   const calcularValores = () => {
-    const tasaPeriodo = TASA_ANUAL * (plazoPago / 365);
+    const tasaPeriodo = TASA_ANUAL * (plazoPago / 360);
     const descuento = valorFactura * tasaPeriodo;
     setDescuentoEstimado(descuento);
-    const anticipo = valorFactura * PORCENTAJE_FINANCIAMIENTO;
+    const anticipo = valorFactura * (PORCENTAJE_FINANCIAMIENTO / 100);
     setValorAnticipo(anticipo - descuento);
-    const tasaMensualEquivalente = Math.pow(1 + TASA_ANUAL, 30 / 365) - 1;
+    const tasaMensualEquivalente = Math.pow(1 + TASA_ANUAL, 30 / 360) - 1;
     setTasaMensual(tasaMensualEquivalente);
   };
 
@@ -401,8 +408,8 @@ export function Calculator() {
             <div className="p-4 border border-light border-top-0 rounded-bottom">
               <div className="bg-lime-50 rounded-xl p-3 gap-3 border border-lime-1003 mb-3">
                 <div className="text-lime-500 fw-medium small mb-1">
-                  De tu factura de ${valorFacturaFormatted} te anticipamos el
-                  90%:
+                  De tu factura de ${valorFacturaFormatted} te anticipamos el{" "}
+                  {PORCENTAJE_FINANCIAMIENTO}%:
                 </div>
                 <div className="h2 fw-bold text-lime-500 mb-0">
                   {formatCurrency(valorAnticipo)}
@@ -421,7 +428,7 @@ export function Calculator() {
                     Tasa de descuento estimada *
                   </div>
                   <div className="fw-bold text-dark">
-                    {(tasaMensual * 100).toFixed(1)}% mensual
+                    {(tasaMensual * 100).toFixed(2)}% mensual
                   </div>
                 </div>
               </div>
@@ -460,7 +467,8 @@ export function Calculator() {
 
               <div className="text-muted small bg-success bg-opacity-10 p-3 rounded border border-success border-opacity-25 mb-4">
                 Cuando recibamos el pago de tu factura, descontamos los
-                intereses de los días y te devolvemos el remanente.
+                intereses de los días exactos y te devolvemos{" "}
+                <strong>el remanente</strong>.
                 <p className="pt-2 mb-0">*La tasa puede variar.</p>
               </div>
 
