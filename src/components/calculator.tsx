@@ -42,7 +42,8 @@ export function Calculator() {
     120: 0.2387,
   };
 
-  const TASA_ANUAL = pagador === "ecopetrol" ? tasasEcopetrol[plazoPago] ?? 0.2387 : 0.2387;
+  const TASA_ANUAL =
+    pagador === "ecopetrol" ? tasasEcopetrol[plazoPago] ?? 0.2387 : 0.2387;
 
   const calculatorRef = useRef<HTMLDivElement>(null);
 
@@ -146,7 +147,11 @@ export function Calculator() {
                     : "text-muted"
                 }`}
               >
-                {step === 1 ? "Monto" : step === 2 ? "Plazo" : "Pagador"}
+                {step === 1
+                  ? "Monto y plazo"
+                  : step === 2
+                  ? "Clientes"
+                  : "Cotización"}
               </div>
             </div>
             <div className="bs-stepper-line"></div>
@@ -187,9 +192,9 @@ export function Calculator() {
                   <div className="mb-4">
                     <Label
                       htmlFor="valorFactura"
-                      className="form-label text-dark"
+                      className="form-label text-dark fw-medium"
                     >
-                      ¿Cuál es el valor de tu factura?
+                      ¿Cuánta liquidez estás buscando?
                     </Label>
                     <div className="position-relative mt-2">
                       <DollarSign
@@ -208,21 +213,9 @@ export function Calculator() {
                       />
                     </div>
                   </div>
-                </motion.div>
-              )}
-
-              {/* Otros pasos van aquí... */}
-              {activeStep === 2 && (
-                <motion.div
-                  key="step2"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 20 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="mb-4">
-                    <label className="form-label text-dark fw-medium fs-5 mb-3">
-                      ¿Cuál es el plazo promedio de pago?
+                  <div className="mb-4 ">
+                    <label className="form-label text-dark fw-medium mb-3">
+                      ¿Cuál es el plazo promedio de pago de tus facturas?
                     </label>
                     <div className="row g-3">
                       {[30, 60, 90, 120].map((dias) => (
@@ -231,7 +224,7 @@ export function Calculator() {
                             type="button"
                             className={`btn w-100 py-2 ${
                               plazoPago === dias
-                                ? "btn-success bg-lime-500 text-white"
+                                ? "btn-success bg-gradient-lime-500 text-white"
                                 : "btn-outline-secondary"
                             }`}
                             onClick={() => setPlazoPago(dias)}
@@ -251,9 +244,9 @@ export function Calculator() {
                 </motion.div>
               )}
 
-              {activeStep === 3 && (
+              {activeStep === 2 && (
                 <motion.div
-                  key="step3"
+                  key="step2"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 20 }}
@@ -264,7 +257,7 @@ export function Calculator() {
                       htmlFor="pagador"
                       className="form-label text-dark fw-medium fs-5 mb-2"
                     >
-                      ¿Quién es el pagador de la factura?
+                      ¿Quiénes son tus principales clientes?
                     </label>
                     <select
                       id="pagador"
@@ -317,7 +310,7 @@ export function Calculator() {
                 </motion.div>
               )}
 
-              {/* {activeStep === 4 && (
+              {activeStep === 3 && (
                 <motion.div
                   key="step4"
                   initial={{ opacity: 0, x: -20 }}
@@ -338,7 +331,7 @@ export function Calculator() {
                         id="email"
                         type="email"
                         className="form-control form-control-lg ps-5"
-                        placeholder="nombre@empresa.com"
+                        placeholder="Tu correo corporativo"
                         value={email}
                         onChange={(e) => {
                           setEmail(e.target.value);
@@ -356,7 +349,7 @@ export function Calculator() {
                     </p>
                   </div>
                 </motion.div>
-              )} */}
+              )}
             </AnimatePresence>
 
             <div className="d-flex justify-content-between mt-4">
@@ -472,37 +465,16 @@ export function Calculator() {
                 <p className="pt-2 mb-0">*La tasa puede variar.</p>
               </div>
 
-              <div className="d-flex justify-content-between">
-                <div className="position-relative me-2">
-                  <i className="bi bi-envelope-fill position-absolute top-50 start-0 translate-middle-y text-lime-500 ps-3"></i>
-                  <input
-                    id="email"
-                    type="email"
-                    className="form-control form-control-lg ps-5"
-                    placeholder="Tu correo corporativo"
-                    value={email}
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                      setEmailError("");
-                    }}
-                    aria-label="Correo electrónico"
-                  />
-                </div>
-                {emailError && (
-                  <p className="mt-2 text-danger small">{emailError}</p>
-                )}
-
-                <button
-                  className="btn btn-success bg-lime-500 shadow"
-                  onClick={() => {
-                    window.location.href =
-                      "https://cfinancia-prod-clientes.cesionbnk.com";
-                  }}
-                  aria-label="Solicitar financiamiento"
-                >
-                  Solicitar financiamiento
-                </button>
-              </div>
+              <button
+                className="btn btn-success bg-lime-500 w-100 shadow"
+                onClick={() => {
+                  window.location.href =
+                    "https://cfinancia-prod-clientes.cesionbnk.com";
+                }}
+                aria-label="Solicitar financiamiento"
+              >
+                Solicitar financiamiento
+              </button>
             </div>
           </motion.div>
         )}

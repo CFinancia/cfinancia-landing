@@ -76,6 +76,16 @@
   }
 }
 
+.bg-gradient-lime-500 {
+  --tw-bg-opacity: 1 !important;
+  background: linear-gradient(to right, rgb(163, 230, 53), rgb(16, 185, 129));
+  &:hover {
+    --tw-bg-opacity: 1;
+    background: linear-gradient(to right, rgb(163, 230, 53), rgb(16, 185, 129));
+    color: #fff !important;
+  }
+}
+
 .text-lime-500 {
   --bs-text-opacity: 1;
   color: rgba(132 204 22 / var(--bs-text-opacity)) !important;

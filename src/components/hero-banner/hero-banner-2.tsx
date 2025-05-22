@@ -32,7 +32,7 @@ const HeroBannerTwo = () => {
   };
 
   return (
-    <div className="hero-banner-one pt-160 xl-pt-200 lg-pt-150 pb-100 lg-pb-100 position-relative">
+    <div className="hero-banner-one pt-160 xl-pt-200 lg-pt-100 pb-100 lg-pb-100 position-relative">
       <Slider {...slider_setting} className="hero-slider-one m0">
         {slider_bg.map((bg, i) => (
           <div className="item m0" key={i}>
@@ -118,7 +118,7 @@ const HeroBannerTwo = () => {
                   style={{
                     height: "0.8rem",
                     background: "linear-gradient(to right, #a3e635, #10b981)",
-                    borderRadius: "0px 0px 15px 15px",
+                    borderRadius: "15px 15px 0px 0px",
                   }}
                 ></div>
                 <div className="pt-4">
