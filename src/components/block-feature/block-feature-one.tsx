@@ -62,7 +62,7 @@ const BlockFeatureOne = ({ style_2 = false }: { style_2?: boolean }) => {
 					</div>
 
 					<div className="section-subheading sm-mt-40">
-						<p className="text-lg">Facilitamos el acceso a capital de trabajo, para que toda tu cadena de valor fluya sin contratiempos </p>
+						<p className="text-lg">Facilitamos el acceso a capital de trabajo, para que toda tu cadena de valor fluya sin contratiempos.</p>
 						<NavLink to="/service-v1" className="btn-three icon-link">
 							<span>Financiación para empresas</span>
 							<img src="/assets/images/icon/icon_09.svg" alt="arrow" className="lazy-img icon ms-1" />

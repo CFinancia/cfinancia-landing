@@ -25,7 +25,7 @@ const BlockFeatureThree = () => {
                   <div className="col-lg-7">
                     <h3 className="block-title d-inline-block position-relative">
                       <NavLink to="/project-details-v1">
-                        Agende cita con nuestros asesores.
+                        Agenda una cita con nuestros asesores
                       </NavLink>
                     </h3>
                   </div>

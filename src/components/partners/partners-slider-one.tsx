@@ -38,8 +38,7 @@ const slider_logos: string[] = [
   '/assets/images/logo/cavca.png',
   '/assets/images/logo/fineco.jpg',
   '/assets/images/logo/iris.jpg',
-  '/assets/images/logo/kandeo.png',
-  '/assets/images/logo/liquitech.jpg',
+  '/assets/images/logo/kandeo.png'
 ];
 
 const PartnersSliderOne = () => {

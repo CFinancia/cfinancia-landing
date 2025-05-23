@@ -82,9 +82,9 @@ const TextFeatureOne = ({ style_2 = false }: { style_2?: boolean }) => {
               <div className="col-xl-7 col-lg-6 wow fadeInRight">
                 <div className="media-list-item ms-auto pe-xxl-5 pe-4 ps-xxl-5 ps-4 pb-35 md-mt-60 d-flex align-items-end">
                   <ul className="style-none">
-                    <li>Registre su empresa y cargue sus facturas</li>
-                    <li>Seleccione y acepte oferta</li>
-                    <li>Reciba el financiamiento</li>
+                    <li>Registra tu empresa y cargue sus facturas</li>
+                    <li>Selecciona y acepta una oferta</li>
+                    <li>Recibe el financiamiento</li>
                   </ul>
                 </div>
               </div>

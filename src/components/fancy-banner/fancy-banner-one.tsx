@@ -6,7 +6,7 @@ const FancyBannerOne = () => {
           <div className="ps-xl-5 ps-md-4 pe-xxl-5 d-flex align-items-center justify-content-between">
             <div>
               <h3 className="fw-bold">Factoring</h3>
-              <p className="text-md m0">Anticipo de facturas de sus clientes</p>
+              <p className="text-md m0">Anticipo de facturas de tus clientes</p>
             </div>
           </div>
         </div>
@@ -15,7 +15,7 @@ const FancyBannerOne = () => {
             <div>
               <h3 className="fw-bold">Confirming</h3>
               <p className="text-md m0">
-                Gestionar los pagos de su empresa a sus proveedores
+                Gestionar los pagos de tu empresa a sus proveedores
               </p>
             </div>
           </div>

@@ -59,7 +59,7 @@ const service_data:IService[] = [
     id:7,
     icon:'/assets/images/icon/icon_08.svg',
     title:'Control de flujo',
-    desc:'Introducimos una herramienta de flujo de caja que permite organizar de manera eficiente sus cuentas por cobrar y pagar. Simplifica la gestión financiera.',
+    desc:'Introducimos una herramienta de flujo de caja que permite organizar de manera eficiente tus cuentas por cobrar y pagar. Simplifica la gestión financiera.',
     page:'home-2'
   },
   // home 3

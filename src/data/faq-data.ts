@@ -30,7 +30,7 @@ const faq_data: IFaq[] = [
   {
     id: "Five",
     title: "¿Qué diferencia a C-Financia de otras empresas de factoring en Colombia?",
-    desc: "C-Financia se distingue por su enfoque en la atención al cliente, la flexibilidad en los servicios de factoring y la agilidad en la toma de decisiones. Nuestro compromiso es brindar soluciones financieras a medida para las empresas colombianas, adaptándonos a sus necesidades específicas.",
+    desc: "C-Financia se distingue por su enfoque en la atención al cliente, la flexibilidad en los servicios de factoring y la agilidad en la toma de decisiones. Nuestro compromiso es brindar soluciones financieras a medida para las empresas colombianas, adaptándonos a tus necesidades específicas.",
   },
 ];
 

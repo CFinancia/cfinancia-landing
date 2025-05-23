@@ -20,7 +20,7 @@ const menu_data:IMenu[] = [
   {
     id:2,
     link:'/',
-    title:'Liquidez para su empresa',
+    title:'Liquidez para tu empresa',
     // mega_menu:true,
     // mega_menus:[
     //   {

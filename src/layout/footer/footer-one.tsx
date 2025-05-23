@@ -58,7 +58,7 @@ const FooterOne = () => {
           </div>
           <div className="col-lg-7 order-lg-first mb-15">
             <NavLink to="/" className="d-none d-lg-inline-block mb-25">
-              <img src="/assets/images/logo/logo_01.svg" alt="logo"/>
+              <img src="/assets/images/logo/c-financia.svg" alt="logo"/>
             </NavLink>
             <div className="d-xl-flex align-items-center">
               <div className="copyright me-xl-4 lg-mt-10 order-lg-first">
