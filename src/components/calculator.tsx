@@ -11,13 +11,13 @@ import {
   Percent,
   ArrowLeft,
   ArrowRight,
+  UserCheck,
   CheckCircle,
 } from "lucide-react";
-
 import { Modal } from "react-bootstrap";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
+import { Button } from "@/ui/button";
+import { Label } from "@/ui/label";
+import { Input } from "@/ui/input";
 
 export function Calculator() {
   const [valorFactura, setValorFactura] = useState<number>(0);
@@ -33,14 +33,32 @@ export function Calculator() {
   const [email, setEmail] = useState<string>("");
   const [emailError, setEmailError] = useState<string>("");
   const [showModal, setShowModal] = useState<boolean>(false);
-
-  //giro formulario
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
+  const calculatorRef = useRef<HTMLDivElement>(null);
+
+  const scrollToTopOfCalculator = () => {
+    if (calculatorRef.current) {
+      calculatorRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   const handleFlip = () => {
     setIsFlipped(true);
+    setTimeout(() => {
+      calculatorRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 200);
   };
   const handleUnflip = () => {
     setIsFlipped(false);
+  };
+  const handleSubmitFinanciamiento = () => {
+    setShowModal(true);
   };
 
   const PORCENTAJE_FINANCIAMIENTO = plazoPago == 120 ? 85 : 90;
@@ -53,8 +71,6 @@ export function Calculator() {
 
   const TASA_ANUAL =
     pagador === "ecopetrol" ? tasasEcopetrol[plazoPago] ?? 0.2387 : 0.2387;
-
-  const calculatorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (valorFactura > 0) {
@@ -124,9 +140,11 @@ export function Calculator() {
     return re.test(email);
   };
 
-  const handleContinueOnboarding = () => {
-    setShowModal(false);
-    alert("Redirigiendo al proceso de onboarding...");
+  const isButtonDisabled = () => {
+    if (activeStep === 1) return valorFacturaFormatted === "";
+    if (activeStep === 2) return pagador === "";
+    if (activeStep === 3) return email === "" || !validateEmail(email);
+    return false;
   };
 
   const renderStepper = () => {
@@ -223,18 +241,14 @@ export function Calculator() {
                           ¿Cuánta liquidez estás buscando?
                         </Label>
                         <div className="position-relative mt-2">
-                          <DollarSign
-                            className="position-absolute start-0 top-50 translate-middle-y text-lime-500"
-                            style={{ left: "1rem" }}
-                            size={20}
-                          />
+                          <i className="bi bi-currency-dollar position-absolute top-50 start-0 translate-middle-y text-lime-500 ps-3"></i>
                           <Input
                             id="valorFactura"
                             type="text"
                             placeholder="Ingresa el monto total"
                             value={valorFacturaFormatted}
                             onChange={handleInputChange}
-                            className="form-control ps-5"
+                            className="form-control form-control-lg ps-5"
                             aria-label="Valor de la factura"
                           />
                         </div>
@@ -397,7 +411,7 @@ export function Calculator() {
                     variant={"outline"}
                     className="btn btn-success bg-lime-500 d-flex align-items-center "
                     aria-label={activeStep === 3 ? "Calcular" : "Siguiente"}
-                    disabled={activeStep === 3 && pagador == ""}
+                    disabled={isButtonDisabled()}
                   >
                     {activeStep === 3 ? "Ver cotización" : "Siguiente"}
                     {activeStep !== 3 && <ArrowRight className="w-4 h-4" />}
@@ -410,20 +424,6 @@ export function Calculator() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                {/* <div className="bg-lime-500 px-4 py-3 text-white rounded-top">
-                  <div className="d-flex justify-content-between align-items-center">
-                    <h3 className="h6 fw-bold mb-0 text-white">Cotización</h3>
-                    <button
-                      type="button"
-                      className="btn btn-sm btn-link text-white text-decoration-none"
-                      onClick={() => setShowResults(false)}
-                      aria-label="Editar"
-                    >
-                      Editar
-                    </button>
-                  </div>
-                </div> */}
-
                 <div className="p-4 border border-light border-top-0 rounded-bottom">
                   <div className="bg-lime-50 rounded-xl p-3 gap-3 border border-lime-1003 mb-3">
                     <div className="text-lime-500 fw-medium mb-1">
@@ -490,7 +490,12 @@ export function Calculator() {
                   <button
                     className="btn btn-success bg-lime-500 fw-medium w-100 shadow mb-4"
                     style={{ fontSize: "17px" }}
-                    onClick={handleFlip}
+                    onClick={() => {
+                      scrollToTopOfCalculator(); // Paso 1: Scroll
+                      setTimeout(() => {
+                        handleFlip(); // Paso 2: Flip
+                      }, 400); // Ajusta el delay si el scroll dura más
+                    }}
                     aria-label="Solicitar financiamiento"
                   >
                     Crear tu cuenta
@@ -520,9 +525,9 @@ export function Calculator() {
                   className="d-flex align-items-center justify-content-center bg-lime-500 text-white rounded"
                   style={{ width: "2.5rem", height: "2.5rem" }}
                 >
-                  <CalculatorIcon size={20} />
+                  <UserCheck size={20} />
                 </div>
-                <h2 className="h5 text-dark mb-0">Calculadora de liquidez</h2>
+                <h2 className="h5 text-dark mb-0">Crea tu cuenta en minutos</h2>
               </div>
               <button
                 type="button"
@@ -538,35 +543,36 @@ export function Calculator() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
             >
-              {/* <div className="bg-lime-500 px-4 py-3 text-white rounded-top">
-                <div className="d-flex justify-content-between align-items-center">
-                  <h3 className="h6 fw-bold mb-0 text-white">Crea tu cuenta</h3>
-                  <button
-                    type="button"
-                    className="btn btn-sm btn-link text-white text-decoration-none"
-                    onClick={handleUnflip}
-                    aria-label="Volver a la calculadora"
-                  >
-                    Volver
-                  </button>
-                </div>
-              </div> */}
               <div className="p-4 border border-light border-top-0 rounded-bottom">
                 <div className="mb-4">
                   <label
-                    htmlFor="email"
+                    htmlFor="nit"
                     className="form-label text-dark fw-medium fs-6 mb-1"
                   >
                     Ingresa el NIT y dígito de verificación
                   </label>
-                  <div className="position-relative mt-2">
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="nit"
-                      name="nit"
-                      required
-                    />
+                  <div className="row mt-2">
+                    <div className="col-md-8">
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="nit"
+                        name="nit"
+                        placeholder="NIT"
+                        required
+                      />
+                    </div>
+                    <div className="col-md-1 text-center"> - </div>
+                    <div className="col-md-3">
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="digitoVerificacion"
+                        name="digitoVerificacion"
+                        placeholder="DV"
+                        required
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="mb-4">
@@ -582,6 +588,7 @@ export function Calculator() {
                       className="form-control"
                       id="razonSocial"
                       name="razonSocial"
+                      placeholder="Razón social"
                       required
                     />
                   </div>
@@ -607,7 +614,7 @@ export function Calculator() {
                 <button
                   className="btn btn-success bg-lime-500 fw-medium w-100 shadow mt-2"
                   style={{ fontSize: "17px" }}
-                  onClick={handleFlip}
+                  onClick={handleSubmitFinanciamiento}
                   aria-label="Solicitar financiamiento"
                 >
                   Crear mi cuenta
@@ -617,6 +624,47 @@ export function Calculator() {
           </div>
         </div>
       </div>
+
+      {/* Modal de confirmación */}
+
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+        <Modal.Header closeButton>
+          <Modal.Title className="w-100 text-center">
+            Solicitud Recibida
+          </Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <div className="d-flex flex-column align-items-center py-4">
+            <div
+              className="d-flex align-items-center justify-content-center bg-lime-50 bg-opacity-25 rounded-circle mb-3"
+              style={{ width: "64px", height: "64px" }}
+            >
+              <CheckCircle
+                className="text-lime-500"
+                style={{ width: "32px", height: "32px" }}
+              />
+            </div>
+            <p className="text-center text-muted mb-0">
+              Alguien del equipo comercial se estará contactando contigo
+              próximamente.
+            </p>
+          </div>
+        </Modal.Body>
+
+        <Modal.Footer className="justify-content-center">
+          <button
+            className="btn bg-lime-500 w-100 text-white shadow"
+            style={{ height: "48px" }}
+            onClick={() => {
+              window.location.href =
+                "https://cfinancia-prod-clientes.cesionbnk.com";
+            }}
+          >
+            Continuar con el proceso de onboarding
+          </button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }
