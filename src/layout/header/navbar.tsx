@@ -13,8 +13,8 @@ const Navbar = ({ logo_white = false }: { logo_white?: boolean }) => {
             <img
               src={
                 logo_white
-                  ? "/assets/images/logo/logo_01.svg"
-                  : "/assets/images/logo/logo_02.svg"
+                  ? "/assets/images/logo/c-financia.svg"
+                  : "/assets/images/logo/c-financia.svg"
               }
               alt="logo"
             />
@@ -99,38 +99,11 @@ const Navbar = ({ logo_white = false }: { logo_white?: boolean }) => {
       ))}
       <li className="d-md-none ps-2 pe-2">
         <a
-          href="#"
-          data-bs-toggle="modal"
-          data-bs-target="#loginModal"
+          href="https://cfinancia-prod-clientes.cesionbnk.com/"
           className="signup-btn-one icon-link w-100 mt-20"
         >
-          <span className="flex-fill text-center">Signup</span>
-          <div className="icon rounded-circle d-flex align-items-center justify-content-center">
-            <i className="bi bi-arrow-right"></i>
-          </div>
+          <span className="flex-fill text-black text-center" style={{background: "#CFFF45"}}>Regístrate</span>
         </a>
-        <ul className="style-none contact-info m0 pt-30">
-          <li className="d-flex align-items-center p0 mt-15">
-            <img
-              src="/assets/images/icon/icon_14.svg"
-              alt="icon"
-              className="lazy-img icon me-2"
-            />
-            <a href="mailto:babuninc@company.com" className="fw-500">
-              babuninc@company.com
-            </a>
-          </li>
-          <li className="d-flex align-items-center p0 mt-15">
-            <img
-              src="/assets/images/icon/icon_15.svg"
-              alt="icon"
-              className="lazy-img icon me-2"
-            />
-            <a href="tel:+757 699-4478" className="fw-500">
-              +757 699-4478
-            </a>
-          </li>
-        </ul>
       </li>
     </ul>
   );
