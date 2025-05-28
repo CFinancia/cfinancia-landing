@@ -5,6 +5,7 @@ import BreadcrumbOne from "../components/breadcrumb/breadcrumb-one";
 import FooterThree from "../layout/footer/footer-three";
 import NewsletterBanner from "../components/newsletter/newsletter-banner";
 import ContactArea from "../components/contact/contact-area";
+import FooterOne from "@/layout/footer/footer-one";
 
 export default function ContactPage() {
   return (
@@ -21,9 +22,9 @@ export default function ContactPage() {
         <main>
           {/* breadcrumb start */}
           <BreadcrumbOne
-            title="Contact us for inquiries"
-            subtitle="Get our all info and also can message us directly from here"
-            page="Contact"
+            title="Contáctanos"
+            subtitle="Obtén toda nuestra información y también puedes enviarnos un mensaje directamente desde aquí."
+            page="Contáctanos"
             shape="/assets/images/shape/shape_33.svg"
           />
           {/* breadcrumb end */}
@@ -38,7 +39,7 @@ export default function ContactPage() {
         </main>
 
         {/* footer start */}
-        <FooterThree style_2={true} />
+        <FooterOne/>
         {/* footer end */}
       </div>
     

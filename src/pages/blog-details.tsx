@@ -8,7 +8,7 @@ import blog_data from "../data/blog-data";
 import BlogDetailsArea from "../components/blogs/blog-details/blog-details-area";
 import FancyBannerThree from "../components/fancy-banner/fancy-banner-three";
 import NewsletterBanner from "../components/newsletter/newsletter-banner";
-import FooterThree from "../layout/footer/footer-three";
+import FooterOne from "@/layout/footer/footer-one";
 
 export default function BlogDetailsPage() {
 
@@ -67,7 +67,7 @@ export default function BlogDetailsPage() {
         </main>
 
         {/* footer start */}
-        <FooterThree style_2={true} />
+        <FooterOne />
         {/* footer end */}
       </div>
 

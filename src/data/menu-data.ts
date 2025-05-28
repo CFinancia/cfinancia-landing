@@ -19,7 +19,7 @@ const menu_data:IMenu[] = [
   },
   {
     id:2,
-    link:'/',
+    link:'/service-details',
     title:'Liquidez para tu empresa',
     // mega_menu:true,
     // mega_menus:[
@@ -74,6 +74,11 @@ const menu_data:IMenu[] = [
     id:3,
     link:'/',
     title:'Blog',
+     dropdown:true,
+     dropdown_menus:[
+       {link:'/blog-details/1',title:'Descifrando el Factoring'},
+       {link:'/blog-details/2',title:'Cómo mejorar la liquidez empresarial'}
+    ]
     // dropdown:true,
     // dropdown_menus:[
     //   {link:'/blog',title:'Blog List'},
@@ -83,7 +88,7 @@ const menu_data:IMenu[] = [
   },
   {
     id:4,
-    link:'/',
+    link:'/contact',
     title:'Contáctanos'
   }
 ]

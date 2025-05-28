@@ -14,7 +14,7 @@ const FooterOne = () => {
                 <img src="/assets/images/logo/c-financia.svg" alt="logo"/>
               </NavLink>
             </div> 
-            <p className="text-white lh-sm mb-35">C-financia <span className="opacity-50">obtén <br/> liquidez con tus facturas</span></p>
+            <p className="text-white lh-sm mb-35">C-Financia <span className="opacity-50">obtén <br/> liquidez con tus facturas</span></p>
             {/* social link */}
             <ul className="style-none d-flex align-items-center social-icon">
              <FooterSocial/>
@@ -49,9 +49,9 @@ const FooterOne = () => {
         <div className="row align-items-center">
           <div className="col-lg-5 order-lg-last mb-15">
             <div className="footer-newsletter float-xl-end">
-              <h5 className="footer-title">Subscribe Newsletter</h5>
+              <h5 className="footer-title">Suscríbete a nuestro boletín</h5>
               <form action="#">
-                <input type="email" placeholder="Enter your email address"/>
+                <input type="email" placeholder="Ingresa tu correo electrónico"/>
                 <button><i className="bi bi-arrow-right"></i></button>
               </form>
             </div>

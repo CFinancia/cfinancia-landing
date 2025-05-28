@@ -2,19 +2,22 @@ import Wrapper from "../layout/wrapper";
 import SEOCom from "../components/seo";
 import HeaderTwo from "../layout/header/header-two";
 import BreadcrumbOne from "../components/breadcrumb/breadcrumb-one";
-import ServiceDetailsArea from "../components/services/service-details-area";
 import FancyBannerThree from "../components/fancy-banner/fancy-banner-three";
 import NewsletterBanner from "../components/newsletter/newsletter-banner";
-import FooterThree from "../layout/footer/footer-three";
+import FooterOne from "@/layout/footer/footer-one";
+import BlockFeatureTen from "@/components/block-feature/block-feature-ten";
+import FancyBannerSix from "@/components/fancy-banner/fancy-banner-six";
+import FaqSectionOne from "@/components/faq/faq-section-one";
+import FancyBannerTen from "@/components/fancy-banner/fancy-banner-ten";
+import TextFeatureFive from "@/components/text-feature/text-feature-five";
 
 export default function ServiceDetailsPage() {
   return (
     <Wrapper>
+      {/* seo title */}
+      <SEOCom title="Factoring empresarial" />
+      {/* seo title */}
 
-      {/* seo title */}
-      <SEOCom title="Service Details" />
-      {/* seo title */}
- 
       <div className="main-page-wrapper">
         {/* header start */}
         <HeaderTwo />
@@ -22,19 +25,35 @@ export default function ServiceDetailsPage() {
         <main>
           {/* breadcrumb start */}
           <BreadcrumbOne
-            title="Single Service Details"
-            subtitle="Offering solutions & services to address a spectrum of financial issues"
-            page="Services"
-            shape="/assets/images/shape/shape_27.svg"
+            title="Factoring para empresas"
+            subtitle="Optimiza tu flujo de efectivo al anticipar el pago de tus facturas pendientes, asegurando liquidez inmediata"
+            page="Factoring"
+            shape="/assets/images/shape/shape_25.svg"
             bg_img="/assets/images/media/img_32.jpg"
             style_2={true}
             cls="me-xl-4"
           />
           {/* breadcrumb end */}
 
-          {/* service details area start */}
-          <ServiceDetailsArea />
-          {/* service details area end */}
+          {/* text feature start */}
+          <TextFeatureFive />
+          {/* text feature end */}
+
+          {/* block feature start */}
+          <BlockFeatureTen />
+          {/* block feature end */}
+          
+          {/* fancy banner start */}
+          <FancyBannerSix />
+          {/* fancy banner end */}
+
+          {/* fancy banner ten start */}
+          <FancyBannerTen />
+          {/* fancy banner ten end */}
+
+          {/* faq section start */}
+          <FaqSectionOne />
+          {/* faq section end */}
 
           {/* fancy banner three start */}
           <FancyBannerThree />
@@ -46,10 +65,9 @@ export default function ServiceDetailsPage() {
         </main>
 
         {/* footer start */}
-        <FooterThree style_2={true} />
+        <FooterOne />
         {/* footer end */}
       </div>
-     
     </Wrapper>
   );
 }

@@ -8,15 +8,15 @@ const FancyBannerSix = () => {
         <div className="row">
           <div className="col-lg-8 col-md-9 m-auto">
             <h2 className="text-white fw-bold">
-              Apply for loan with low interest.
+              Comienza anticipar el pago de tus facturas
             </h2>
             <p className="text-white text-xl pt-10 pb-20">
-              Apply for loan & get up to $20million with low interest
+              Activa tu cuenta y comienza en minutos
             </p>
             <NavLink to="/contact"
               className="btn-seventeen d-inline-flex align-items-center tran3s"
             >
-              <span className="text">Get Started</span>
+              <span className="text">Regístrate Gratis</span>
               <i className="bi bi-arrow-right"></i>
             </NavLink>
           </div>

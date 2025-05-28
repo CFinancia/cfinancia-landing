@@ -32,22 +32,22 @@ const ContactArea = () => {
                 <div className="col-md-4">
                   <AddressBlock
                     icon="/assets/images/icon/icon_90.svg"
-                    title="Our Address"
-                    subtitle="1012 Pebda Parkway, Mirpur 2 <br/>Dhaka, Bangladesh"
+                    title="Oficina Principal"
+                    subtitle="Carrera 16 # 93-11, piso 10 <br/>Bogotá, Colombia"
                   />
                 </div>
                 <div className="col-md-4">
                   <AddressBlock
                     icon="/assets/images/icon/icon_91.svg"
-                    title="Contact Info"
-                    subtitle='Open a chat or give us call at <br/><a href="tel:310.841.5500" className="call text-lg fw-500">310.841.5500</a>'
+                    title="Teléfono de Contacto"
+                    subtitle='+57 (1) 381 49 90 <br/><a href="#" className="call text-lg fw-500">+57 320 7202593</a>'
                   />
                 </div>
                 <div className="col-md-4">
                   <AddressBlock
                     icon="/assets/images/icon/icon_92.svg"
-                    title="Live Support"
-                    subtitle='live chat service <br/><a href="#" className="webaddress">www.babunlivechat.com</a>'
+                    title="Soporte"
+                    subtitle='soporte@c-financia.com <br/><a href="#" className="webaddress">www.c-financia.com/soporte</a>'
                   />
                 </div>
               </div>
@@ -68,7 +68,7 @@ const ContactArea = () => {
                     </div>
                   </div>
                   <div className="title-one text-center text-lg-start md-mt-20 mb-70 md-mb-30">
-                    <h2>Have inquiries? Reach out via message</h2>
+                    <h2>¿Tienes alguna pregunta? Envíanos un mensaje</h2>
                   </div>
                 </div>
               </div>
@@ -85,9 +85,19 @@ const ContactArea = () => {
       </div>
       <div className="map-banner mt-120 lg-mt-80">
         <div className="gmap_canvas h-100 w-100">
-          <iframe
+          {/* <iframe
             className="gmap_iframe h-100 w-100"
             src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=dhaka collage&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          ></iframe> */}
+          {/* <iframe
+            className="gmap_iframe h-100 w-100"
+            src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=es&amp;q=Cra, 16 #93-11, Bogota&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          ></iframe> */}
+          <iframe
+            className="gmap_iframe h-100 w-100"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.5310159768137!2d-74.05736113224587!3d4.677352631495534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a92b81bbb37%3A0x696b12127657c9c8!2zQ3JhLCAxNiAjOTMtMTEsIEJvZ290w6E!5e0!3m2!1ses!2sco!4v1748389911223!5m2!1ses!2sco"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
       </div>

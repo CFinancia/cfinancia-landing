@@ -6,43 +6,43 @@ const BlogSidebar = () => {
   return (
     <div className="blog-sidebar md-mt-60 ps-xxl-4">
       <form action="#" className="sidebar-search">
-        <input type="text" placeholder="Search.." />
+        <input type="text" placeholder="Buscar" />
         <button className="tran3s">
           <i className="bi bi-search"></i>
         </button>
       </form>
       <div className="blog-category mt-60 lg-mt-40">
-        <h3 className="sidebar-title">Category</h3>
+        <h3 className="sidebar-title">Categorias</h3>
         <ul className="style-none">
           <li>
             <NavLink to="#">
-              Digital <span>(3)</span>
+              Factoring
             </NavLink>
           </li>
           <li>
             <NavLink to="#">
-              Marketing <span>(4)</span>
+              Consejos Financieros
             </NavLink>
           </li>
           <li>
             <NavLink to="#">
-              Consultation <span>(8)</span>
+              Educación Financiera
             </NavLink>
           </li>
           <li>
             <NavLink to="#">
-              Payments <span>(5)</span>
+              Normativa
             </NavLink>
           </li>
           <li>
             <NavLink to="#">
-              Banking <span>(7)</span>
+              Noticias
             </NavLink>
           </li>
         </ul>
       </div>
       <div className="blog-recent-news mt-60 lg-mt-40">
-        <h3 className="sidebar-title">Recent News</h3>
+        <h3 className="sidebar-title">Lo último</h3>
         {recent_blogs.map((b,i) => (
         <article key={i} className="recent-news">
           <figure
@@ -62,41 +62,41 @@ const BlogSidebar = () => {
       </div>
 
       <div className="blog-keyword mt-60 lg-mt-40">
-        <h3 className="sidebar-title">Keywords</h3>
+        <h3 className="sidebar-title">Palabras Claves</h3>
         <ul className="style-none d-flex flex-wrap">
           <li>
-            <NavLink to="#">Finance</NavLink>
+            <NavLink to="#">Finanzas</NavLink>
           </li>
           <li>
-            <NavLink to="#">Business</NavLink>
+            <NavLink to="#">Factoring</NavLink>
           </li>
           <li>
-            <NavLink to="#">Online Banking</NavLink>
+            <NavLink to="#">Confirming</NavLink>
           </li>
           <li>
-            <NavLink to="#">Consultation</NavLink>
+            <NavLink to="#">Financiamiento</NavLink>
           </li>
           <li>
-            <NavLink to="#">Branding</NavLink>
+            <NavLink to="#">Capital</NavLink>
           </li>
           <li>
-            <NavLink to="#">Cards</NavLink>
+            <NavLink to="#">Factura Electrónica</NavLink>
           </li>
           <li>
-            <NavLink to="#">Payments</NavLink>
+            <NavLink to="#">Soluciones Financieras</NavLink>
           </li>
           <li>
-            <NavLink to="#">Loan</NavLink>
+            <NavLink to="#">RADIAN</NavLink>
           </li>
         </ul>
       </div>
       <div className="contact-banner text-center mt-50 lg-mt-30">
         <h3 className="mb-20">
-          Any Questions? <br />
-          Let’s talk
+          ¿Alguna pregunta? <br />
+          Hablemos
         </h3>
         <NavLink to="/contact" className="tran3s fw-500">
-          Let’s Talk
+          Agendar Reunión
         </NavLink>
       </div>
     </div>

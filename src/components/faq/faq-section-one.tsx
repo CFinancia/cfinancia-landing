@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 // internal
 import faq_data from "../../data/faq-data";
 import FaqItem from "./faq-item";
+import PartnersSliderOne from "../partners/partners-slider-one";
 
 const FaqSectionOne = ({ cls }: { cls?: string }) => {
   return (

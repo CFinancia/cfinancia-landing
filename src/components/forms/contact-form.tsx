@@ -29,12 +29,24 @@ const ContactForm = () => {
       <div className="row controls">
         <div className="col-12">
           <div className="input-group-meta form-group mb-30">
-            <label htmlFor="">Name*</label>
+            <label htmlFor="">Nombre*</label>
             <input
               type="text"
-              placeholder="Your Name*"
+              placeholder="Ingresa tu nombre*"
               {...register("name")} id='name'
               name='name'
+            />
+            <div className="help-block with-errors">
+             <ErrorMsg msg={errors.name?.message as string} />
+            </div>
+          </div>
+          <div className="input-group-meta form-group mb-30">
+            <label htmlFor="">Empresa*</label>
+            <input
+              type="text"
+              placeholder="Nombre de la empresa*"
+              {...register("name")} id='company'
+              name='company'
             />
             <div className="help-block with-errors">
              <ErrorMsg msg={errors.name?.message as string} />
@@ -46,7 +58,7 @@ const ContactForm = () => {
             <label htmlFor="">Email*</label>
             <input
               type="email"
-              placeholder="Email Address*"
+              placeholder="Ingresa tu email*"
               {...register("email")} id='email'
               name="email"
             />
@@ -58,7 +70,7 @@ const ContactForm = () => {
         <div className="col-12">
           <div className="input-group-meta form-group mb-35">
             <textarea
-              placeholder="Your message*"
+              placeholder="Mensaje*"
               {...register("message")} id='message'
               name="message"
             ></textarea>
@@ -69,7 +81,7 @@ const ContactForm = () => {
         </div>
         <div className="col-12">
           <button type='submit' className="btn-four tran3s w-100 d-block">
-            Send Message
+            Enviar mensaje
           </button>
         </div>
       </div>

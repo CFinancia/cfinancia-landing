@@ -22,7 +22,7 @@ const BlockFeatureTen = () => {
         <div className="row align-items-center">
           <div className="col-lg-8 wow fadeInUp">
             <div className="title-one mb-50 lg-mb-20">
-              <h2>Complete Banking solution with great Facility.</h2>
+              <h2>Beneficios del factoring</h2>
             </div>
           </div>
         </div>
@@ -31,8 +31,8 @@ const BlockFeatureTen = () => {
             <div className="col-xl-4 col-md-6 wow fadeInUp">
               <CardItem
                 icon="/assets/images/icon/icon_62.svg"
-                title="Multiple Account"
-                subtitle="Effortless payments and transfers with our streamlined banking process."
+                title="Flujo de Efectivo Continuo"
+                subtitle="Recibe pagos anticipados por tus facturas, asegurando un flujo de efectivo constante."
               />
             </div>
             <div
@@ -41,8 +41,8 @@ const BlockFeatureTen = () => {
             >
               <CardItem
                 icon="/assets/images/icon/icon_63.svg"
-                title="Loan Facility"
-                subtitle="Earning potential grows with dedication, innovation, & with our instruction from expert."
+                title="Optimización de Recursos"
+                subtitle="Libera capital al externalizar el cobro, enfócate en el crecimiento de tu empresa."
               />
             </div>
             <div
@@ -51,15 +51,15 @@ const BlockFeatureTen = () => {
             >
               <CardItem
                 icon="/assets/images/icon/icon_64.svg"
-                title="Expense Track"
-                subtitle="Strengthen budgeting through precise and instinctive monitoring of your expenses."
+                title="Reducción de Riesgos"
+                subtitle="Minimiza riesgos al transferir la responsabilidad crediticia al servicio de factoring."
               />
             </div>
             <div className="col-xl-4 col-md-6 wow fadeInUp">
               <CardItem
                 icon="/assets/images/icon/icon_65.svg"
-                title="DPS & FDR"
-                subtitle="Achieve lasting dreams through disciplined savings & a thoughtful investment approach."
+                title="Agilidad en Financiamiento"
+                subtitle="Accede rápidamente a fondos sin trámites complicados."
               />
             </div>
             <div
@@ -68,8 +68,8 @@ const BlockFeatureTen = () => {
             >
               <CardItem
                 icon="/assets/images/icon/icon_66.svg"
-                title="International Account"
-                subtitle="Achieve lasting dreams through disciplined savings and a thoughtful investment approach."
+                title="Descuentos por Volumen"
+                subtitle="Obtén tasas preferenciales según el monto y volumen de tus facturas."
               />
             </div>
             <div
@@ -78,8 +78,8 @@ const BlockFeatureTen = () => {
             >
               <CardItem
                 icon="/assets/images/icon/icon_67.svg"
-                title="Credit Card"
-                subtitle="Strengthen budgeting through precise and instinctive monitoring of your expenses."
+                title="Asesoramiento Profesional"
+                subtitle="Recibe asesoría para optimizar tus cuentas por cobrar y mejorar tu salud financiera."
               />
             </div>
           </div>

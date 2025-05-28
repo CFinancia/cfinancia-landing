@@ -14,22 +14,22 @@ const TextFeatureFive = () => {
                 <div className="text-wrapper pt-50 pb-60 lg-pb-40 ps-3 ps-xxl-5 pe-3 pe-xxl-5">
                   <div className="title-one">
                     <h2 className="text-dark">
-                      Let’s get started It’s simple.
+                      Acceder a financiamiento rápido y seguro.
                     </h2>
                   </div>
                   <p className="text-lg text-dark mt-25 mb-35 lg-mb-30">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.
+                    Acelera el crecimiento de tu empresa al recibir financiamiento a través del factoring.
                   </p>
                   <ul className="style-none">
-                    <li>Mobile app easy management & access</li>
-                    <li>Ton’s of features for handle the card easily</li>
-                    <li>Strong security system.</li>
+                    <li>Facturas desde 30 hasta 180 días</li>
+                    <li>Negocia facturas desde 10 millones</li>
+                    <li>Tasas flexibles y competitivas</li>
+                    <li>100% digital</li>
                   </ul>
-                  <NavLink to="/about-us"
+                  <NavLink to="https://cfinancia-prod-clientes.cesionbnk.com/"
                     className="btn-eleven d-inline-flex align-items-center mt-40"
                   >
-                    <span className="text">More about us</span>
+                    <span className="text">Comenzar ahora gratis</span>
                     <div className="icon tran3s rounded-circle d-flex align-items-center">
                       <img src="/assets/images/icon/icon_27.svg" alt="icon" className="lazy-img" />
                     </div>
@@ -44,11 +44,6 @@ const TextFeatureFive = () => {
                   >
                     <img src="/assets/images/icon/icon_29.svg" alt="icon" className="lazy-img" />
                   </a>
-                  <img
-                    src="/assets/images/assets/screen_07.svg"
-                    alt="screen"
-                    className="lazy-img shapes screen_01"
-                  />
                 </div>
               </div>
             </div>

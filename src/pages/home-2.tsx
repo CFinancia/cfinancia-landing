@@ -21,7 +21,7 @@ export default function HomePageTwo() {
     <Wrapper>
 
       {/* seo title */}
-      <SEOCom title="Home 2" />
+      <SEOCom title="C-Financia" />
       {/* seo title */}
 
       <div className="main-page-wrapper">
