@@ -2,7 +2,6 @@ import Wrapper from "../layout/wrapper";
 import SEOCom from "../components/seo";
 import HeaderTwo from "../layout/header/header-two";
 import BreadcrumbOne from "../components/breadcrumb/breadcrumb-one";
-import FooterThree from "../layout/footer/footer-three";
 import NewsletterBanner from "../components/newsletter/newsletter-banner";
 import ContactArea from "../components/contact/contact-area";
 import FooterOne from "@/layout/footer/footer-one";
@@ -22,10 +21,10 @@ export default function ContactPage() {
         <main>
           {/* breadcrumb start */}
           <BreadcrumbOne
-            title="Contáctanos"
+            title="Conócenos y escríbenos"
             subtitle="Obtén toda nuestra información y también puedes enviarnos un mensaje directamente desde aquí."
             page="Contáctanos"
-            shape="/assets/images/shape/shape_33.svg"
+            shape="/assets/images/shape/shape_26.svg"
           />
           {/* breadcrumb end */}
 

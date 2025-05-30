@@ -5,10 +5,13 @@ export interface IBlog {
   img: string;
   date: string;
   title: string;
-  post_info?: string;
   quote_blog?: boolean;
   designation?: string;
   author:string;
+  reading_time?: string;
+  company_position?: string;
   category:string;
   page: string;
+  introduction?: string[]
+  author_note?: string
 }

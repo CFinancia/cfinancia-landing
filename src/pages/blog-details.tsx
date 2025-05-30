@@ -11,10 +11,9 @@ import NewsletterBanner from "../components/newsletter/newsletter-banner";
 import FooterOne from "@/layout/footer/footer-one";
 
 export default function BlogDetailsPage() {
-
   const { id } = useParams();
   const navigate = useNavigate();
-  const blog = blog_data.find(b => Number(b.id) === Number(id));
+  const blog = blog_data.find((b) => Number(b.id) === Number(id));
 
   useEffect(() => {
     if (!blog) {
@@ -24,7 +23,6 @@ export default function BlogDetailsPage() {
 
   return (
     <Wrapper>
-
       {/* seo title */}
       <SEOCom title="Blog Details" />
       {/* seo title */}
@@ -35,14 +33,26 @@ export default function BlogDetailsPage() {
         {/* header end */}
         <main>
           {/* breadcrumb start */}
-          <BreadcrumbOne
-            title="Single Blog Details"
-            subtitle="Meet our experts, guiding you through financial intricacies with precision"
-            page="Blog"
-            bg_img="/assets/images/media/img_32.jpg"
-            style_2={true}
-            shape="/assets/images/shape/shape_35.svg"
-          />
+          {id == "1" ? (
+            <BreadcrumbOne
+              title="¿Qué es el factoring?"
+              subtitle="Descifrando el Factoring: Una Guía Completa para Entender este Servicio de Financiamiento Empresarial."
+              page="Blog"
+              bg_img="/assets/images/blog/blog_img_03.jpg"
+              style_2={false}
+              shape="/assets/images/shape/shape_26.svg"
+            />
+          ) : (
+            <BreadcrumbOne
+              title="Artículo de finanzas"
+              subtitle="Cómo Mejorar la Liquidez Empresarial: Estrategias Prácticas para Empresas Colombianas"
+              page="Blog"
+              bg_img="/assets/images/blog/blog_img_04.jpg"
+              style_2={false}
+              shape="/assets/images/shape/shape_26.svg"
+            />
+          )}
+
           {/* breadcrumb end */}
 
           {/* blog details area start */}
@@ -70,7 +80,6 @@ export default function BlogDetailsPage() {
         <FooterOne />
         {/* footer end */}
       </div>
-
     </Wrapper>
   );
 }
