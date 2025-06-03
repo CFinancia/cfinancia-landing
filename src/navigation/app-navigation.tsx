@@ -1,15 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "../components/scroll-to-top";
-import Home from "../pages/home";
 import HomePageTwo from "../pages/home-2";
 import HomePageThree from "../pages/home-3";
 import HomePageFour from "../pages/home-4";
-import HomePageFive from "../pages/home-5";
 import HomePageSix from "../pages/home-6";
-import HomePageSeven from "../pages/home-7";
 import ContactPage from "../pages/contact";
-import BlogPage from "../pages/blog";
-import BlogGridPage from "../pages/blog-grid";
 import BlogDetailsPage from "../pages/blog-details";
 import ShopPage from "../pages/shop";
 import ShopDetailsPage from "../pages/shop-details";
@@ -22,7 +17,6 @@ import ProjectV3Page from "../pages/project-v3";
 import ProjectDetailsV1Page from "../pages/project-details-v1";
 import ProjectDetailsV2Page from "../pages/project-details-v2";
 import AboutUsPage from "../pages/about-us";
-import AboutUsTwoPage from "../pages/about-us-2";
 import TestimonialPage from "../pages/testimonial";
 import PricingPage from "../pages/pricing";
 import FaqPage from "../pages/faq";
@@ -44,14 +38,11 @@ export default function AppNavigation() {
         <Route path="/home-2" element={<HomePageTwo />} />
         <Route path="/home-3" element={<HomePageThree />} />
         <Route path="/home-4" element={<HomePageFour />} />
-        <Route path="/home-5" element={<HomePageFive />} />
         <Route path="/home-6" element={<HomePageSix />} />
-        <Route path="/home-7" element={<HomePageSeven />} />
         <Route path="/service-v1" element={<ServiceV1Page />} />
         <Route path="/service-v2" element={<ServiceV2Page />} />
         <Route path="/service-details" element={<ServiceDetailsPage />} />
         <Route path="/about-us" element={<AboutUsPage />} />
-        <Route path="/about-us-2" element={<AboutUsTwoPage />} />
         <Route path="/testimonial" element={<TestimonialPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/faq" element={<FaqPage />} />
@@ -68,8 +59,6 @@ export default function AppNavigation() {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/wishlist" element={<WishlistPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
-        <Route path="/blog" element={<BlogPage />} />
-        <Route path="/blog-grid" element={<BlogGridPage />} />
         <Route path="/blog-details/:id" element={<BlogDetailsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<NotFoundPage />} />
