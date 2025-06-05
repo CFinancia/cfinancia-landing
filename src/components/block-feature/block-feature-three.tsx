@@ -44,7 +44,7 @@ const BlockFeatureThree = () => {
                   <div className="d-flex align-items-center justify-content-between">
                     <div className="tag text-uppercase fw-500">Contáctanos</div>
                     <NavLink
-                      to="/"
+                      to="/contacto"
                       className="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"
                     >
                       <i className="bi bi-arrow-up-right"></i>
@@ -100,7 +100,7 @@ const BlockFeatureThree = () => {
           </div>
 
           <div className="section-btn sm-mt-40">
-            <NavLink to="/" className="btn-five icon-link">
+            <NavLink to="/contacto" className="btn-five icon-link">
               <span className="text">Contáctanos</span>
               <div className="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
                 <i className="bi bi-arrow-up-right"></i>

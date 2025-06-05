@@ -25,20 +25,20 @@ const Footer = () => {
             <h5 className="footer-title">Links</h5>
             <ul className="footer-nav-link style-none">
               <li><NavLink to="/">Home</NavLink></li>
-              <li><NavLink to="/pricing">Factoring</NavLink></li>
+              <li><NavLink to="/servicios-factoring">Factoring</NavLink></li>
             </ul>
           </div>
           <div className="col-xl-2 col-md-3 col-sm-4 mb-20">
             <h5 className="footer-title">Nuestra Empresa</h5>
             <ul className="footer-nav-link style-none">
-              <li><NavLink to="/blog">Blog</NavLink></li>
-              <li><NavLink to="/contact">Contáctanos</NavLink></li>
+              <li><NavLink to="/blog-factoring/1">Blog</NavLink></li>
+              <li><NavLink to="/contacto">Contáctanos</NavLink></li>
             </ul>
           </div>
           <div className="col-xl-2 col-md-3 col-sm-4 mb-20">
             <h5 className="footer-title">Servicio al Cliente</h5>
             <ul className="footer-nav-link style-none">
-              <li><NavLink to="/contact">Contáctanos</NavLink></li>
+              <li><NavLink to="/contacto">Contáctanos</NavLink></li>
             </ul>
           </div>
         </div>

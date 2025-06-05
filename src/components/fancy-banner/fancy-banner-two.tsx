@@ -22,7 +22,7 @@ const FancyBannerTwo = () => {
                 <NavLink to="https://cfinancia-prod-clientes.cesionbnk.com" className="btn-four mt-10 me-2">
                   Regístrate
                 </NavLink>
-                <NavLink to="/" className="btn-six mt-10 ms-2">
+                <NavLink to="/contacto" className="btn-six mt-10 ms-2">
                   Contáctanos
                 </NavLink>
               </div>
