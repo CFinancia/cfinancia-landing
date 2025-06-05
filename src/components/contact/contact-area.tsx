@@ -85,14 +85,6 @@ const ContactArea = () => {
       </div>
       <div className="map-banner mt-120 lg-mt-80">
         <div className="gmap_canvas h-100 w-100">
-          {/* <iframe
-            className="gmap_iframe h-100 w-100"
-            src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=dhaka collage&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-          ></iframe> */}
-          {/* <iframe
-            className="gmap_iframe h-100 w-100"
-            src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=es&amp;q=Cra, 16 #93-11, Bogota&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-          ></iframe> */}
           <iframe
             className="gmap_iframe h-100 w-100"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.5310159768137!2d-74.05736113224587!3d4.677352631495534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a92b81bbb37%3A0x696b12127657c9c8!2zQ3JhLCAxNiAjOTMtMTEsIEJvZ290w6E!5e0!3m2!1ses!2sco!4v1748389911223!5m2!1ses!2sco"
