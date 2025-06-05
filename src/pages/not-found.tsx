@@ -9,6 +9,10 @@ export default function NotFoundPage() {
 
       {/* seo title */}
       <SEOCom title="Not Found" />
+      <SEOCom
+        title="Not Found"
+        url="https://cfinancia.com/not-found"
+      />
       {/* seo title */}
 
       <div className="main-page-wrapper">

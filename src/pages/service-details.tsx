@@ -15,7 +15,10 @@ export default function ServiceDetailsPage() {
   return (
     <Wrapper>
       {/* seo title */}
-      <SEOCom title="Factoring empresarial" />
+      <SEOCom
+        title="Factoring empresarial"
+        url="https://cfinancia.com/servicios-factoring"
+      />
       {/* seo title */}
 
       <div className="main-page-wrapper">

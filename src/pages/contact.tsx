@@ -11,7 +11,10 @@ export default function ContactPage() {
     <Wrapper>
 
       {/* seo title */}
-      <SEOCom title="Contact" />
+      <SEOCom
+        title="Contacto"
+        url="https://cfinancia.com/contacto"
+      />
       {/* seo title */}
 
       <div className="main-page-wrapper">

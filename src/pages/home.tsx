@@ -21,7 +21,10 @@ export default function Home() {
     <Wrapper>
 
       {/* seo title */}
-      <SEOCom title="C-Financia" />
+      <SEOCom
+        title="C-Financia"
+        url="https://cfinancia.com/"
+      />
       {/* seo title */}
 
       <div className="main-page-wrapper">

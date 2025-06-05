@@ -24,7 +24,18 @@ export default function BlogDetailsPage() {
   return (
     <Wrapper>
       {/* seo title */}
-      <SEOCom title="Blog Details" />
+      {id == "1" ? (
+        <SEOCom
+          title="Blog | ¿Qué es el factoring?"
+          url="https://cfinancia.com/blog-factoring/1"
+        />
+      ) : (
+        <SEOCom
+          title="Blog | Artículo de finanzas"
+          url="https://cfinancia.com/blog-factoring/2"
+        />
+      )
+      }
       {/* seo title */}
 
       <div className="main-page-wrapper">
