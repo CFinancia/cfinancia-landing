@@ -9,14 +9,14 @@ import FancyBannerTwo from "../components/fancy-banner/fancy-banner-two";
 import FaqSectionOne from "../components/faq/faq-section-one";
 import HeroBannerTwo from "../components/hero-banner/hero-banner-2";
 import TextFeatureOne from "../components/text-feature/text-feature-one";
-import FooterOne from "../layout/footer/footer-one";
-import HeaderTwo from "../layout/header/header-two";
+import Footer from "../layout/footer/footer";
+import Header from "../layout/header/header";
 import TextFeatureNine from "@/components/text-feature/text-feature-nine";
 import FancyBannerNine from "@/components/fancy-banner/fancy-banner-nine";
 
 
 
-export default function HomePageTwo() {
+export default function Home() {
   return (
     <Wrapper>
 
@@ -26,7 +26,7 @@ export default function HomePageTwo() {
 
       <div className="main-page-wrapper">
         {/* header start */}
-        <HeaderTwo />
+        <Header />
         {/* header end */}
         <main>
           {/* hero banner start */}
@@ -75,7 +75,7 @@ export default function HomePageTwo() {
         </main>
 
         {/* footer start */}
-        <FooterOne/>
+        <Footer/>
         {/* footer end */}
       </div>
     </Wrapper>

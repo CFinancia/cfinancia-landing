@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 // internal
 import FooterSocial from './footer-social';
 
-const FooterOne = () => {
+const Footer = () => {
   return (
     <div className="footer-one">
     <div className="container">
@@ -73,4 +73,4 @@ const FooterOne = () => {
   );
 };
 
-export default FooterOne;
+export default Footer;

@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import Wrapper from "../layout/wrapper";
 import SEOCom from "../components/seo";
-import HeaderOne from "../layout/header/header-one";
+import Header from "@/layout/header/header";
 
 export default function NotFoundPage() {
   return (
@@ -13,7 +13,7 @@ export default function NotFoundPage() {
 
       <div className="main-page-wrapper">
         {/* header start */}
-        <HeaderOne />
+        <Header />
         {/* header end */}
         <main>
           <div className="error-page text-center d-flex align-items-center justify-content-center flex-column light-bg position-relative">

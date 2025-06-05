@@ -1,10 +1,10 @@
 import Wrapper from "../layout/wrapper";
 import SEOCom from "../components/seo";
-import HeaderTwo from "../layout/header/header-two";
 import BreadcrumbOne from "../components/breadcrumb/breadcrumb-one";
 import NewsletterBanner from "../components/newsletter/newsletter-banner";
 import ContactArea from "../components/contact/contact-area";
-import FooterOne from "@/layout/footer/footer-one";
+import Header from "@/layout/header/header";
+import Footer from "@/layout/footer/footer";
 
 export default function ContactPage() {
   return (
@@ -16,7 +16,7 @@ export default function ContactPage() {
 
       <div className="main-page-wrapper">
         {/* header start */}
-        <HeaderTwo/>
+        <Header/>
         {/* header end */}
         <main>
           {/* breadcrumb start */}
@@ -38,7 +38,7 @@ export default function ContactPage() {
         </main>
 
         {/* footer start */}
-        <FooterOne/>
+        <Footer/>
         {/* footer end */}
       </div>
     

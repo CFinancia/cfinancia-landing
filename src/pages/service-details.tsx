@@ -1,15 +1,15 @@
 import Wrapper from "../layout/wrapper";
 import SEOCom from "../components/seo";
-import HeaderTwo from "../layout/header/header-two";
 import BreadcrumbOne from "../components/breadcrumb/breadcrumb-one";
 import FancyBannerThree from "../components/fancy-banner/fancy-banner-three";
 import NewsletterBanner from "../components/newsletter/newsletter-banner";
-import FooterOne from "@/layout/footer/footer-one";
 import BlockFeatureTen from "@/components/block-feature/block-feature-ten";
 import FancyBannerSix from "@/components/fancy-banner/fancy-banner-six";
 import FaqSectionOne from "@/components/faq/faq-section-one";
 import FancyBannerTen from "@/components/fancy-banner/fancy-banner-ten";
 import TextFeatureFive from "@/components/text-feature/text-feature-five";
+import Header from "@/layout/header/header";
+import Footer from "@/layout/footer/footer";
 
 export default function ServiceDetailsPage() {
   return (
@@ -20,7 +20,7 @@ export default function ServiceDetailsPage() {
 
       <div className="main-page-wrapper">
         {/* header start */}
-        <HeaderTwo />
+        <Header />
         {/* header end */}
         <main>
           {/* breadcrumb start */}
@@ -65,7 +65,7 @@ export default function ServiceDetailsPage() {
         </main>
 
         {/* footer start */}
-        <FooterOne />
+        <Footer />
         {/* footer end */}
       </div>
     </Wrapper>

@@ -3,12 +3,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import Wrapper from "../layout/wrapper";
 import SEOCom from "../components/seo";
 import BreadcrumbOne from "../components/breadcrumb/breadcrumb-one";
-import HeaderTwo from "../layout/header/header-two";
 import blog_data from "../data/blog-data";
 import BlogDetailsArea from "../components/blogs/blog-details/blog-details-area";
 import FancyBannerThree from "../components/fancy-banner/fancy-banner-three";
 import NewsletterBanner from "../components/newsletter/newsletter-banner";
-import FooterOne from "@/layout/footer/footer-one";
+import Header from "@/layout/header/header";
+import Footer from "@/layout/footer/footer";
 
 export default function BlogDetailsPage() {
   const { id } = useParams();
@@ -29,7 +29,7 @@ export default function BlogDetailsPage() {
 
       <div className="main-page-wrapper">
         {/* header start */}
-        <HeaderTwo />
+        <Header />
         {/* header end */}
         <main>
           {/* breadcrumb start */}
@@ -77,7 +77,7 @@ export default function BlogDetailsPage() {
         </main>
 
         {/* footer start */}
-        <FooterOne />
+        <Footer />
         {/* footer end */}
       </div>
     </Wrapper>
