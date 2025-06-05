@@ -3,6 +3,7 @@
 import type React from "react";
 
 import { useState, useEffect, useRef } from "react";
+import companies from "../../public/companies.json";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   CalculatorIcon,
@@ -306,14 +307,9 @@ export function Calculator() {
                         aria-label="Pagador de la factura"
                       >
                         <option value="">Selecciona un cliente</option>
-                        {[
-                          { id: "ecopetrol", nombre: "Ecopetrol" },
-                          { id: "d1", nombre: "D1" },
-                          { id: "tecnoquimicas", nombre: "Tecnoquímicas" },
-                          { id: "colsubsidio", nombre: "Colsubsidio" },
-                        ].map((p) => (
-                          <option key={p.id} value={p.id}>
-                            {p.nombre}
+                        {companies.map((company) => (
+                          <option key={company.nit} value={company.empresa}>
+                            {company.empresa}
                           </option>
                         ))}
                       </select>
@@ -324,23 +320,23 @@ export function Calculator() {
                         </label>
                         <div className="d-flex flex-wrap gap-2 mt-2">
                           {[
-                            { id: "ecopetrol", nombre: "Ecopetrol" },
-                            { id: "d1", nombre: "D1" },
-                            { id: "tecnoquimicas", nombre: "Tecnoquímicas" },
-                            { id: "colsubsidio", nombre: "Colsubsidio" },
-                          ].map((p) => (
+                            { nit: "899999068", empresa: "ECOPETROL SA" },
+                            { nit: "900276962", empresa: "D1 SAS" },
+                            { nit: "890300466", empresa: "TECNOQUIMICAS SA" },
+                            { nit: "830003564", empresa: "COLSUBSIDIO EPS" },
+                          ].map((company) => (
                             <button
-                              key={p.id}
+                              key={company.nit}
                               type="button"
                               className={`btn btn-outline-secondary ${
-                                pagador === p.id
+                                pagador === company.nit
                                   ? "active bg-light border-success text-lime-500"
                                   : ""
                               }`}
-                              onClick={() => setPagador(p.id)}
-                              aria-label={p.nombre}
+                              onClick={() => setPagador(company.nit)}
+                              aria-label={company.empresa}
                             >
-                              {p.nombre}
+                              {company.empresa}
                             </button>
                           ))}
                         </div>
