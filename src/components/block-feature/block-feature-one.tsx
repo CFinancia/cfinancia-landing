@@ -53,7 +53,7 @@ const BlockFeatureOne = ({ style_2 = false }: { style_2?: boolean }) => {
 									<img src={item.icon} alt="icon" className="lazy-img icon me-auto" />
 									<h4 className="fw-bold mt-30 mb-25">{item.title}</h4>
 									<p className="mb-20">{item.desc}</p>
-									<NavLink to="/" className="arrow-btn tran3s mt-auto stretched-link">
+									<NavLink to="/servicios-factoring" className="arrow-btn tran3s mt-auto stretched-link">
 										<img src="/assets/images/icon/icon_09.svg" alt="arrow" className="lazy-img" />
 									</NavLink>
 								</div>
@@ -63,7 +63,7 @@ const BlockFeatureOne = ({ style_2 = false }: { style_2?: boolean }) => {
 
 					<div className="section-subheading sm-mt-40">
 						<p className="text-lg">Facilitamos el acceso a capital de trabajo, para que toda tu cadena de valor fluya sin contratiempos.</p>
-						<NavLink to="/service-v1" className="btn-three icon-link">
+						<NavLink to="/servicios-factoring" className="btn-three icon-link">
 							<span>Financiación para empresas</span>
 							<img src="/assets/images/icon/icon_09.svg" alt="arrow" className="lazy-img icon ms-1" />
 						</NavLink>

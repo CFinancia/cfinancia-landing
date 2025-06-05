@@ -24,7 +24,7 @@ const BlockFeatureThree = () => {
                   </div>
                   <div className="col-lg-7">
                     <h3 className="block-title d-inline-block position-relative">
-                      <NavLink to="/project-details-v1">
+                      <NavLink to="/contacto">
                         Agenda una cita con nuestros asesores
                       </NavLink>
                     </h3>
@@ -36,7 +36,7 @@ const BlockFeatureThree = () => {
                 <div className="img-wrapper"></div>
                 <div className="text-wrapper bg-white">
                   <h3 className="block-title d-inline-block position-relative mt-5 mb-40 lg-mb-30">
-                    <NavLink to="/project-details-v1">
+                    <NavLink to="/contacto">
                       Completa nuestro formulario de contacto y permítenos
                       ayudarte en tus necesidades financieras.
                     </NavLink>
@@ -61,7 +61,7 @@ const BlockFeatureThree = () => {
               >
                 <div className="date">Autoatención Comercial</div>
                 <h3 className="block-title d-inline-block position-relative mt-20 mb-80 lg-mb-50">
-                  <NavLink to="/project-details-v1">
+                  <NavLink to="/contacto">
                     Optimiza tu experiencia con nuestro chatbot personalizado.
                     Respuestas rápidas y asesoramiento sobre factoring en tiempo
                     real.
@@ -70,7 +70,7 @@ const BlockFeatureThree = () => {
                 <div className="d-flex align-items-center justify-content-between">
                   <div className="tag text-uppercase fw-500">CHATBOT</div>
                   <NavLink
-                    to="/"
+                    to="/contacto"
                     className="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"
                   >
                     <i className="bi bi-arrow-up-right"></i>
@@ -82,14 +82,14 @@ const BlockFeatureThree = () => {
                 data-wow-delay="0.2s"
               >
                 <h3 className="block-title d-inline-block position-relative mt-20 mb-250 lg-mb-150 sm-mb-100">
-                  <NavLink to="/">
+                  <NavLink to="/contacto">
                     Contacta a través de WhatsApp.
                   </NavLink>
                 </h3>
                 <div className="d-flex align-items-center justify-content-between">
                   <div className="tag text-uppercase fw-500">WHATSAPP</div>
                   <NavLink
-                    to="/project-details-v1"
+                    to="/contacto"
                     className="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"
                   >
                     <i className="bi bi-arrow-up-right"></i>

@@ -53,7 +53,7 @@ const BlogSidebar = () => {
           ></figure>
           <div className="post-data">
             <div className="date">{b.date}</div>
-            <NavLink to={`/blog-details/${b.id}`} className="blog-title">
+            <NavLink to={`/blog-factoring/${b.id}`} className="blog-title">
               <h3>{b.title}</h3>
             </NavLink>
           </div>
@@ -95,7 +95,7 @@ const BlogSidebar = () => {
           ¿Alguna pregunta? <br />
           Hablemos
         </h3>
-        <NavLink to="/contact" className="tran3s fw-500">
+        <NavLink to="/contacto" className="tran3s fw-500">
           Agendar Reunión
         </NavLink>
       </div>
