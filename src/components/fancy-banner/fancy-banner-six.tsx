@@ -13,7 +13,7 @@ const FancyBannerSix = () => {
             <p className="text-white text-xl pt-10 pb-20">
               Activa tu cuenta y comienza en minutos
             </p>
-            <NavLink to="https://cfinancia-prod-clientes.cesionbnk.com/"
+            <NavLink to="https://app.cesionbnk.com/cfinancia/vinculaciones"
               className="btn-seventeen d-inline-flex align-items-center tran3s"
             >
               <span className="text">Regístrate Gratis</span>

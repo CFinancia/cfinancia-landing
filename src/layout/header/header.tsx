@@ -28,7 +28,7 @@ const HeaderTwo = () => {
                 </li>
                 <li className="d-none d-md-inline-block ms-3 ms-xl-5">
                   <a
-                    href="https://cfinancia-prod-clientes.cesionbnk.com/"
+                    href="https://app.cesionbnk.com/cfinancia/vinculaciones"
                     className="btn-one tran3s"
                   >
                     Regístrate

@@ -99,7 +99,7 @@ const Navbar = ({ logo_white = false }: { logo_white?: boolean }) => {
       ))}
       <li className="d-md-none ps-2 pe-2">
         <a
-          href="https://cfinancia-prod-clientes.cesionbnk.com/"
+          href="https://app.cesionbnk.com/cfinancia/vinculaciones"
           className="signup-btn-one icon-link w-100 mt-20"
         >
           <span className="flex-fill text-black text-center" style={{background: "#CFFF45"}}>Regístrate</span>

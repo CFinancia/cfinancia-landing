@@ -27,7 +27,7 @@ const TextFeatureFive = () => {
                   <li>100% digital</li>
                 </ul>
                 <NavLink
-                  to="https://cfinancia-prod-clientes.cesionbnk.com/"
+                  to="https://app.cesionbnk.com/cfinancia/vinculaciones"
                   className="btn-eleven d-inline-flex align-items-center mt-40"
                 >
                   <span className="text">Comenzar ahora gratis</span>
