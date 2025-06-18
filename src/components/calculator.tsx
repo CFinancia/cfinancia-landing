@@ -153,7 +153,7 @@ export function Calculator() {
 
   const enviarCorreo = async () => {
     try {
-      const response = await fetch("https://hwwqudd0fa.execute-api.us-east-1.amazonaws.com/Prod/sistema/envieCorreo", {
+      const response = await fetch("https://hwwqudd0fa.execute-api.us-east-1.amazonaws.com/Prod/sistema/envieCorreoLanding", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ idTenant: "265a0493-740a-11ee-a243-12a5defed043", valorFactura: valorFactura, pagador: pagador, correo: email }),
