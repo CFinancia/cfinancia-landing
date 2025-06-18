@@ -117,8 +117,11 @@ export function Calculator() {
   };
 
   const handleCalculate = () => {
-    if (valorFactura > 0) {
+    if (valorFactura > 0 && pagador && validateEmail(email)) {
       setShowResults(true);
+      enviarCorreo(); // Aquí se hace el envío con fetch
+    } else {
+      console.warn("Faltan datos para enviar el correo.");
     }
   };
 
@@ -146,6 +149,25 @@ export function Calculator() {
     if (activeStep === 2) return pagador === "";
     if (activeStep === 3) return email === "" || !validateEmail(email);
     return false;
+  };
+
+  const enviarCorreo = async () => {
+    try {
+      const response = await fetch("https://hwwqudd0fa.execute-api.us-east-1.amazonaws.com/Prod/sistema/envieCorreo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ idTenant: "265a0493-740a-11ee-a243-12a5defed043", valorFactura: valorFactura, pagador: pagador, correo: email }),
+      });
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log("Correo enviado con éxito:", data.message);
+      } else {
+        console.error("Error al enviar el correo:", data.message);
+      }
+    } catch (error) {
+      console.error("Error inesperado al enviar el correo:", error);
+    }
   };
 
   const renderStepper = () => {
