@@ -355,11 +355,11 @@ export function Calculator() {
                               key={company.nit}
                               type="button"
                               className={`btn btn-outline-secondary ${
-                                pagador === company.nit
+                                pagador === company.empresa
                                   ? "active bg-light border-success text-lime-500"
                                   : ""
                               }`}
-                              onClick={() => setPagador(company.nit)}
+                              onClick={() => setPagador(company.empresa)}
                               aria-label={company.empresa}
                             >
                               {company.empresa}
