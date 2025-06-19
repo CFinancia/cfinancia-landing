@@ -152,21 +152,25 @@ export function Calculator() {
   };
 
   const enviarCorreo = async () => {
-    try {
-      const response = await fetch("https://hwwqudd0fa.execute-api.us-east-1.amazonaws.com/Prod/sistema/envieCorreoLanding", {
+    const response = await fetch(
+      "https://hwwqudd0fa.execute-api.us-east-1.amazonaws.com/Prod/sistema/envieCorreoLanding",
+      {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ tenantId: "265a0493-740a-11ee-a243-12a5defed043", valorFactura: valorFactura, pagador: pagador, correo: email }),
-      });
-      const data = await response.json();
-
-      if (response.ok) {
-        console.log("Correo enviado con éxito:", data.message);
-      } else {
-        console.error("Error al enviar el correo:", data.message);
+        body: JSON.stringify({
+          tenantId: "265a0493-740a-11ee-a243-12a5defed043",
+          valorFactura: valorFactura,
+          pagador: pagador,
+          correo: email,
+        }),
       }
-    } catch (error) {
-      console.error("Error inesperado al enviar el correo:", error);
+    );
+    const data = await response.json();
+
+    if (response.ok) {
+      console.log("Correo enviado con éxito:", data.message);
+    } else {
+      console.error("Error al enviar el correo:", data.message);
     }
   };
 
