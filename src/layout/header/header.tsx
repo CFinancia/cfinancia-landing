@@ -11,7 +11,7 @@ const HeaderTwo = () => {
           <div className="d-flex align-items-center justify-content-between">
             <div className="logo order-lg-0">
               <NavLink to="/" className="d-flex align-items-center">
-                <img src="/assets/images/logo/c-financia.svg" alt="logo" />
+                <img src="https://public.cesionbnk.com/static/logo/LogoCFinanciaBlanco.png" alt="logo" width={200} />
               </NavLink>
             </div>
 
