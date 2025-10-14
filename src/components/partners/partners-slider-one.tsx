@@ -34,10 +34,7 @@ const slider_setting = {
 // slider logos
 const slider_logos: string[] = [
   '/assets/images/logo/munichre.png',
-  '/assets/images/logo/apex.jpg',
   '/assets/images/logo/cavca.png',
-  '/assets/images/logo/fineco.jpg',
-  '/assets/images/logo/iris.jpg',
   '/assets/images/logo/kandeo.png'
 ];
 
