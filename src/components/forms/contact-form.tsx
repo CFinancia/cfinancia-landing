@@ -28,8 +28,27 @@ const ContactForm = () => {
   } = useForm<FormData>({
     resolver: yupResolver(schema),
   });
-  const onSubmit = handleSubmit((data) => {
-    alert(JSON.stringify(data));
+  const onSubmit = handleSubmit(async (data) => {
+    try {
+      await fetch(
+        "https://hwwqudd0fa.execute-api.us-east-1.amazonaws.com/Prod/sistema/envieCorreoLanding",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            tenantId: "265a0493-740a-11ee-a243-12a5defed043",
+            nombre: data.name,
+            empresa: data.company,
+            correo: data.email,
+            telefono: data.phone,
+            mensaje: data.message,
+            origen: "landing-contacto",
+          }),
+        }
+      );
+    } catch (err) {
+      console.error("Error al enviar el mensaje:", err);
+    }
     reset();
   });
   return (

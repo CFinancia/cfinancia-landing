@@ -5,6 +5,7 @@ import BlogDetailsPage from "../pages/blog-details";
 import NotFoundPage from "../pages/not-found";
 import ServiceDetailsPage from "../pages/service-details";
 import Home from "../pages/home";
+import DispapelesPage from "../aliados/dispapeles/index";
 
 
 export default function AppNavigation() {
@@ -13,6 +14,7 @@ export default function AppNavigation() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/dispapeles" element={<DispapelesPage />} />
         <Route path="/index" element={<Home />} />
         <Route path="/servicios-factoring" element={<ServiceDetailsPage />} />
         <Route path="/blog-factoring/:id" element={<BlogDetailsPage />} />
