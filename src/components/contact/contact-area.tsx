@@ -40,7 +40,7 @@ const ContactArea = () => {
                   <AddressBlock
                     icon="/assets/images/icon/icon_91.svg"
                     title="Teléfono de Contacto"
-                    subtitle='+57 (1) 381 49 90 <br/><a href="#" className="call text-lg fw-500">+57 320 7202593</a>'
+                    subtitle='+57 (1) 381 49 90 <br/><a href="#" className="call text-lg fw-500">+57 316 742 1086</a>'
                   />
                 </div>
                 <div className="col-md-4">
