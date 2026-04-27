@@ -37,6 +37,7 @@ const DispapelesForm = () => {
   const [submitted, setSubmitted] = useState(false);
   const [searchParams] = useSearchParams();
   const companyParam = getFirstSearchParam(searchParams, [
+    "Empresa",
     "Nombre Empresa",
     "nombreEmpresa",
     "nombre_empresa",
@@ -45,8 +46,8 @@ const DispapelesForm = () => {
   ]);
   const nitParam = getFirstSearchParam(searchParams, [
     "NIT",
-    "nit",
     "Nit",
+    "nit",
     "documento",
     "numeroDocumento",
   ]);
