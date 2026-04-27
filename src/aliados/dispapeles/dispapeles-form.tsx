@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useSearchParams } from "react-router-dom";
 import ErrorMsg from './err-msg';
 
 type FormData = {
@@ -20,10 +21,41 @@ const schema = yup.object().shape({
   phone: yup.string().required("El teléfono es requerido").label("Phone"),
 });
 
+const getFirstSearchParam = (
+  searchParams: URLSearchParams,
+  keys: string[]
+) => {
+  for (const key of keys) {
+    const value = searchParams.get(key);
+    if (value?.trim()) return value.trim();
+  }
+
+  return "";
+};
+
 const DispapelesForm = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [searchParams] = useSearchParams();
+  const companyParam = getFirstSearchParam(searchParams, [
+    "Nombre Empresa",
+    "nombreEmpresa",
+    "nombre_empresa",
+    "empresa",
+    "company",
+  ]);
+  const nitParam = getFirstSearchParam(searchParams, [
+    "NIT",
+    "nit",
+    "Nit",
+    "documento",
+    "numeroDocumento",
+  ]);
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<FormData>({
     resolver: yupResolver(schema),
+    defaultValues: {
+      company: companyParam,
+      nit: nitParam,
+    },
   });
 
   const onSubmit = handleSubmit(async (data) => {
@@ -95,22 +127,6 @@ const DispapelesForm = () => {
       </p>
       <form id="dispapeles-form" onSubmit={onSubmit}>
         <div className="row controls">
-          <div className="col-12">
-            <div className="input-group-meta form-group mb-4">
-              <label className="fw-medium mb-1 text-dark" htmlFor="name" style={{ fontSize: '0.9rem' }}>Nombre Completo*</label>
-              <input
-                type="text"
-                className="form-control shadow-none transition-all py-3 bg-light border-0"
-                style={{ borderRadius: '10px' }}
-                placeholder="Ingresa tu nombre"
-                autoComplete="name"
-                {...register("name")} id='name'
-              />
-              <div className="help-block with-errors mt-1 text-danger">
-                {errors.name && <ErrorMsg msg={errors.name.message as string} />}
-              </div>
-            </div>
-          </div>
           <div className="col-md-6">
             <div className="input-group-meta form-group mb-4">
               <label className="fw-medium mb-1 text-dark" htmlFor="company" style={{ fontSize: '0.9rem' }}>Empresa*</label>
@@ -141,6 +157,22 @@ const DispapelesForm = () => {
               />
               <div className="help-block with-errors mt-1 text-danger">
                 {errors.nit && <ErrorMsg msg={errors.nit.message as string} />}
+              </div>
+            </div>
+          </div>
+          <div className="col-12">
+            <div className="input-group-meta form-group mb-4">
+              <label className="fw-medium mb-1 text-dark" htmlFor="name" style={{ fontSize: '0.9rem' }}>Nombre Completo*</label>
+              <input
+                type="text"
+                className="form-control shadow-none transition-all py-3 bg-light border-0"
+                style={{ borderRadius: '10px' }}
+                placeholder="Ingresa tu nombre"
+                autoComplete="name"
+                {...register("name")} id='name'
+              />
+              <div className="help-block with-errors mt-1 text-danger">
+                {errors.name && <ErrorMsg msg={errors.name.message as string} />}
               </div>
             </div>
           </div>
