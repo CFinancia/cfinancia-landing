@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useSearchParams } from "react-router-dom";
 import ErrorMsg from './err-msg';
+import { destinatariosLandingPorOrigen } from '@/lib/getLandingCorreos';
 
 type FormData = {
   name: string;
@@ -68,6 +69,7 @@ const DispapelesForm = () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             tenantId: "265a0493-740a-11ee-a243-12a5defed043",
+            ...destinatariosLandingPorOrigen("alianza-dispapeles"),
             nombre: data.name,
             empresa: data.company,
             nit: data.nit,

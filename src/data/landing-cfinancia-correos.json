@@ -1,0 +1,16 @@
+{
+  "origenes": {
+    "landing-cotizacion": {
+      "para": ["jmartinez+cotizacion@cesionbnk.com"],
+      "copia": []
+    },
+    "landing-contacto": {
+      "para": ["jmartinez+contacto@cesionbnk.com"],
+      "copia": []
+    },
+    "alianza-dispapeles": {
+      "para": ["jmartinez+dispapeles@cesionbnk.com"],
+      "copia": []
+    }
+  }
+}

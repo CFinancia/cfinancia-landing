@@ -19,6 +19,7 @@ import { Modal } from "react-bootstrap";
 import { Button } from "@/ui/button";
 import { Label } from "@/ui/label";
 import { Input } from "@/ui/input";
+import { destinatariosLandingPorOrigen } from "@/lib/getLandingCorreos";
 
 export function Calculator() {
   const [valorFactura, setValorFactura] = useState<number>(0);
@@ -159,6 +160,8 @@ export function Calculator() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           tenantId: "265a0493-740a-11ee-a243-12a5defed043",
+          ...destinatariosLandingPorOrigen("landing-cotizacion"),
+          origen: "landing-cotizacion",
           valorFactura: valorFactura,
           pagador: pagador,
           correo: email,

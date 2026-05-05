@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import ErrorMsg from "../common/err-msg";
+import { destinatariosLandingPorOrigen } from "@/lib/getLandingCorreos";
 
 type FormData = {
   name: string;
@@ -37,6 +38,7 @@ const ContactForm = () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             tenantId: "265a0493-740a-11ee-a243-12a5defed043",
+            ...destinatariosLandingPorOrigen("landing-contacto"),
             nombre: data.name,
             empresa: data.company,
             correo: data.email,
