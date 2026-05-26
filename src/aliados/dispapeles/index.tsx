@@ -108,7 +108,7 @@ export default function DispapelesPage() {
                       </div>
 
                       <h1 className="display-4 fw-bold mb-4 text-dark">
-                        Convierte tus <span style={{ color: "#a3e635" }}>Facturas de Dispapeles</span> en liquidez inmediata.
+                        Convierte tus <span style={{ color: "#a3e635" }}>Facturas de Venta</span> en liquidez inmediata.
                       </h1>
 
                       <p className="fs-5 mb-5 text-muted" style={{ opacity: 0.9, lineHeight: "1.6" }}>
