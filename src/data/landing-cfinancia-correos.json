@@ -1,16 +1,26 @@
 {
   "origenes": {
     "landing-cotizacion": {
-      "para": ["jmartinez+cotizacion@cesionbnk.com"],
+      "para": [
+        "jmartinez+cotizacion@cesionbnk.com",
+        "philip.s+cotizacion@cfinancia.com"
+      ],
       "copia": []
     },
     "landing-contacto": {
-      "para": ["jmartinez+contacto@cesionbnk.com"],
+      "para": [
+        "jmartinez+contacto@cesionbnk.com",
+        "philip.s+cotizacion@cfinancia.com"
+      ],
       "copia": []
     },
     "alianza-dispapeles": {
-      "para": ["alianzas@cfinancia.com"],
-      "copia": ["jmartinez+dispapeles@cesionbnk.com"]
+      "para": [
+        "alianzas@cfinancia.com"
+      ],
+      "copia": [
+        "jmartinez+dispapeles@cesionbnk.com"
+      ]
     }
   }
 }
