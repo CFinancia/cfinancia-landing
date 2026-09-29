@@ -81,3 +81,186 @@
         }
     }
 }
+// PQR modal
+.pqr-modal {
+    border: none;
+    border-radius: 30px;
+    overflow: hidden;
+    background: $light-bg-one;
+    .pqr-modal-header {
+        position: relative;
+        background: $color-two;
+        color: #fff;
+        padding: 40px 45px 35px;
+        h3 {
+            font-family: $sub-font;
+            color: #fff;
+            font-size: 32px;
+            line-height: 1.2em;
+            margin: 15px 0 8px;
+            padding-right: 30px;
+        }
+        p {
+            color: rgba($color: #fff, $alpha: 0.6);
+            margin: 0;
+        }
+    }
+    .pqr-badge {
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $color-two;
+        background: $color-one;
+        border-radius: 30px;
+        padding: 4px 14px;
+    }
+    .pqr-close {
+        position: absolute;
+        top: 22px;
+        right: 22px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: none;
+        color: #fff;
+        background: rgba($color: #fff, $alpha: 0.1);
+        @include transition(0.3s);
+        &:hover {
+            background: $color-one;
+            color: $color-two;
+        }
+    }
+    .pqr-modal-body {
+        padding: 35px 45px 45px;
+    }
+}
+.pqr-form {
+    .pqr-field {
+        margin-bottom: 22px;
+    }
+    .pqr-label {
+        display: block;
+        font-size: 15px;
+        color: rgba($color: #000000, $alpha: 0.5);
+        margin-bottom: 6px;
+    }
+    .pqr-optional {
+        font-size: 13px;
+        opacity: 0.7;
+    }
+    input[type="text"], input[type="email"], input[type="tel"], textarea {
+        width: 100%;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        background: #fff;
+        font-size: 17px;
+        color: $text-dark;
+        outline: none;
+        @include transition(0.2s);
+        &:focus {
+            border-color: $color-two;
+            box-shadow: 0 0 0 3px rgba($color: $color-one, $alpha: 0.6);
+        }
+    }
+    input[type="text"], input[type="email"], input[type="tel"] {
+        height: 55px;
+        padding: 0 20px;
+    }
+    textarea {
+        height: 130px;
+        padding: 15px 20px;
+        resize: none;
+    }
+    .pqr-types {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+    }
+    .pqr-type {
+        cursor: pointer;
+        input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .pqr-type-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            padding: 16px 8px;
+            border-radius: 12px;
+            background: #fff;
+            border: 2px solid transparent;
+            font-weight: 500;
+            color: $heading;
+            @include transition(0.2s);
+            i {
+                font-size: 22px;
+            }
+        }
+        &:hover .pqr-type-box {
+            border-color: rgba($color: $color-two, $alpha: 0.2);
+        }
+        input:checked + .pqr-type-box {
+            background: $color-two;
+            border-color: $color-two;
+            color: #fff;
+            i { color: $color-one; }
+        }
+        input:focus-visible + .pqr-type-box {
+            box-shadow: 0 0 0 3px rgba($color: $color-one, $alpha: 0.8);
+        }
+    }
+    .pqr-check {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 15px;
+        color: rgba($color: #000000, $alpha: 0.6);
+        cursor: pointer;
+        input {
+            margin-top: 4px;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            accent-color: $color-two;
+        }
+    }
+    .pqr-error {
+        display: block;
+        font-size: 13px;
+        margin-top: 5px;
+        color: #ff4d44;
+    }
+    .btn-four {
+        font-weight: 500;
+        line-height: 58px;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-radius: 8px;
+        border: none;
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .pqr-modal {
+        border-radius: 20px;
+        .pqr-modal-header {
+            padding: 30px 22px 25px;
+            h3 { font-size: 24px; }
+        }
+        .pqr-modal-body {
+            padding: 25px 22px 30px;
+        }
+    }
+    .pqr-form .pqr-types {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

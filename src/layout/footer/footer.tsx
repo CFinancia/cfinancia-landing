@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { Modal } from "react-bootstrap";
 // internal
 import FooterSocial from "./footer-social";
+import PqrForm from "@/components/forms/pqr-form";
 
 const Footer = () => {
+  const [showPqr, setShowPqr] = useState(false);
   return (
     <div className="footer-one">
       <div className="container">
@@ -57,6 +61,17 @@ const Footer = () => {
                 <li>
                   <NavLink to="/contacto">Contáctanos</NavLink>
                 </li>
+                <li>
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setShowPqr(true);
+                    }}
+                  >
+                    PQR
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -92,6 +107,32 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* PQR modal */}
+      <Modal
+        show={showPqr}
+        onHide={() => setShowPqr(false)}
+        centered
+        size="lg"
+        contentClassName="pqr-modal"
+      >
+        <div className="pqr-modal-header">
+          <button
+            type="button"
+            className="pqr-close"
+            aria-label="Cerrar"
+            onClick={() => setShowPqr(false)}
+          >
+            <i className="bi bi-x-lg"></i>
+          </button>
+          <span className="pqr-badge">Servicio al Cliente</span>
+          <h3>Peticiones, Quejas, Reclamos y Sugerencias</h3>
+          <p>Cuéntanos qué necesitas y te responderemos lo antes posible.</p>
+        </div>
+        <Modal.Body className="pqr-modal-body">
+          <PqrForm onSuccess={() => setShowPqr(false)} />
+        </Modal.Body>
+      </Modal>
     </div>
   );
 };
