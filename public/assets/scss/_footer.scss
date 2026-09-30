@@ -29,6 +29,52 @@
         color: #fff;
         margin-bottom: 15px;
     }
+    .footer-legal {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 6px 0;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px dashed rgba($color: #fff, $alpha: 0.15);
+        font-size: 14px;
+        line-height: 1.5em;
+        color: rgba($color: #fff, $alpha: 0.55);
+        li {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            &:not(:last-child)::after {
+                content: "";
+                width: 1px;
+                height: 14px;
+                margin: 0 16px 0 10px;
+                background: rgba($color: #fff, $alpha: 0.2);
+            }
+        }
+        i {
+            color: $color-one;
+            font-size: 13px;
+        }
+        strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        a {
+            color: inherit;
+            @include transition(0.2s);
+            &:hover {
+                color: $color-one;
+            }
+        }
+        @media (max-width: 767px) {
+            flex-direction: column;
+            align-items: flex-start;
+            li::after {
+                display: none;
+            }
+        }
+    }
     .footer-nav-link a {
         color: rgba($color: #fff, $alpha: 0.7);
         line-height: 46px;

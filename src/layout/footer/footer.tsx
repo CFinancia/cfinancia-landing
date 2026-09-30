@@ -4,6 +4,9 @@ import { Modal } from "react-bootstrap";
 // internal
 import FooterSocial from "./footer-social";
 import PqrForm from "@/components/forms/pqr-form";
+import company_data from "@/data/company-data";
+
+const telHref = (tel: string) => `tel:${tel.replace(/[^\d+]/g, "")}`;
 
 const Footer = () => {
   const [showPqr, setShowPqr] = useState(false);
@@ -72,6 +75,16 @@ const Footer = () => {
                     PQR
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="https://www.sic.gov.co/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Superintendencia de Industria y Comercio"
+                  >
+                    SIC
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -105,6 +118,29 @@ const Footer = () => {
               </div>
             </div>
           </div>
+          <ul className="footer-legal style-none">
+            <li>
+              <strong>{company_data.razonSocial}</strong>
+              {company_data.nit && <> · NIT {company_data.nit}</>}
+            </li>
+            <li>
+              <i className="bi bi-geo-alt"></i>
+              {company_data.direccion}
+            </li>
+            <li>
+              <i className="bi bi-telephone"></i>
+              {company_data.telefonos.map((tel, i) => (
+                <span key={tel}>
+                  {i > 0 && " / "}
+                  <a href={telHref(tel)}>{tel}</a>
+                </span>
+              ))}
+            </li>
+            <li>
+              <i className="bi bi-envelope"></i>
+              <a href={`mailto:${company_data.correo}`}>{company_data.correo}</a>
+            </li>
+          </ul>
         </div>
       </div>
 
