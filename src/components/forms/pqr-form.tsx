@@ -70,7 +70,7 @@ const PqrForm = ({ onClose }: Props) => {
     const documento = data.document?.trim();
     try {
       const res = await fetch(
-        "https://hwwqudd0fa.execute-api.us-east-1.amazonaws.com/Prod/sistema/envieCorreoLanding",
+        "https://wbn7ubjkg0.execute-api.us-east-1.amazonaws.com/Prod/sistema/envieCorreoLanding",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
