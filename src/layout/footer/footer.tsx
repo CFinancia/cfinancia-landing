@@ -130,7 +130,7 @@ const Footer = () => {
           <p>Cuéntanos qué necesitas y te responderemos lo antes posible.</p>
         </div>
         <Modal.Body className="pqr-modal-body">
-          <PqrForm onSuccess={() => setShowPqr(false)} />
+          <PqrForm onClose={() => setShowPqr(false)} />
         </Modal.Body>
       </Modal>
     </div>

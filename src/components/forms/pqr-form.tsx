@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { destinatariosLandingPorOrigen } from "@/lib/getLandingCorreos";
-import { notifyError, notifySuccess } from "@/utils/toast";
+import { notifyError } from "@/utils/toast";
 
 const TIPOS_PQR = [
   { value: "Petición", icon: "bi-question-circle" },
@@ -10,9 +11,6 @@ const TIPOS_PQR = [
   { value: "Reclamo", icon: "bi-exclamation-triangle" },
   { value: "Sugerencia", icon: "bi-lightbulb" },
 ] as const;
-
-// TODO: cambiar a "landing-pqr" cuando el backend (cesione) con ese origen esté desplegado.
-const ORIGEN_API = "landing-contacto";
 
 type FormData = {
   tipo: string;
@@ -52,10 +50,12 @@ const FieldError = ({ msg }: { msg?: string }) =>
   msg ? <span className="pqr-error">{msg}</span> : null;
 
 type Props = {
-  onSuccess?: () => void;
+  onClose?: () => void;
 };
 
-const PqrForm = ({ onSuccess }: Props) => {
+const PqrForm = ({ onClose }: Props) => {
+  const [radicado, setRadicado] = useState<string | null>(null);
+  const [correoEnviado, setCorreoEnviado] = useState("");
   const {
     register,
     handleSubmit,
@@ -78,11 +78,12 @@ const PqrForm = ({ onSuccess }: Props) => {
             tenantId: "265a0493-740a-11ee-a243-12a5defed043",
             ...destinatariosLandingPorOrigen("landing-pqr"),
             nombre: data.name,
-            empresa: documento ? `Documento: ${documento}` : "No informado",
+            nit: documento || undefined,
             correo: data.email,
             telefono: data.phone,
-            mensaje: `[PQR - ${data.tipo}] ${data.message}`,
-            origen: ORIGEN_API,
+            tipoSolicitud: data.tipo,
+            mensaje: data.message,
+            origen: "landing-pqr",
           }),
         }
       );
@@ -90,14 +91,43 @@ const PqrForm = ({ onSuccess }: Props) => {
       if (!res.ok || body?.succeeded === false) {
         throw new Error(body?.messages?.join(" ") || `HTTP ${res.status}`);
       }
-      notifySuccess("Tu solicitud fue enviada. Te contactaremos pronto.");
+      setCorreoEnviado(data.email);
+      setRadicado(body?.radicado ?? "");
       reset();
-      onSuccess?.();
     } catch (err) {
       console.error("Error al enviar la PQR:", err);
       notifyError("No pudimos enviar tu solicitud. Intenta de nuevo.");
     }
   });
+
+  if (radicado !== null) {
+    return (
+      <div className="pqr-success">
+        <div className="pqr-success-icon">
+          <i className="bi bi-check-lg"></i>
+        </div>
+        <h4>¡Tu solicitud fue radicada!</h4>
+        {radicado && (
+          <>
+            <p>Tu número de radicado es:</p>
+            <div className="pqr-radicado">{radicado}</div>
+          </>
+        )}
+        <p className="pqr-success-note">
+          Enviamos una confirmación a <strong>{correoEnviado}</strong>. El
+          seguimiento de tu solicitud se realizará por este medio; conserva el
+          número de radicado para cualquier consulta.
+        </p>
+        <button
+          type="button"
+          className="btn-four tran3s w-100 d-block"
+          onClick={onClose}
+        >
+          Cerrar
+        </button>
+      </div>
+    );
+  }
 
   return (
     <form className="pqr-form" onSubmit={onSubmit} noValidate>
