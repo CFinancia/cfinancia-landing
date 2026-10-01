@@ -6,6 +6,7 @@ import NotFoundPage from "../pages/not-found";
 import ServiceDetailsPage from "../pages/service-details";
 import Home from "../pages/home";
 import DispapelesPage from "../aliados/dispapeles/index";
+import PoliticaDatosPage from "../pages/politica-datos";
 
 
 export default function AppNavigation() {
@@ -19,6 +20,7 @@ export default function AppNavigation() {
         <Route path="/servicios-factoring" element={<ServiceDetailsPage />} />
         <Route path="/blog-factoring/:id" element={<BlogDetailsPage />} />
         <Route path="/contacto" element={<ContactPage />} />
+        <Route path="/politica-tratamiento-datos" element={<PoliticaDatosPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>

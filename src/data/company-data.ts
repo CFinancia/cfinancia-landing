@@ -6,6 +6,8 @@ const company_data = {
   direccion: "Carrera 16 # 93-11, piso 10, Bogotá, Colombia",
   telefonos: ["+57 (1) 381 49 90", "+57 316 742 1086"],
   correo: "soporte@c-financia.com",
+  politicaDatosUrl:
+    "https://s3.us-east-1.amazonaws.com/public.cesione.com.co/cfinancia/tyc/politica-seguridad.md",
 };
 
 export default company_data;

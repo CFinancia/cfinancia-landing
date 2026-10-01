@@ -29,6 +29,11 @@
         color: #fff;
         margin-bottom: 15px;
     }
+    .footer-nav-link a.footer-link-multilinea {
+        display: inline-block;
+        line-height: 1.4em;
+        padding: 12px 0;
+    }
     .footer-legal {
         display: flex;
         flex-wrap: wrap;

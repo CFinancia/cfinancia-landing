@@ -54,7 +54,9 @@ const Footer = () => {
                   <NavLink to="/blog-factoring/1">Blog</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/contacto">Contáctanos</NavLink>
+                  <NavLink to="/politica-tratamiento-datos" className="footer-link-multilinea">
+                    Política de Tratamiento de Datos
+                  </NavLink>
                 </li>
               </ul>
             </div>
