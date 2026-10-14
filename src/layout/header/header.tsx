@@ -20,7 +20,7 @@ const HeaderTwo = () => {
                 <li className="d-flex align-items-center login-btn-one">
                   <span className="bi bi-lock text-white me-2"></span>
                   <a
-                    href="https://cfinancia.cesionbnk.com/"
+                    href="https://app.cesionbnk.com/cfinancia"
                     className="text-light fw-500"
                   >
                     Mi Cuenta

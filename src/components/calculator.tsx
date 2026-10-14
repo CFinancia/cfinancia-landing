@@ -679,7 +679,7 @@ export function Calculator() {
             style={{ height: "48px" }}
             onClick={() => {
               window.location.href =
-                "https://cfinancia-prod-clientes.cesionbnk.com";
+                "https://app.cesionbnk.com/cfinancia/vinculaciones";
             }}
           >
             Continuar con el proceso de onboarding

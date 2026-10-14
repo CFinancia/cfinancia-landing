@@ -16,7 +16,7 @@ const FancyBannerNine = () => {
                 Descubre cómo nuestro servicio de factoring puede ayudar a tu empresa a alcanzar sus objetivos de crecimiento.
               </p>
               <div className="d-inline-flex flex-wrap justify-content-center">
-                <NavLink to="https://cfinancia-prod-clientes.cesionbnk.com" className="btn-four mt-10 me-2">
+                <NavLink to="https://app.cesionbnk.com/cfinancia/vinculaciones" className="btn-four mt-10 me-2">
                   Regístrate
                 </NavLink>
                 <NavLink to="/contacto" className="btn-six mt-10 ms-2">
