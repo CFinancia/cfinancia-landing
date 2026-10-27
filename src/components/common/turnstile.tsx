@@ -11,10 +11,11 @@ declare global {
   }
 }
 
-// Clave pública. En desarrollo, si no está definida, se usa la de prueba de Cloudflare (siempre pasa).
+// Clave pública (no es secreta). En desarrollo se usa la de prueba de Cloudflare (siempre pasa),
+// salvo que se defina VITE_TURNSTILE_SITE_KEY en .env.local para probar la real.
 const SITE_KEY =
   import.meta.env.VITE_TURNSTILE_SITE_KEY ||
-  (import.meta.env.DEV ? "1x00000000000000000000AA" : "");
+  (import.meta.env.DEV ? "1x00000000000000000000AA" : "0x4AAAAAAFouCfsGoYE7YLKj");
 
 export type TurnstileHandle = { reset: () => void };
 
