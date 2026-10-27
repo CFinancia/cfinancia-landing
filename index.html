@@ -8,6 +8,8 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- Cloudflare Turnstile (anti-spam de formularios). Debe ir antes de main.tsx -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

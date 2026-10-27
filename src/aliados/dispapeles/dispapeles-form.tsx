@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useSearchParams } from "react-router-dom";
 import ErrorMsg from './err-msg';
+import Turnstile from '@/components/common/turnstile';
 import { destinatariosLandingPorOrigen } from '@/lib/getLandingCorreos';
 
 type FormData = {
@@ -36,6 +37,7 @@ const getFirstSearchParam = (
 
 const DispapelesForm = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState("");
   const [searchParams] = useSearchParams();
   const companyParam = getFirstSearchParam(searchParams, [
     "Empresa",
@@ -76,12 +78,14 @@ const DispapelesForm = () => {
             correo: data.email,
             telefono: data.phone,
             origen: "alianza-dispapeles",
+            turnstileToken,
           }),
         }
       );
     } catch (err) {
       console.error("Error al enviar el correo:", err);
     }
+    setTurnstileToken("");
     setSubmitted(true);
     reset();
   });
@@ -213,6 +217,10 @@ const DispapelesForm = () => {
             </div>
           </div>
 
+          <div className="col-12 d-flex justify-content-center">
+            <Turnstile onChange={setTurnstileToken} />
+          </div>
+
           <div className="col-12 mt-3">
             <button type='submit' className="btn w-100 py-3 fw-bold rounded-3"
               style={{
@@ -222,7 +230,7 @@ const DispapelesForm = () => {
                 boxShadow: '0 4px 15px rgba(163,230,53,0.3)',
                 transition: 'transform 0.2s, box-shadow 0.2s'
               }}
-              disabled={isSubmitting}
+              disabled={isSubmitting || !turnstileToken}
               onMouseOver={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(163,230,53,0.4)'; }}
               onMouseOut={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 15px rgba(163,230,53,0.3)'; }}
             >

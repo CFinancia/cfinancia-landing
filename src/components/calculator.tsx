@@ -20,6 +20,7 @@ import { Button } from "@/ui/button";
 import { Label } from "@/ui/label";
 import { Input } from "@/ui/input";
 import { destinatariosLandingPorOrigen } from "@/lib/getLandingCorreos";
+import Turnstile from "@/components/common/turnstile";
 
 export function Calculator() {
   const [valorFactura, setValorFactura] = useState<number>(0);
@@ -34,6 +35,7 @@ export function Calculator() {
   const [activeStep, setActiveStep] = useState<number>(1);
   const [email, setEmail] = useState<string>("");
   const [emailError, setEmailError] = useState<string>("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
   const [showModal, setShowModal] = useState<boolean>(false);
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
   const calculatorRef = useRef<HTMLDivElement>(null);
@@ -118,7 +120,7 @@ export function Calculator() {
   };
 
   const handleCalculate = () => {
-    if (valorFactura > 0 && pagador && validateEmail(email)) {
+    if (valorFactura > 0 && pagador && validateEmail(email) && turnstileToken) {
       setShowResults(true);
       enviarCorreo(); // Aquí se hace el envío con fetch
     } else {
@@ -148,11 +150,14 @@ export function Calculator() {
   const isButtonDisabled = () => {
     if (activeStep === 1) return valorFacturaFormatted === "";
     if (activeStep === 2) return pagador === "";
-    if (activeStep === 3) return email === "" || !validateEmail(email);
+    if (activeStep === 3)
+      return email === "" || !validateEmail(email) || !turnstileToken;
     return false;
   };
 
   const enviarCorreo = async () => {
+    // El token es de un solo uso; al volver al paso 3 el widget genera uno nuevo.
+    setTurnstileToken("");
     const response = await fetch(
       "https://hwwqudd0fa.execute-api.us-east-1.amazonaws.com/Prod/sistema/envieCorreoLanding",
       {
@@ -165,6 +170,7 @@ export function Calculator() {
           valorFactura: valorFactura,
           pagador: pagador,
           correo: email,
+          turnstileToken,
         }),
       }
     );
@@ -411,6 +417,9 @@ export function Calculator() {
                         Tus datos están seguros. No compartiremos tu información
                         con terceros.
                       </p>
+                      <div className="mt-3">
+                        <Turnstile onChange={setTurnstileToken} />
+                      </div>
                     </div>
                   </motion.div>
                 )}

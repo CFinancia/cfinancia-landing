@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import Turnstile, { TurnstileHandle } from "../common/turnstile";
 import { destinatariosLandingPorOrigen } from "@/lib/getLandingCorreos";
 import { notifyError } from "@/utils/toast";
 
@@ -56,6 +57,8 @@ type Props = {
 const PqrForm = ({ onClose }: Props) => {
   const [radicado, setRadicado] = useState<string | null>(null);
   const [correoEnviado, setCorreoEnviado] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const turnstileRef = useRef<TurnstileHandle>(null);
   const {
     register,
     handleSubmit,
@@ -84,6 +87,7 @@ const PqrForm = ({ onClose }: Props) => {
             tipoSolicitud: data.tipo,
             mensaje: data.message,
             origen: "landing-pqr",
+            turnstileToken,
           }),
         }
       );
@@ -93,10 +97,12 @@ const PqrForm = ({ onClose }: Props) => {
       }
       setCorreoEnviado(data.email);
       setRadicado(body?.radicado ?? "");
+      setTurnstileToken("");
       reset();
     } catch (err) {
       console.error("Error al enviar la PQR:", err);
       notifyError("No pudimos enviar tu solicitud. Intenta de nuevo.");
+      turnstileRef.current?.reset();
     }
   });
 
@@ -228,10 +234,14 @@ const PqrForm = ({ onClose }: Props) => {
         <FieldError msg={errors.acceptTerms?.message} />
       </div>
 
+      <div className="pqr-field">
+        <Turnstile ref={turnstileRef} onChange={setTurnstileToken} />
+      </div>
+
       <button
         type="submit"
         className="btn-four tran3s w-100 d-block"
-        disabled={isSubmitting}
+        disabled={isSubmitting || !turnstileToken}
       >
         {isSubmitting ? "Enviando..." : "Enviar solicitud"}
       </button>

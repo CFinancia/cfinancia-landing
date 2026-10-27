@@ -1,7 +1,9 @@
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import ErrorMsg from "../common/err-msg";
+import Turnstile, { TurnstileHandle } from "../common/turnstile";
 import { destinatariosLandingPorOrigen } from "@/lib/getLandingCorreos";
 
 type FormData = {
@@ -21,6 +23,8 @@ const schema = yup.object().shape({
 });
 
 const ContactForm = () => {
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const turnstileRef = useRef<TurnstileHandle>(null);
   const {
     register,
     handleSubmit,
@@ -45,12 +49,14 @@ const ContactForm = () => {
             telefono: data.phone,
             mensaje: data.message,
             origen: "landing-contacto",
+            turnstileToken,
           }),
         }
       );
     } catch (err) {
       console.error("Error al enviar el mensaje:", err);
     }
+    turnstileRef.current?.reset();
     reset();
   });
   return (
@@ -126,8 +132,15 @@ const ContactForm = () => {
             </div>
           </div>
         </div>
+        <div className="col-12 mb-30">
+          <Turnstile ref={turnstileRef} onChange={setTurnstileToken} />
+        </div>
         <div className="col-12">
-          <button type="submit" className="btn-four tran3s w-100 d-block">
+          <button
+            type="submit"
+            className="btn-four tran3s w-100 d-block"
+            disabled={!turnstileToken}
+          >
             Enviar mensaje
           </button>
         </div>
