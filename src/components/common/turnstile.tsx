@@ -36,15 +36,24 @@ const Turnstile = forwardRef<TurnstileHandle, Props>(({ onChange }, ref) => {
   }));
 
   useEffect(() => {
+    if (!SITE_KEY) {
+      console.error("Turnstile: falta VITE_TURNSTILE_SITE_KEY");
+      return;
+    }
     if (!window.turnstile || !containerRef.current) return;
 
-    widgetId.current = window.turnstile.render(containerRef.current, {
-      sitekey: SITE_KEY,
-      language: "es",
-      callback: (token: string) => onChange(token),
-      "expired-callback": () => onChange(""),
-      "error-callback": () => onChange(""),
-    });
+    // Si Cloudflare falla, se registra el error pero no se rompe la página.
+    try {
+      widgetId.current = window.turnstile.render(containerRef.current, {
+        sitekey: SITE_KEY,
+        language: "es",
+        callback: (token: string) => onChange(token),
+        "expired-callback": () => onChange(""),
+        "error-callback": () => onChange(""),
+      });
+    } catch (err) {
+      console.error("Turnstile:", err);
+    }
 
     return () => {
       if (widgetId.current) window.turnstile?.remove(widgetId.current);
