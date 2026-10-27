@@ -17,14 +17,42 @@ const HeaderTwo = () => {
 
             <div className="right-widget ms-auto ms-lg-0 me-3 me-lg-0 order-lg-3">
               <ul className="d-flex align-items-center style-none">
-                <li className="d-flex align-items-center login-btn-one">
+                <li className="d-flex align-items-center login-btn-one dropdown">
                   <span className="bi bi-lock text-white me-2"></span>
                   <a
-                    href="https://app.cesionbnk.com/cfinancia"
-                    className="text-light fw-500"
+                    className="text-light fw-500 dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    data-bs-auto-close="true"
+                    aria-expanded="false"
                   >
                     Mi Cuenta
                   </a>
+                  <ul className="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a
+                        href="https://app.cesionbnk.com/cfinancia"
+                        className="dropdown-item d-flex align-items-center"
+                        target="_self"
+                        rel="noopener noreferrer"
+                      >
+                        <span className="bi bi-person me-2"></span>
+                        <span>Clientes</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://app.cesionbnk.com/cfinancia/admin"
+                        className="dropdown-item d-flex align-items-center"
+                        target="_self"
+                        rel="noopener noreferrer"
+                      >
+                        <span className="bi bi-shield-lock me-2"></span>
+                        <span>Administradores</span>
+                      </a>
+                    </li>
+                  </ul>
                 </li>
                 <li className="d-none d-md-inline-block ms-3 ms-xl-5">
                   <a
